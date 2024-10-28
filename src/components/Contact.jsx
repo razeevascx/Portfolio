@@ -1,9 +1,5 @@
 import { HiOutlineMail } from "react-icons/hi";
-import {
-  BsLinkedin,
-  BsGithub,
-  BsInstagram,
-} from "react-icons/bs";
+import { BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -134,7 +130,7 @@ function Contact() {
                     </motion.a>
 
                     <motion.a
-                      href="https://instagram.com/razeev.ascx"
+                      href="https://instagram.com/razeev.asnx"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
@@ -165,24 +161,6 @@ function Contact() {
                         <div className="font- medium">GitHub</div>
                         <div className="text-sm text-slate-400">
                           Explore my projects
-                        </div>
-                      </div>
-                    </motion.a>
-
-                    <motion.a
-                      href="https://linkedin.com/in/yourprofile"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      className="flex items-center gap-4 p-4 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group"
-                    >
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center border border-slate-700/50">
-                        <BsLinkedin className="text-xl text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="font-medium">LinkedIn</div>
-                        <div className="text-sm text-slate-400">
-                          Connect with me
                         </div>
                       </div>
                     </motion.a>

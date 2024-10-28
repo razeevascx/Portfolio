@@ -145,6 +145,7 @@ function Home() {
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
+            href="#project"
             className="glass-card px-6 py-3 rounded-full font-medium text-lg flex items-center gap-2"
           >
             <span>View Projects</span>
@@ -163,7 +164,7 @@ function Home() {
           {["GitHub", "LinkedIn", "Twitter"].map((platform) => (
             <motion.a
               key={platform}
-              href="#"
+              href="#contact"
               className="text-text/60 hover:text-text transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
             >
