@@ -5,7 +5,6 @@ import Description from './Description';
 import Skills from './Skill';
 import CTAButtons from './Ctabtn';
 import SocialLinks from './SocialLinks';
-
 function Home() {
   const variants = {
     container: {
