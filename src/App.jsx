@@ -1,5 +1,5 @@
 import About from "./components/About/About";
-import Home from "./components/Home";
+import Home from "./components/Hero/Index";
 import Star from "./components/Star";
 import Navbar from "./components/Navbar/Navbar";
 import Education from "./components/Education";
@@ -17,6 +17,12 @@ function App() {
       </div>
 
       <div className="z-10">
+        <div className="bg-yellow-500">
+          
+      <marquee className="font-bold text-black p-2">Note: This is an active project
+        and features/technologies may change during development.
+        </marquee>
+        </div>
         <Navbar />
       </div>
 

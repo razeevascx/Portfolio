@@ -85,9 +85,10 @@ const About = () => {
             </div>
             <h3 className="text-xl text-blue-500 mb-4">MERN Stack Developer</h3>
             <p className="text-gray-300 leading-relaxed">
-              Passionate about creating efficient and scalable web applications.
+  Passionate about creating efficient and scalable web applications.
               Specialized in full-stack development with modern technologies.
               Always eager to learn and implement new technologies.
+              My journey as a developer has been a continuous learning process, from building small projects to working on complex applications, I've always strived to improve my skills and stay up-to-date with the latest technologies.
             </p>
           </motion.div>
 

@@ -40,7 +40,7 @@ body {
   }
 
   body {
-    @apply bg-background text-text-primary overflow-x-hidden;
+    @apply bg-background text-text-primary;
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
   }
@@ -56,37 +56,20 @@ body {
 
 @layer components {
   .glossy {
-    @apply bg-white/10 
-           backdrop-blur-xl 
-           border border-white/20 
-           rounded-xl 
-           transition-all 
-           duration-300;
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl transition-all duration-300;
   }
 
   .glass-card {
-    @apply bg-background-light/5
-           backdrop-blur-lg
-           border border-text-primary/10
-           rounded-2xl
-           transition-all
-           duration-300;
+    @apply bg-background-light/5 backdrop-blur-lg border border-text-primary/10 rounded-2xl transition-all duration-300;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-secondary 
-           bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 
   /* Navigation Styles */
   .nav-item {
-    @apply px-4 py-2 
-           rounded-full 
-           transition-all 
-           duration-300
-           text-text-secondary 
-           hover:text-text-primary
-           hover:bg-white/5;
+    @apply px-4 py-2 rounded-full transition-all duration-300 text-text-secondary hover:text-text-primary hover:bg-white/5;
   }
 
   .nav-item.active {
@@ -95,51 +78,31 @@ body {
 
   /* Education Component Styles */
   .sidebar-item {
-    @apply p-4 
-           cursor-pointer 
-           font-mono 
-           transition-all 
-           duration-300
-           rounded-lg
-           hover:bg-white/5
-           hover:text-primary;
+    @apply p-4 cursor-pointer font-mono transition-all duration-300 rounded-lg hover:bg-white/5 hover:text-primary;
   }
 
   .sidebar-item.active {
-    @apply bg-white/10 
-           text-primary 
-           border-l-2 
-           border-primary;
+    @apply bg-white/10 text-primary border-l-2 border-primary;
   }
 
   .education-content {
-    @apply glass-card
-           p-6
-           space-y-4;
+    @apply glass-card p-6 space-y-4;
   }
 
   .education-title {
-    @apply text-2xl 
-           font-bold 
-           gradient-text;
+    @apply text-2xl font-bold gradient-text;
   }
 
   .education-school {
-    @apply text-lg 
-           text-primary 
-           hover:text-secondary 
-           transition-colors 
-           duration-300;
+    @apply text-lg text-primary hover:text-secondary transition-colors duration-300;
   }
 
   .education-year {
-    @apply text-text-secondary
-           font-mono;
+    @apply text-text-secondary font-mono;
   }
 
   .education-description {
-    @apply text-text-primary/80 
-           leading-relaxed;
+    @apply text-text-primary/80 leading-relaxed;
   }
 
   canvas {
@@ -153,12 +116,12 @@ body {
 
 @layer utilities {
   .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome, Safari, and Opera */
   }
 }
 
@@ -245,14 +208,12 @@ body {
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar */
 ::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari, and Opera */
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 * {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
