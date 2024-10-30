@@ -4,7 +4,7 @@ import LocationAndRole from './Location';
 import Description from './Description';
 import Skills from './Skill';
 import CTAButtons from './Ctabtn';
-import SocialLinks from './SocialLinks';
+// import SocialLinks from './SocialLinks';
 function Home() {
   const variants = {
     container: {
@@ -81,7 +81,7 @@ function Home() {
         <Description variants={variants.text} />
         <Skills skills={skills} variants={variants.text} />
         <CTAButtons variants={variants.button} />
-        <SocialLinks socialLinks={socialLinks} variants={variants.button} />
+{/*         <SocialLinks socialLinks={socialLinks} variants={variants.button} /> */}
       </motion.div>
     </motion.div>
   );
