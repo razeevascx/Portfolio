@@ -18,7 +18,7 @@ function Education() {
 
   const educationData = [
     {
-      school: "Higher Secondary Education",
+      school: "Khwopa Higher Secondary School",
       role: "Major in Computer Science",
       location: "Dekocha 06, Bhaktapur 44800",
       year: "2022 - 2024",
@@ -29,7 +29,7 @@ function Education() {
       link: "https://www.facebook.com/khwopahss"
     },
     {
-      school: "Secondary Education",
+      school: "Shree Saraswati Secondary School",
       role: "Secondary Education",
       location: "Changunaryan-08, Bhaktapur 44800",
       year: "2022",
