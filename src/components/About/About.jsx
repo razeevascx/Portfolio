@@ -84,12 +84,12 @@ const About = () => {
               </motion.button>
             </div>
             <h3 className="text-xl text-blue-500 mb-4">MERN Stack Developer</h3>
-            <p className="text-gray-300 leading-relaxed">
+{/*             <p className="text-gray-300 leading-relaxed">
   Passionate about creating efficient and scalable web applications.
               Specialized in full-stack development with modern technologies.
               Always eager to learn and implement new technologies.
               My journey as a developer has been a continuous learning process, from building small projects to working on complex applications, I've always strived to improve my skills and stay up-to-date with the latest technologies.
-            </p>
+            </p> */}
           </motion.div>
 
           {/* Quick Stats */}
@@ -103,7 +103,7 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 glass-card rounded-lg">
                 <h4 className="text-blue-400">Experience</h4>
-                <p className="text-2xl font-bold text-white">10+ Months</p>
+                <p className="text-2xl font-bold text-white">Below 1 Years</p>
               </div>
               {/* <div className="p-4 glass-card rounded-lg"> */}
                 {/* <h4 className="text-blue-400">Projects</h4>
