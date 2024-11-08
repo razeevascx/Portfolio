@@ -2,7 +2,6 @@ import About from "./components/About/About";
 import Home from "./components/Hero/Index";
 import Star from "./components/Star";
 import Navbar from "./components/Navbar/Navbar";
-import Education from "./components/Education";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 import Service from "./components/Service";
@@ -43,9 +42,7 @@ function App() {
           <Service/>
         </section>
 
-        <section id="education" >
-          <Education />
-        </section>
+     
 
         <section id="contact" >
           <Contact />

@@ -1,5 +1,5 @@
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
-import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
+import {  BiMessageSquareDetail } from 'react-icons/bi';
 import { RiServiceLine } from 'react-icons/ri';
 
 export const navLinks = [
@@ -19,12 +19,7 @@ export const navLinks = [
     icon: RiServiceLine,
   },
 
-  {
-    label: 'Education',
-    href: '#education',
-    icon: BiBook,
-  },
-  {
+   {
     label: 'Contact',
     href: '#contact',
     icon: BiMessageSquareDetail,

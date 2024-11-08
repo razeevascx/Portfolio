@@ -9,7 +9,7 @@ const EducationItem = ({ education, index, activeIndex, setActiveIndex }) => (
     animate={{ opacity: 1, x: 0 }}
     transition={{ delay: index * 0.1 }}
   >
-    {education.school}
+    {education.degree}
   </motion.div>
 );
 
@@ -18,23 +18,28 @@ function Education() {
 
   const educationData = [
     {
+      degree: "Higher Secondary",
       school: "Khwopa Higher Secondary School",
       role: "Major in Computer Science",
       location: "Dekocha 06, Bhaktapur 44800",
       year: "2022 - 2024",
       experiences: [
-        "Completed +2 with Computer Science as major subject",
-        
+        "Gained foundational knowledge in Computer Science.",
+        "Developed skills in problem-solving, coding, and data analysis.",
+        "Participated in academic projects and tech-based workshops."
       ],
       link: "https://www.facebook.com/khwopahss"
     },
     {
+      degree: "Secondary",
       school: "Shree Saraswati Secondary School",
       role: "Secondary Education",
       location: "Changunaryan-08, Bhaktapur 44800",
       year: "2022",
       experiences: [
-       ""
+        "Achieved academic excellence in core subjects.",
+        "Participated in science fairs and cultural events.",
+        "Built a strong foundation in STEM subjects."
       ],
       link: "https://www.facebook.com/100064233663286"
     }
@@ -46,9 +51,9 @@ function Education() {
   };
 
   return (
-    <section className=" text-[#D9D9D9]">
+    <section className="text-[#D9D9D9]">
       <motion.div 
-        className="max-w-6xl mx-auto px-4 py-20 flex flex-col md:flex-row"
+        className=" mx-auto  flex flex-col md:flex-row"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
