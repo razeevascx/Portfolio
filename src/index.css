@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  background-color: #0f0f11;
 }
 
 #root {
@@ -17,31 +18,13 @@ body {
 }
 
 @layer base {
-  :root {
-    /* Primary Colors */
-    --color-primary: #2b4fff;
-    --color-primary-light: #5c78ff;
-    --color-primary-dark: #3d2aff;
-    --color-primary-hover: #5ea2ff;
-
-    /* Secondary Colors */
-    --color-secondary: #7129ff;
-    --color-secondary-light: #905aff;
-    --color-secondary-dark: #a52aff;
-    --color-secondary-hover: #ba5aff;
-
-    /* Text Colors */
-    --color-text-primary: #f1f1f1;
-    --color-text-secondary: #666666;
-    --color-text-bright: #ffffff;
-    --color-background: #1a1d23;
-    --color-background-light: #2a2d34;
-    --color-background-dark: #0f0f11;
+  :gname {
+    @apply bg-gradient-to-r from-green-600 to-indigo-400 bg-clip-text text-transparent animate-text;
   }
 
   body {
     @apply bg-background text-text-primary;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
 
