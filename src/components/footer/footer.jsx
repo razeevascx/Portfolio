@@ -5,17 +5,17 @@ function Footer() {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/rajeevpuri/',
+      url: 'https://www.linkedin.com/in/razeevasnx',
       icon: <Linkedin className="w-5 h-5" />,
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/rajeevpuri',
+      url: 'https://github.com/razeevascx',
       icon: <Github className="w-5 h-5" />,
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/rajeevpuri',
+      url: 'https://twitter.com/about_razeev',
       icon: <Twitter className="w-5 h-5" />,
     },
     {

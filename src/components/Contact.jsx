@@ -1,30 +1,30 @@
-import { HiOutlineMail } from "react-icons/hi";
-import { BsGithub, BsInstagram } from "react-icons/bs";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { toast, Toaster } from "react-hot-toast";
+import { HiOutlineMail } from 'react-icons/hi';
+import { BsGithub, BsInstagram } from 'react-icons/bs';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
 
 function Contact() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
-  const email = "hey@rajeevpuri.com.np";
+  const email = 'contact@rajeevpuri.com.np';
   const emailCode = `const contactMe = {
   email: "${email}",
   status: "Open to opportunities",
   response_time: "24 hours",
 };`;
 
-  const notify = (message, type = "success") => {
+  const notify = (message, type = 'success') => {
     toast.dismiss();
     toast[type](message, {
       duration: 2000,
-      position: "bottom-center",
+      position: 'bottom-center',
       style: {
-        color: "#fff",
-        borderRadius: "10px",
-        border: "1px solid rgba(148, 163, 184, 0.1)",
+        color: '#fff',
+        borderRadius: '10px',
+        border: '1px solid rgba(148, 163, 184, 0.1)',
       },
     });
   };
@@ -32,16 +32,16 @@ function Contact() {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
-      notify("Email copied to clipboard! 📋");
+      notify('Email copied to clipboard! 📋');
     } catch (err) {
-      console.error("Failed to copy email:", err);
-      notify("Failed to copy email.", "error");
+      console.error('Failed to copy email:', err);
+      notify('Failed to copy email.', 'error');
     }
   };
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [controls, inView]);
 
@@ -172,7 +172,6 @@ function Contact() {
         </div>
       </main>
 
-  
       <Toaster />
     </div>
   );
