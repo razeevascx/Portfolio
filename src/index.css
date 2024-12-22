@@ -18,8 +18,8 @@ body {
 }
 
 @layer base {
-  :gname {
-    @apply bg-gradient-to-r from-green-600 to-indigo-400 bg-clip-text text-transparent animate-text;
+  .gname {
+    @apply bg-gradient-to-r from-green-600 to-indigo-400 bg-clip-text text-transparent;
   }
 
   body {
@@ -174,7 +174,10 @@ body {
 }
 
 /* Global Transitions */
-* {
+body,
+button,
+input,
+textarea {
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
     color 0.3s ease-in-out;
 }
