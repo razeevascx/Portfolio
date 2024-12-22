@@ -1,5 +1,5 @@
 import { HiOutlineMail } from "react-icons/hi";
-import { BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
+import { BsGithub, BsInstagram } from "react-icons/bs";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -172,25 +172,7 @@ function Contact() {
         </div>
       </main>
 
-      {/* Footer Section */}
-      <footer className="border-t border-slate-700/50 py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4 text-center">
-            <h4 className="text-xl font-bold text-slate-100">Rajeev Puri</h4>
-            <p className="text-slate-400 text-sm">
-              Building digital experiences with code and creativity.
-            </p>
-          </div>
-
-          {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-slate-700/50 text-center">
-            <p className="text-slate-400 text-sm">
-              &copy; {new Date().getFullYear()} Rajeev Puri. All rights
-              reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+  
       <Toaster />
     </div>
   );

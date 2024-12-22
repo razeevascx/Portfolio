@@ -1,14 +1,14 @@
 import React from 'react';
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
+import Footer from './components/footer/footer';
 
 // Lazy load components
 const About = lazy(() => import('./components/About/About'));
 const Home = lazy(() => import('./components/Hero/Index'));
 const Navbar = lazy(() => import('./components/Navbar/Navbar'));
-const Project = lazy(() => import('./components/Project'));
+// const Project = lazy(() => import('./components/Project'));
 const Contact = lazy(() => import('./components/Contact'));
 const Service = lazy(() => import('./components/Service'));
-const Name = lazy(() => import('./components/Name'));
 
 // Custom Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -43,66 +43,55 @@ class ErrorBoundary extends React.Component {
 // Loading Fallback Component
 const LoadingFallback = () => (
   <div className="flex justify-center items-center h-screen">
-    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-blue-500"></div>
+    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-blue-500" />
   </div>
 );
 
 function App() {
-  const [showMainContent, setShowMainContent] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowMainContent(true);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="relative min-h-screen">
       <ErrorBoundary>
         <Suspense fallback={<LoadingFallback />}>
-          {!showMainContent ? (
-            <Name />
-          ) : (
-            <>
+          <>
+            <Suspense fallback={<LoadingFallback />}>
+              <Navbar />
+            </Suspense>
+
+            <main className="relative">
               <Suspense fallback={<LoadingFallback />}>
-                <Navbar />
+                <section id="home">
+                  <Home />
+                </section>
               </Suspense>
 
-              <main className="relative">
-                <Suspense fallback={<LoadingFallback />}>
-                  <section id="home">
-                    <Home />
-                  </section>
-                </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="about">
+                  <About />
+                </section>
+              </Suspense>
 
-                <Suspense fallback={<LoadingFallback />}>
-                  <section id="about">
-                    <About />
-                  </section>
-                </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="projects">{/* <Project /> */}</section>
+              </Suspense>
 
-                <Suspense fallback={<LoadingFallback />}>
-                  <section id="projects">
-                    {/* <Project /> */}
-                  </section>
-                </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="service">
+                  <Service />
+                </section>
+              </Suspense>
 
-                <Suspense fallback={<LoadingFallback />}>
-                  <section id="service">
-                    <Service />
-                  </section>
-                </Suspense>
-
-                <Suspense fallback={<LoadingFallback />}>
-                  <section id="contact">
-                    <Contact />
-                  </section>
-                </Suspense>
-              </main>
-            </>
-          )}
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="contact">
+                  <Contact />
+                </section>
+              </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="footer">
+                  <Footer />
+                </section>
+              </Suspense>
+            </main>
+          </>
         </Suspense>
       </ErrorBoundary>
     </div>
