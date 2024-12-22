@@ -1,5 +1,6 @@
 import React from 'react';
 import { lazy, Suspense } from 'react';
+import Footer from './components/footer/footer';
 
 // Lazy load components
 const About = lazy(() => import('./components/About/About'));
@@ -82,6 +83,11 @@ function App() {
               <Suspense fallback={<LoadingFallback />}>
                 <section id="contact">
                   <Contact />
+                </section>
+              </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="footer">
+                  <Footer />
                 </section>
               </Suspense>
             </main>
