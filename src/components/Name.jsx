@@ -26,7 +26,7 @@ const Name = () => {
         isVisible ? '' : 'hidden'
       }`}
     >
-      <div className="flex justify-center items-center mb-4">
+      <div className="flex justify-center items-center mb-4 w-full px-4">
         <motion.img
           src={name}
           whileHover={{
@@ -36,11 +36,7 @@ const Name = () => {
           animate={{ x: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
           alt="Responsive Name Logo"
-          className="object-contain
-            md:max-h-[60vh] md:w-auto
-            sm:max-h-[50vh] sm:w-auto
-            xs:max-h-[40vh] xs:w-auto
-            max-h-[30vh] w-full"
+          className="max-w-[80%] md:max-w-[60%] lg:max-w-[40%] max-h-[70vh] w-auto h-auto object-contain"
         />
       </div>
 
