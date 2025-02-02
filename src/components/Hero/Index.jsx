@@ -53,12 +53,12 @@ function Home() {
 
   return (
     <motion.div
-      className="w-full min-h-screen flex justify-center items-center flex-col sm:flex-row p-4 sm:p-8"
+      className="w-full min-h-screen flex justify-center items-center"
       initial="hidden"
       animate="visible"
       variants={variants.container}
     >
-      <motion.div className="w-full sm:w-3/5 flex flex-col space-y-4 p-2">
+      <motion.div className="w-full sm:w-3/5 flex flex-col space-y-4 ">
         <Greeting variants={variants.emoji} />
         <Description variants={variants.text} />
         <Skills variants={variants.text} />

@@ -42,9 +42,6 @@ This portfolio is being built with modern web technologies, including a robust f
   - Integrate animations and dynamic 3D elements
   - Populate content and test the application
 
-## Coming Soon
-
-Stay tuned for updates! This portfolio will be continuously improved and updated with new features and content.
 
 ---
 *Note: This is an active project, and features/technologies may change during development.*
@@ -55,9 +52,6 @@ Stay tuned for updates! This portfolio will be continuously improved and updated
   - Integrate AR-powered experiences
   - Implement personalized user experiences through machine learning
 
-## Coming Soon
-
-Stay tuned for updates! This portfolio will be continuously improved and updated with new features and content, pushing the boundaries of what is possible in web development.
 
 ---
 *Note: This is an active project, and features/technologies may change during development.*
