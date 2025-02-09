@@ -73,8 +73,6 @@ function Footer() {
               <motion.a
                 key={link.id}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}

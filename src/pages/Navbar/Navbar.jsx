@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const quicklink = [
     { id: 1, title: "Home", url: "/" },
@@ -24,7 +25,8 @@ function Navbar() {
             <motion.a
               key={link.id}
               href={link.url}
-              className=" hover:gname hover:font-bold"
+              className={`hover:gname hover:font-bold ${location.pathname === link.url ? "gname font-bold" : ""
+                }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -36,6 +38,7 @@ function Navbar() {
           <button
             className="text-gray-800 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
@@ -54,21 +57,24 @@ function Navbar() {
           </button>
         </div>
       </div>
-      {isOpen && (
-        <div className="md:hidden mt-2 space-y-2">
-          {quicklink.map((link) => (
-            <motion.a
-              key={link.id}
-              href={link.url}
-              className="block text-gray-600 hover:text-gray-800 hover:font-bold py-2"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {link.title}
-            </motion.a>
-          ))}
-        </div>
-      )}
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: isOpen ? "auto" : 0 }}
+        className="overflow-hidden md:hidden mt-2"
+      >
+        {quicklink.map((link) => (
+          <motion.a
+            key={link.id}
+            href={link.url}
+            className={`block text-gray-600 hover:text-gray-800 hover:font-bold py-2 ${location.pathname === link.url ? "gname font-bold" : ""
+              }`}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {link.title}
+          </motion.a>
+        ))}
+      </motion.div>
     </nav>
   );
 }

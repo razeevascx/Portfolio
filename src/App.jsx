@@ -1,7 +1,7 @@
 import React from 'react';
 import { lazy, Suspense } from 'react';
 import Footer from './components/footer/footer';
-import Home from './components/Hero/Index';
+import Home from './pages/Hero/Index';
 
 // Lazy load components
 const About = lazy(() => import('./components/About/About'));

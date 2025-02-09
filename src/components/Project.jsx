@@ -1,145 +1,73 @@
-import { Portfilo } from "../assets/assests";
-import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
+const Project = ({ title, description, link, tech }) => {
+  return (
+    <div className="project glossy shadow-lg rounded-lg p-6 mb-6 transition-transform transform hover:scale-105">
+      <h2 className="text-2xl font-bold mb-2 ">{title}</h2>
+      <p className=" mb-4">{description}</p>
+      <p className=" mb-4"><strong>Tech:</strong> {tech}</p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+      >
+        View Project
+      </a>
+    </div>
+  );
 };
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
-const Project = () => {
-  const projects = [
+const Projects = () => {
+  const projectList = [
     {
-      images: Portfilo,
-      title: "Portfolio Website",
-      description: "A personal portfolio website to showcase my projects and skills.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      liveLink: "https://razeevasnx.vercel.app/",
-      repoLink: "https://github.com/razeevascx/portfolio",
-      featured: true,
+      title: 'School Management System',
+      description: 'A comprehensive system to manage school operations, including student enrollment, attendance tracking, and grade management.',
+      link: 'https://drive.google.com/file/d/17FeCxwSDwn6E1xAZLi-f313TcjAebRVw/view',
+      tech: 'React, Node.js, MongoDB , Express , Redux '
     },
+    {
+      title: 'Telegram Bot',
+      description: 'A bot for automating tasks on Telegram, such as sending scheduled messages, managing groups, and providing information on demand.',
+      link: 'https://github.com/razeevascx/terabox_bot',
+      tech: 'Python, Telegram API , Docker, Docker Compose'
+    },
+    {
+      title: 'News Temp',
+      description: 'A template for displaying news articles with a clean and responsive design, suitable for news websites and blogs.',
+      link: 'https://github.com/razeevascx/news-temp',
+      tech: 'React Js,Tailwind CSS, Vite'
+    },
+    {
+      title: 'Portfolio',
+      description: 'A personal portfolio website to showcase projects, skills, and experiences, with a modern and professional design.',
+      link: 'https://rajeevpuri.com.np',
+      tech: 'React, Tailwind CSS , Vite, Framer Motion, React Icons, Tanstack Router,'
+    },
+    {
+      title: 'MailRef',
+      description: 'A tool for generating temporary email addresses for receiving emails without revealing your real email address.',
+      link: 'https://github.com/razeevascx/MailRef',
+      tech: 'React -SSR, Tailwind CSS, TypeScript, Next.js, Supabase'
+
+
+    }
   ];
 
   return (
-    <section className="w-full text-text py-20">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-6xl mx-auto px-4"
-      >
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
+    <section className="projects py-12">
+      <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-2 gap-8">
+        {projectList.map((project, index) => (
+          <Project
+            key={index}
+            title={project.title}
+            description={project.description}
+            link={project.link}
+            tech={project.tech}
+          />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };
 
-const ProjectCard = ({ project, index }) => {
-  const isEven = index % 2 === 0;
-
-  return (
-    <motion.div
-      variants={itemVariants}
-      className="mb-32 last:mb-0"
-    >
-      <div className="glass-card p-8 rounded-xl backdrop-blur-sm">
-        <div className={`grid md:grid-cols-12 gap-8 ${isEven ? '' : 'md:flex-row-reverse'}`}>
-          <ProjectImage image={project.images} title={project.title} />
-          <ProjectDescription project={project} />
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-const ProjectDescription = ({ project }) => (
-  <div className="md:col-span-5 flex flex-col justify-center">
-    <div className="mb-2">
-      {project.featured && (
-        <span className="text-primary text-sm font-mono">Featured Project</span>
-      )}
-    </div>
-    <h3 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
-      {project.title}
-    </h3>
-    <div className="glass-card p-6 mb-6 backdrop-blur-sm">
-      <p className="text-text/80 leading-relaxed">{project.description}</p>
-    </div>
-    <TechStack technologies={project.technologies} />
-    <ProjectLinks repoLink={project.repoLink} liveLink={project.liveLink} />
-  </div>
-);
-
-const TechStack = ({ technologies }) => (
-  <div className="flex flex-wrap gap-3 mb-8">
-    {technologies.map((tech, index) => (
-      <span
-        key={index}
-        className="glass-card px-4 py-2 rounded-full text-primary text-sm font-mono hover:scale-105 transition-transform duration-300"
-      >
-        {tech}
-      </span>
-    ))}
-  </div>
-);
-
-const ProjectLinks = ({ repoLink, liveLink }) => (
-  <div className="flex gap-6">
-    <LinkButton href={repoLink} label="Source Code" icon={<FaGithub />} />
-    <LinkButton href={liveLink} label="Live Demo" icon={<FaExternalLinkAlt />} />
-  </div>
-);
-
-const LinkButton = ({ href, label, icon }) => (
-  <motion.a
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-2 text-text/80 hover:text-primary transition-colors duration-300"
-    aria-label={label}
-  >
-    {icon}
-    <span className="text-sm font-medium">{label}</span>
-  </motion.a>
-);
-
-const ProjectImage = ({ image, title }) => (
-  <motion.div
-    className="md:col-span-7 relative group"
-    whileHover={{ scale: 1.02 }}
-    transition={{ duration: 0.3 }}
-  >
-    <div className="relative overflow-hidden rounded-lg glass-card">
-      <img
-        src={image}
-        alt={`${title} Preview`}
-        className="w-full h-full object-cover object-center transition-transform duration-300"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    </div>
-  </motion.div>
-);
-
-export default Project;
+export default Projects;

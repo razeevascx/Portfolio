@@ -3,7 +3,7 @@ import { BsGithub, BsInstagram } from 'react-icons/bs';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import { toast, Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 function Contact() {
   const controls = useAnimation();
@@ -19,12 +19,19 @@ function Contact() {
   const notify = (message, type = 'success') => {
     toast.dismiss();
     toast[type](message, {
-      duration: 2000,
-      position: 'bottom-center',
+      duration: 3000,
+      position: 'left',
       style: {
+        background: type === 'success' ? '#4caf50' : '#f44336',
         color: '#fff',
-        borderRadius: '10px',
-        border: '1px solid rgba(148, 163, 184, 0.1)',
+        borderRadius: '8px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        padding: '16px',
+        fontSize: '16px',
+      },
+      iconTheme: {
+        primary: '#fff',
+        secondary: type === 'success' ? '#4caf50' : '#f44336',
       },
     });
   };
@@ -46,9 +53,20 @@ function Contact() {
   }, [controls, inView]);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow py-20">
+    <div className="flex flex-col">
+      <main className="flex-grow ">
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="border-l-4 border-blue-500 pl-4"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-3xl font-bold text-white">
+              <span className="text-blue-500">04.</span> Contact Me
+            </h1>
+          </motion.div>
           <div className="relative" ref={ref}>
             {/* Header Section */}
             <motion.div
@@ -56,9 +74,7 @@ function Contact() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-16"
             >
-              <motion.h2 className="text-sm font-semibold text-blue-400 tracking-wider uppercase mb-3">
-                Contact
-              </motion.h2>
+
               <motion.h3 className="text-4xl sm:text-5xl font-bold text-slate-100 mb-6">
                 Let&apos;s Work Together
               </motion.h3>
@@ -172,7 +188,6 @@ function Contact() {
         </div>
       </main>
 
-      <Toaster />
     </div>
   );
 }

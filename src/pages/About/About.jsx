@@ -10,7 +10,7 @@ const About = () => {
 
   const timeline = [
     {
-      year: "2024 AD - Present",
+      year: "2025 AD - Present",
       description:
         "Pursuing a Bachelor's Degree in Computer Science at the University of Wolverhampton, UK.",
     },
@@ -136,7 +136,15 @@ const About = () => {
                 . Currently I&apos;m living at
                 <span className="text-white font-semibold">
                   {" "}
-                  Wolverhampton, UK.
+                  Wolverhampton, UK
+                </span>{" "}
+                and pursuing a
+                <span className="text-white font-semibold">
+                  BSc {"(Hons)"} Degree{" "}
+                </span>
+                in Computer Science at the{" "}
+                <span className="text-white font-semibold">
+                  University of Wolverhampton.
                 </span>
               </p>
 

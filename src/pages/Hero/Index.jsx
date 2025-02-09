@@ -53,7 +53,7 @@ function Home() {
 
   return (
     <motion.div
-      className="w-full min-h-screen flex justify-center items-center"
+      className="flex justify-center items-center"
       initial="hidden"
       animate="visible"
       variants={variants.container}
