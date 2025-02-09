@@ -42,9 +42,10 @@ This portfolio is being built with modern web technologies, including a robust f
   - Integrate animations and dynamic 3D elements
   - Populate content and test the application
 
-
 ---
-*Note: This is an active project, and features/technologies may change during development.*
+
+_Note: This is an active project, and features/technologies may change during development._
+
 - **Mid-term Goals:**
   - Populate content and test the application
   - Integrate AI-powered features
@@ -52,6 +53,6 @@ This portfolio is being built with modern web technologies, including a robust f
   - Integrate AR-powered experiences
   - Implement personalized user experiences through machine learning
 
-
 ---
-*Note: This is an active project, and features/technologies may change during development.*
+
+_Note: This is an active project, and features/technologies may change during development._

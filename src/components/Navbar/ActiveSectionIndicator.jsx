@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "framer-motion";
 
 const ActiveSectionIndicator = ({ currentNavItem }) => (
   <AnimatePresence mode="wait">

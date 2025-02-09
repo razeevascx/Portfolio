@@ -24,7 +24,7 @@ body {
 
   body {
     @apply bg-background text-text-primary;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     overflow-x: hidden;
   }
 
@@ -178,7 +178,9 @@ body,
 button,
 input,
 textarea {
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+  transition:
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
     color 0.3s ease-in-out;
 }
 
@@ -191,7 +193,9 @@ textarea {
 
 /* Dark Mode Transitions */
 .dark-mode-transition {
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition:
+    background-color 0.5s ease-in-out,
+    color 0.5s ease-in-out;
 }
 
 /* Hide scrollbar */

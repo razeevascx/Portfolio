@@ -1,33 +1,32 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   SiJavascript,
   SiPython,
   SiTypescript,
   SiMongodb,
-} from 'react-icons/si';
-
+} from "react-icons/si";
 
 const Skills = ({ variants }) => {
   // Define border colors, icons, and native icon colors for each skill
   const skillsData = [
     {
-      name: 'JavaScript',
-      color: 'border-yellow-500 hover:bg-yellow-500/20',
+      name: "JavaScript",
+      color: "border-yellow-500 hover:bg-yellow-500/20",
       icon: <SiJavascript color="#F7DF1E" aria-label="JavaScript Icon" />,
     },
     {
-      name: 'Python',
-      color: 'border-blue-600 hover:bg-blue-600/20',
+      name: "Python",
+      color: "border-blue-600 hover:bg-blue-600/20",
       icon: <SiPython color="#3776AB" aria-label="Python Icon" />,
     },
     {
-      name: 'TypeScript',
-      color: 'border-indigo-500 hover:bg-indigo-500/20',
+      name: "TypeScript",
+      color: "border-indigo-500 hover:bg-indigo-500/20",
       icon: <SiTypescript color="#3178C6" aria-label="TypeScript Icon" />,
     },
     {
-      name: 'MongoDB',
-      color: 'border-green-600 hover:bg-green-600/20',
+      name: "MongoDB",
+      color: "border-green-600 hover:bg-green-600/20",
       icon: <SiMongodb color="#47A248" aria-label="MongoDB Icon" />,
     },
   ];

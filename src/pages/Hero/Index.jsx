@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import Greeting from './Name';
-import Description from './Description';
-import Skills from './Skill';
+import { motion } from "framer-motion";
+import Greeting from "./Name";
+import Description from "./Description";
+import Skills from "./Skill";
 function Home() {
   const variants = {
     container: {
@@ -21,7 +21,7 @@ function Home() {
         y: 0,
         transition: {
           duration: 0.8,
-          ease: 'easeOut',
+          ease: "easeOut",
         },
       },
     },
@@ -37,7 +37,7 @@ function Home() {
     button: {
       hover: {
         scale: 1.05,
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
         transition: {
           duration: 0.3,
         },

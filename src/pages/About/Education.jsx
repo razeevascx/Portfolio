@@ -121,7 +121,7 @@ function Education() {
                         {experience}
                       </span>
                     </motion.li>
-                  )
+                  ),
                 )}
               </ul>
             </div>

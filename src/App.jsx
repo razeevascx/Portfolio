@@ -1,14 +1,14 @@
-import React from 'react';
-import { lazy, Suspense } from 'react';
-import Footer from './components/footer/footer';
-import Home from './pages/Hero/Index';
+import React from "react";
+import { lazy, Suspense } from "react";
+import Footer from "./components/footer/footer";
+import Home from "./pages/Hero/Index";
 
 // Lazy load components
-const About = lazy(() => import('./components/About/About'));
-const Navbar = lazy(() => import('./components/Navbar/Navbar'));
+const About = lazy(() => import("./components/About/About"));
+const Navbar = lazy(() => import("./components/Navbar/Navbar"));
 // const Project = lazy(() => import('./components/Project'));
-const Contact = lazy(() => import('./components/Contact'));
-const Service = lazy(() => import('./components/Service'));
+const Contact = lazy(() => import("./components/Contact"));
+const Service = lazy(() => import("./components/Service"));
 
 // Custom Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -22,7 +22,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Uncaught error:', error, errorInfo);
+    console.error("Uncaught error:", error, errorInfo);
   }
 
   render() {

@@ -10,7 +10,6 @@ export const Route = createRootRoute({
       <Outlet />
       <Footer />
       <Toaster />
-
     </>
   ),
 });

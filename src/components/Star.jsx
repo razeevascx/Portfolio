@@ -6,8 +6,13 @@ const StarsCanvas = () => {
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ 
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000,
+    );
+    const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
       alpha: true, // Enable transparency
     });
@@ -26,8 +31,11 @@ const StarsCanvas = () => {
         positions[i * 3 + 2] = (Math.random() - 0.5) * 2;
       }
 
-      geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-      
+      geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3),
+      );
+
       const material = new THREE.PointsMaterial({
         color: new THREE.Color(color),
         size: size,
@@ -49,16 +57,16 @@ const StarsCanvas = () => {
 
     // Create multiple star layers with theme colors
     const starLayers = [
-      createStarLayer(1000, '#5C78FF', 0.003, 0.0005), // Primary color
-      createStarLayer(800, '#28B9FF', 0.002, 0.001),   // Secondary color
-      createStarLayer(500, '#FFFFFF', 0.001, 0.0015),  // White stars
+      createStarLayer(1000, "#5C78FF", 0.003, 0.0005), // Primary color
+      createStarLayer(800, "#28B9FF", 0.002, 0.001), // Secondary color
+      createStarLayer(500, "#FFFFFF", 0.001, 0.0015), // White stars
     ];
 
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      
-      starLayers.forEach(layer => {
+
+      starLayers.forEach((layer) => {
         layer.stars.rotation.x += layer.speed;
         layer.stars.rotation.y += layer.speed;
       });
@@ -82,21 +90,21 @@ const StarsCanvas = () => {
     // Clean up on unmount
     return () => {
       window.removeEventListener("resize", handleResize);
-      
+
       // Dispose of all resources
-      starLayers.forEach(layer => {
+      starLayers.forEach((layer) => {
         layer.geometry.dispose();
         layer.material.dispose();
       });
-      
+
       renderer.dispose();
     };
   }, []);
 
   return (
-    <canvas 
-      ref={canvasRef} 
-      className="w-full h-full fixed inset-0 z-[1] bg-gradient-to-b from-primary-background/80 to-secondary-background/80" 
+    <canvas
+      ref={canvasRef}
+      className="w-full h-full fixed inset-0 z-[1] bg-gradient-to-b from-primary-background/80 to-secondary-background/80"
     />
   );
 };

@@ -1,11 +1,11 @@
 // components/Navbar.jsx
-import { useState, useEffect } from 'react';
-import DynamicIsland from './DynamicIsland';
-import { navLinks } from './navLinks';
+import { useState, useEffect } from "react";
+import DynamicIsland from "./DynamicIsland";
+import { navLinks } from "./navLinks";
 
 const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,9 +15,13 @@ const Navbar = () => {
       }
 
       // Active section detection
-      const sections = navLinks.map(link => ({
+      const sections = navLinks.map((link) => ({
         id: link.href.substring(1),
-        offset: Math.abs(document.getElementById(link.href.substring(1))?.getBoundingClientRect().top || 0)
+        offset: Math.abs(
+          document
+            .getElementById(link.href.substring(1))
+            ?.getBoundingClientRect().top || 0,
+        ),
       }));
 
       const currentSection = sections.reduce((acc, section) => {
@@ -27,8 +31,8 @@ const Navbar = () => {
       setActiveSection(currentSection.id);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isExpanded]);
 
   return (

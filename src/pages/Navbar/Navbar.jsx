@@ -25,8 +25,9 @@ function Navbar() {
             <motion.a
               key={link.id}
               href={link.url}
-              className={`hover:gname hover:font-bold ${location.pathname === link.url ? "gname font-bold" : ""
-                }`}
+              className={`hover:gname hover:font-bold ${
+                location.pathname === link.url ? "gname font-bold" : ""
+              }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -66,8 +67,9 @@ function Navbar() {
           <motion.a
             key={link.id}
             href={link.url}
-            className={`block text-gray-600 hover:text-gray-800 hover:font-bold py-2 ${location.pathname === link.url ? "gname font-bold" : ""
-              }`}
+            className={`block text-gray-600 hover:text-gray-800 hover:font-bold py-2 ${
+              location.pathname === link.url ? "gname font-bold" : ""
+            }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

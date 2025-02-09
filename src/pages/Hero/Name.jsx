@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 function Greeting() {
   return (
@@ -11,7 +11,7 @@ function Greeting() {
       <motion.div
         className="inline-block"
         whileHover={{ scale: 1.02 }}
-        transition={{ type: 'spring', stiffness: 300 }}
+        transition={{ type: "spring", stiffness: 300 }}
       >
         <h2 className="text-xl md:text-4xl font-medium text-gray-600 dark:text-gray-400 mb-2">
           Hello there I am

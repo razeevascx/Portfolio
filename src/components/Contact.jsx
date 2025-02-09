@@ -1,37 +1,37 @@
-import { HiOutlineMail } from 'react-icons/hi';
-import { BsGithub, BsInstagram } from 'react-icons/bs';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import { toast } from 'react-hot-toast';
+import { HiOutlineMail } from "react-icons/hi";
+import { BsGithub, BsInstagram } from "react-icons/bs";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 function Contact() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
-  const email = 'contact@rajeevpuri.com.np';
+  const email = "contact@rajeevpuri.com.np";
   const emailCode = `const contactMe = {
   email: "${email}",
   status: "Open to opportunities",
   response_time: "24 hours",
 };`;
 
-  const notify = (message, type = 'success') => {
+  const notify = (message, type = "success") => {
     toast.dismiss();
     toast[type](message, {
       duration: 3000,
-      position: 'left',
+      position: "left",
       style: {
-        background: type === 'success' ? '#4caf50' : '#f44336',
-        color: '#fff',
-        borderRadius: '8px',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '16px',
-        fontSize: '16px',
+        background: type === "success" ? "#4caf50" : "#f44336",
+        color: "#fff",
+        borderRadius: "8px",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        padding: "16px",
+        fontSize: "16px",
       },
       iconTheme: {
-        primary: '#fff',
-        secondary: type === 'success' ? '#4caf50' : '#f44336',
+        primary: "#fff",
+        secondary: type === "success" ? "#4caf50" : "#f44336",
       },
     });
   };
@@ -39,23 +39,22 @@ function Contact() {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
-      notify('Email copied to clipboard! 📋');
+      notify("Email copied to clipboard! 📋");
     } catch (err) {
-      console.error('Failed to copy email:', err);
-      notify('Failed to copy email.', 'error');
+      console.error("Failed to copy email:", err);
+      notify("Failed to copy email.", "error");
     }
   };
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
   return (
     <div className="flex flex-col">
       <main className="flex-grow ">
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="border-l-4 border-blue-500 pl-4"
@@ -74,7 +73,6 @@ function Contact() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-16"
             >
-
               <motion.h3 className="text-4xl sm:text-5xl font-bold text-slate-100 mb-6">
                 Let&apos;s Work Together
               </motion.h3>
@@ -187,7 +185,6 @@ function Contact() {
           </div>
         </div>
       </main>
-
     </div>
   );
 }

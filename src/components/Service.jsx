@@ -1,35 +1,35 @@
-import { motion } from 'framer-motion';
-import { FaDatabase, FaPalette, FaLayerGroup } from 'react-icons/fa';
-import { BiCodeBlock } from 'react-icons/bi';
+import { motion } from "framer-motion";
+import { FaDatabase, FaPalette, FaLayerGroup } from "react-icons/fa";
+import { BiCodeBlock } from "react-icons/bi";
 
 const services = [
   {
     icon: <BiCodeBlock size={40} aria-label="MERN Stack Development" />,
-    title: 'MERN Stack Development',
+    title: "MERN Stack Development",
     description:
-      'Specialized in building full-stack applications using MongoDB, Express.js, React.js, and Node.js. Creating scalable and modern web solutions with the latest technologies.',
-    technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux'],
+      "Specialized in building full-stack applications using MongoDB, Express.js, React.js, and Node.js. Creating scalable and modern web solutions with the latest technologies.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux"],
   },
   {
     icon: <FaPalette size={40} aria-label="Graphic Design" />,
-    title: 'Graphic Design',
+    title: "Graphic Design",
     description:
-      'Creating stunning visual content including logos, brand identity, marketing materials, and social media graphics. Focusing on unique and memorable designs.',
-    technologies: ['Photoshop', 'Illustrator', 'Figma'],
+      "Creating stunning visual content including logos, brand identity, marketing materials, and social media graphics. Focusing on unique and memorable designs.",
+    technologies: ["Photoshop", "Illustrator", "Figma"],
   },
   {
     icon: <FaLayerGroup size={40} aria-label="UI/UX Design" />,
-    title: 'UI/UX Design',
+    title: "UI/UX Design",
     description:
-      'Designing intuitive and user-centered interfaces with a focus on user experience. Creating wireframes, prototypes, and implementing responsive designs.',
-    technologies: ['Figma'],
+      "Designing intuitive and user-centered interfaces with a focus on user experience. Creating wireframes, prototypes, and implementing responsive designs.",
+    technologies: ["Figma"],
   },
   {
     icon: <FaDatabase size={40} aria-label="Database Management" />,
-    title: 'Database Management',
+    title: "Database Management",
     description:
-      'Expert in database design, optimization, and management. Handling both SQL and NoSQL databases with a focus on performance and security.',
-    technologies: ['MongoDB', 'MySQL'],
+      "Expert in database design, optimization, and management. Handling both SQL and NoSQL databases with a focus on performance and security.",
+    technologies: ["MongoDB", "MySQL"],
   },
 ];
 

@@ -1,16 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { motion } from 'framer-motion';
-import Project from '../components/Project';
+import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import Project from "../components/Project";
 import { Link } from "@tanstack/react-router";
 
-
-export const Route = createFileRoute('/projects')({
+export const Route = createFileRoute("/projects")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
   return (
-    <section className='max-w-7xl mx-auto space-y-10 p-6 rounded-lg shadow-lg '>
+    <section className="max-w-7xl mx-auto space-y-10 p-6 rounded-lg shadow-lg ">
       <motion.div
         className="border-l-4 border-blue-500 pl-4"
         initial={{ y: -20, opacity: 0 }}
@@ -23,7 +22,10 @@ function RouteComponent() {
       </motion.div>
       <div className="text-white">
         <h1 className="text-4xl text-center font-bold">
-          Like the work I do? <Link to='/contact' className="text-blue-500 underline">Contact</Link>
+          Like the work I do?{" "}
+          <Link to="/contact" className="text-blue-500 underline">
+            Contact
+          </Link>
         </h1>
       </div>
       <Project />

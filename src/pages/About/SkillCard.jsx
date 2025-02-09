@@ -5,10 +5,10 @@ const SkillCard = ({ skill, isHovered, onHover, onLeave }) => {
     <motion.div
       className={`
         relative p-4 rounded-lg transition-all duration-300
-        ${isHovered ? 'bg-gray-800' : 'bg-gray-800/50'}
+        ${isHovered ? "bg-gray-800" : "bg-gray-800/50"}
         hover:shadow-lg hover:shadow-blue-500/10
         border border-transparent
-        ${isHovered ? 'border-blue-500/50' : 'hover:border-gray-700'}
+        ${isHovered ? "border-blue-500/50" : "hover:border-gray-700"}
       `}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
@@ -29,21 +29,23 @@ const SkillCard = ({ skill, isHovered, onHover, onLeave }) => {
         </motion.div>
 
         <div className="flex-1">
-          <h4 className={`
+          <h4
+            className={`
             text-sm font-semibold 
-            ${isHovered ? 'text-blue-400' : 'text-gray-200'}
+            ${isHovered ? "text-blue-400" : "text-gray-200"}
             transition-colors duration-300
-          `}>
+          `}
+          >
             {skill.label}
           </h4>
-          
+
           {/* Description - Only shown on hover */}
           <motion.p
             className="text-xs text-gray-400 mt-1 line-clamp-2"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ 
+            animate={{
               opacity: isHovered ? 1 : 0,
-              height: isHovered ? "auto" : 0
+              height: isHovered ? "auto" : 0,
             }}
             transition={{ duration: 0.2 }}
           >

@@ -1,7 +1,4 @@
+import Portfilo from "./image.png";
+import name from "./name.svg";
 
-import Portfilo from "./image.png"
-import name from "./name.svg"
-
-
-
-export { name,Portfilo};
+export { name, Portfilo };
