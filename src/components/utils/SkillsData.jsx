@@ -12,7 +12,7 @@ import {
   FaDatabase,
   FaServer,
 } from "react-icons/fa";
-import { SiTailwindcss, SiPostman, SiVisualstudiocode } from "react-icons/si";
+import { SiTailwindcss, SiPostman } from "react-icons/si";
 
 const skillsData = {
   mernStack: [
@@ -150,7 +150,6 @@ const skillsData = {
     },
     {
       label: "VS Code",
-      icon: <SiVisualstudiocode />,
       color: "text-blue-500",
       description: "VS Code is a lightweight but powerful source code editor.",
     },
