@@ -13,7 +13,6 @@ const router = createRouter({
   basepath: import.meta.env.BASE_URL || "",
 });
 
-router.hydrate();
 
 // Create root and render the app with RouterProvider
 createRoot(document.getElementById("root")).render(
