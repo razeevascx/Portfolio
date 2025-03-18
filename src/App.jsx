@@ -71,14 +71,13 @@ function App() {
               </Suspense>
 
               <Suspense fallback={<LoadingFallback />}>
-                <section id="projects">
-                  <Project />
-                </section>
-              </Suspense>
-
-              <Suspense fallback={<LoadingFallback />}>
                 <section id="service">
                   <Service />
+                </section>
+              </Suspense>
+              <Suspense fallback={<LoadingFallback />}>
+                <section id="projects">
+                  <Project />
                 </section>
               </Suspense>
 

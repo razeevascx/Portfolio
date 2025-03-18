@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function Greeting() {
   return (
     <motion.div
-      className="container mx-auto p-4 m-4 text-center"
+      className="mx-auto p-4 text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -28,7 +28,7 @@ function Greeting() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-5xl lg:text-9xl font-extrabold m-4 ">
+        <h1 className="text-5xl lg:text-8xl font-extrabold m-4 ">
           Welcome to
           <br /> My Space on the Internet
         </h1>

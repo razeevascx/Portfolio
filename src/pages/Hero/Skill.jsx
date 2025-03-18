@@ -7,7 +7,7 @@ import {
 } from "react-icons/si";
 
 const Skills = ({ variants }) => {
-  // Define border colors, icons, and native icon colors for each skill
+ 
   const skillsData = [
     {
       name: "JavaScript",
