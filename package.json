@@ -4,22 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run watch-routes && vite --host",
+    "dev": "vite ",
     "build": "npm run generate-routes && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-routes": "tsr generate",
     "watch-routes": "tsr watch",
-    "format": "prettier --write .",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@react-three/drei": "^9.115.0",
-    "@react-three/fiber": "^8.17.10",
     "@tanstack/react-router": "^1.99.0",
     "framer-motion": "^11.11.10",
-    "gsap": "^3.12.5",
     "lucide-react": "^0.447.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
@@ -28,8 +23,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
     "react-intersection-observer": "^9.13.1",
-    "react-router-dom": "^6.27.0",
-    "three": "^0.169.0"
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
@@ -44,7 +38,6 @@
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
-    "gh-pages": "^6.3.0",
     "globals": "^15.9.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",

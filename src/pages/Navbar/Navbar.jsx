@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation } from "@tanstack/react-router";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const quicklink = [
     { id: 1, title: "Home", url: "/" },
@@ -18,16 +16,14 @@ function Navbar() {
     <nav className="py-4 px-4 z-50 sticky top-0 shadow-md backdrop-blur-sm ">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold gname">
-          <Link to="/">razeev</Link>
+          <a href={"/"}>razeev</a>
         </div>
         <div className="hidden md:flex space-x-4">
           {quicklink.map((link) => (
             <motion.a
               key={link.id}
               href={link.url}
-              className={`hover:gname hover:font-bold ${
-                location.pathname === link.url ? "gname font-bold" : ""
-              }`}
+              className={`hover:gname hover:font-bold `}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -67,9 +63,7 @@ function Navbar() {
           <motion.a
             key={link.id}
             href={link.url}
-            className={`block text-gray-600 hover:text-gray-800 hover:font-bold py-2 ${
-              location.pathname === link.url ? "gname font-bold" : ""
-            }`}
+            className={`block text-gray-600 hover:text-gray-800 hover:font-bold py-2`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

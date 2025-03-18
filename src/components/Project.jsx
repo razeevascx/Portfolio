@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 const Project = ({ title, description, link, tech }) => {
   return (
     <div className="project glossy shadow-lg rounded-lg p-6 mb-6 transition-transform transform hover:scale-105">
@@ -58,7 +59,25 @@ const Projects = () => {
   ];
 
   return (
-    <section className="projects py-12">
+    <section className="projects py-12 max-w-7xl mx-auto space-y-10 p-6 rounded-lg shadow-lg ">
+      <motion.div
+        className="border-l-4 border-blue-500 pl-4"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-3xl font-bold text-white">
+          <span className="text-blue-500">03.</span> Projects
+        </h1>
+      </motion.div>
+      <div className="text-white">
+        <h1 className="text-4xl text-center font-bold">
+          Like the work I do?{" "}
+          <a href={"#about"} className="text-blue-500 underline">
+            Contact
+          </a>
+        </h1>
+      </div>
       <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-2 gap-8">
         {projectList.map((project, index) => (
           <Project

@@ -1,12 +1,12 @@
-import React from "react";
-import { lazy, Suspense } from "react";
-import Footer from "./components/footer/footer";
+import React, { lazy, Suspense } from "react";
+import Footer from "./pages/footer/footer";
+import Navbar from "./pages/Navbar/Navbar";
 import Home from "./pages/Hero/Index";
+import { Toaster } from "react-hot-toast";
 
 // Lazy load components
-const About = lazy(() => import("./components/About/About"));
-const Navbar = lazy(() => import("./components/Navbar/Navbar"));
-// const Project = lazy(() => import('./components/Project'));
+const About = lazy(() => import("./pages/About/About"));
+const Project = lazy(() => import("./components/Project"));
 const Contact = lazy(() => import("./components/Contact"));
 const Service = lazy(() => import("./components/Service"));
 
@@ -71,7 +71,9 @@ function App() {
               </Suspense>
 
               <Suspense fallback={<LoadingFallback />}>
-                <section id="projects">{/* <Project /> */}</section>
+                <section id="projects">
+                  <Project />
+                </section>
               </Suspense>
 
               <Suspense fallback={<LoadingFallback />}>
@@ -93,6 +95,7 @@ function App() {
             </main>
           </>
         </Suspense>
+        <Toaster />
       </ErrorBoundary>
     </div>
   );
