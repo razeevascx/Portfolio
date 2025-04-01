@@ -78,7 +78,7 @@ const Projects = () => {
           </a>
         </h1>
       </div>
-      <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-1 gap-8">
+      <div className="container mx-auto px-4 grid grid-cols-2 sm:grid-cols-1 gap-8">
         {projectList.map((project, index) => (
           <Project
             key={index}
