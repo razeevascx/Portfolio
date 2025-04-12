@@ -2,57 +2,70 @@
 
 Welcome to my portfolio project, a showcase of my skills and projects in web development. This project is currently under active development and will feature an interactive, responsive design.
 
-> **Showcaseing My Journey, Inspiring My Future**
+> **Showcasing My Journey, Inspiring My Future**
 
-[![Top Language](https://img.shields.io/github/languages/top/razeevascx/Portfolio?style=flat&color=0080ff)](https://github.com/razeevascx/Portfolio)
-[![Language Count](https://img.shields.io/github/languages/count/razeevascx/Portfolio?style=flat&color=0080ff)](https://github.com/razeevascx/Portfolio)
+<div align="center">
 
-### 🛠️ Built with:
+[![Top Language](https://img.shields.io/github/languages/top/razeevascx/Portfolio?style=for-the-badge&color=0080ff)](https://github.com/razeevascx/Portfolio)
+[![Language Count](https://img.shields.io/github/languages/count/razeevascx/Portfolio?style=for-the-badge&color=0080ff)](https://github.com/razeevascx/Portfolio)
 
-![JSON](https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white)
-![npm](https://img.shields.io/badge/npm-CB3837.svg?style=flat&logo=npm&logoColor=white)
-![Autoprefixer](https://img.shields.io/badge/Autoprefixer-DD3735.svg?style=flat&logo=Autoprefixer&logoColor=white)
-![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=flat&logo=PostCSS&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black)
-![React](https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat&logo=TypeScript&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF.svg?style=flat&logo=GitHub-Actions&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF.svg?style=flat&logo=Vite&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=ESLint&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-663399.svg?style=flat&logo=CSS&logoColor=white)
-![YAML](https://img.shields.io/badge/YAML-CB171E.svg?style=flat&logo=YAML&logoColor=white)
+### 🛠️ Built with
 
-### Planned Technologies
+<p align="center">
+  <a href="https://reactjs.org/">
+    <img src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" alt="React">
+  </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="TypeScript">
+  </a>
+  <a href="https://vitejs.dev/">
+    <img src="https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white" alt="Vite">
+  </a>
+</p>
 
-- **Frontend:**
+<p align="center">
+  <a href="https://tanstack.com/router/latest">
+    <img src="https://img.shields.io/badge/TanStack_Router-FF4154.svg?style=for-the-badge&logo=React-Router&logoColor=white" alt="TanStack Router">
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white" alt="Tailwind CSS">
+  </a>
+  <a href="https://www.framer.com/motion/">
+    <img src="https://img.shields.io/badge/Framer_Motion-0055FF.svg?style=for-the-badge&logo=Framer&logoColor=white" alt="Framer Motion">
+  </a>
+</p>
 
-  - React for building reusable UI components
-  - Tailwind CSS for styling and layout
-  - Framer Motion for interactive UI animations
+<p align="center">
+  <a href="https://eslint.org/">
+    <img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=for-the-badge&logo=ESLint&logoColor=white" alt="ESLint">
+  </a>
+  <a href="https://postcss.org/">
+    <img src="https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=for-the-badge&logo=PostCSS&logoColor=white" alt="PostCSS">
+  </a>
+</p>
 
-  ***
+</div>
 
 ## 🚀 **Features**
 
-- 🎯 **Interactive UI:** Modern and responsive interface using React and Tailwind CSS.
-- 🌐 **Optimized Performance:** Vite for fast bundling and loading.
-- ✅ **Continuous Deployment:** Automated with GitHub Actions.
-- 🛠️ **Code Quality:** ESLint integration for clean code.
-
----
+- 🎯 **Modern Stack:** Built with React 18, TypeScript, and Vite
+- 🛣️ **Advanced Routing:** Using TanStack Router for type-safe routing
+- 💅 **Styling:** Tailwind CSS with PostCSS and Autoprefixer
+- 🎬 **Animations:** Smooth transitions with Framer Motion
+- 📱 **Responsive Design:** Full-page scrolling with react-fullpage
+- 🎨 **Icons:** Comprehensive icon set with Lucide React and React Icons
+- ✨ **UI Feedback:** Toast notifications with react-hot-toast
+- 🛠️ **Development:** ESLint for code quality and Prettier for formatting
+- 📦 **Build Tools:** Vite for lightning-fast development and builds
 
 ## 🚀 **Getting Started**
 
 ### ✅ **Prerequisites**
 
-Ensure you have the following installed:
-
-- **Programming Language:** JavaScript
-- **Package Manager:** pnpm
+- Node.js (Latest LTS version)
+- pnpm (Package Manager)
 
 ### ⚙️ **Installation**
-
-Clone the repository and install dependencies:
 
 1. **Clone the repository:**
 
@@ -72,18 +85,50 @@ cd Portfolio
 pnpm install
 ```
 
-### 🔥 **Usage**
+### 🔥 **Development**
 
-Run the project locally:
+Start the development server:
 
 ```bash
-pnpm start
+pnpm dev
 ```
 
-### 🧪 **Testing**
+### 🏗️ **Build**
 
-To run the test suite:
+Build for production:
 
 ```bash
-pnpm test
+pnpm build
+```
+
+### 🔍 **Other Scripts**
+
+- **Preview production build:**
+
+```bash
+pnpm preview
+```
+
+- **Lint code:**
+
+```bash
+pnpm lint
+```
+
+- **Format code:**
+
+```bash
+pnpm format
+```
+
+- **Generate routes:**
+
+```bash
+pnpm generate-routes
+```
+
+- **Watch routes for changes:**
+
+```bash
+pnpm watch-routes
 ```
