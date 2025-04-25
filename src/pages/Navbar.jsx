@@ -1,15 +1,35 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Mail, User, Zap, Rocket } from "lucide-react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const quicklink = [
-    { id: 1, title: "Home", url: "/" },
-    { id: 2, title: "About", url: "#about" },
-    { id: 3, title: "Services", url: "#services" },
-    { id: 4, title: "Projects", url: "#projects" },
-    { id: 5, title: "Contact", url: "#contact" },
+    {
+      id: "01",
+      title: "About",
+      url: "#about",
+      icon: <User className="w-5 h-5 mr-2" />,
+    },
+    {
+      id: "02",
+      title: "Services",
+      url: "#services",
+      icon: <Zap className="w-5 h-5 mr-2" />,
+    },
+    {
+      id: "03",
+      title: "Projects",
+      url: "#projects",
+      icon: <Rocket className="w-5 h-5 mr-2" />,
+    },
+    {
+      id: "04",
+      title: "Contact",
+      url: "#contact",
+      icon: <Mail className="w-5 h-5 mr-2" />,
+    },
   ];
 
   return (
@@ -23,11 +43,11 @@ function Navbar() {
             <motion.a
               key={link.id}
               href={link.url}
-              className={`hover:gname hover:font-bold `}
-              whileHover={{ scale: 1.1 }}
+              className="flex items-center hover:text-blue-500 font-extrabold text-lg"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {link.title}
+              <span className="font-medium">{link.title}</span>
             </motion.a>
           ))}
         </div>

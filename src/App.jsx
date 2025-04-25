@@ -1,14 +1,14 @@
 import React, { lazy, Suspense } from "react";
-import Footer from "./pages/footer/footer";
-import Navbar from "./pages/Navbar/Navbar";
+import Footer from "./pages/Footer";
+import Navbar from "./pages/Navbar";
 import Home from "./pages/Hero/Index";
 import { Toaster } from "react-hot-toast";
 
 // Lazy load components
 const About = lazy(() => import("./pages/About/About"));
-const Project = lazy(() => import("./components/Project"));
-const Contact = lazy(() => import("./components/Contact"));
-const Service = lazy(() => import("./components/Service"));
+const Project = lazy(() => import("./pages/Project"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Service = lazy(() => import("./pages/Service"));
 
 // Custom Error Boundary Component
 class ErrorBoundary extends React.Component {

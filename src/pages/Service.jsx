@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaDatabase, FaPalette, FaLayerGroup } from "react-icons/fa";
 import { BiCodeBlock } from "react-icons/bi";
+import Items from "../components/Items";
 
 const services = [
   {
@@ -35,8 +36,7 @@ const services = [
 
 const ServiceCard = ({ service }) => (
   <motion.div
-    className="p-6 rounded-lg bg-secondary-background/50 backdrop-blur-sm
-               border border-secondary/20 hover:border-secondary/50
+    className="p-6 rounded-lg glass-card  hover:border-secondary/50
                transform hover:-translate-y-2 transition-all duration-300
                group shadow-md hover:shadow-lg"
   >
@@ -74,44 +74,26 @@ const Service = () => {
     },
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
-    <section id="services" className="w-full ">
-      <motion.div
-        className="max-w-6xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Header */}
+    <section id="services" className="w-full p-10">
+      <div className="max-w-6xl mx-auto">
+        <Items
+          Number="02"
+          title="What I Do"
+          des=" Delivering comprehensive solutions across various domains of
+            software development"
+        />
         <motion.div
-          className="border-l-4 border-blue-500 pl-4 m-4"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          <h1 className="text-3xl font-bold text-white">
-            <span className="text-blue-500">02.</span> Services
-          </h1>
-        </motion.div>
-
-        {/* Services Grid */}
-        <div className="grid p-4 grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

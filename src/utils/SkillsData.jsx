@@ -13,8 +13,14 @@ import {
   FaServer,
 } from "react-icons/fa";
 import { SiTailwindcss, SiPostman } from "react-icons/si";
+export const tabs = [
+  { id: "mernStack", label: "MERN Stack" },
+  { id: "frontend", label: "Frontend" },
+  { id: "backend", label: "Backend" },
+  { id: "tools", label: "Tools" },
+];
 
-const skillsData = {
+export const skillsData = {
   mernStack: [
     {
       label: "MongoDB",
@@ -180,34 +186,3 @@ const skillsData = {
     },
   ],
 };
-
-const educationData = [
-  {
-    degree: "Higher Secondary",
-    school: "Khwopa Higher Secondary School",
-    role: "Major in Computer Science",
-    location: "Dekocha 06, Bhaktapur 44800",
-    year: "2022 - 2024",
-    experiences: [
-      "Gained foundational knowledge in Computer Science.",
-      "Developed skills in problem-solving, coding, and data analysis.",
-      "Participated in academic projects and tech-based workshops.",
-    ],
-    link: "https://www.facebook.com/khwopahss",
-  },
-  {
-    degree: "Secondary",
-    school: "Shree Saraswati Secondary School",
-    role: "Secondary Education",
-    location: "Changunaryan-08, Bhaktapur 44800",
-    year: "2022",
-    experiences: [
-      "Achieved academic excellence in core subjects.",
-      "Participated in science fairs and cultural events.",
-      "Built a strong foundation in STEM subjects.",
-    ],
-    link: "https://www.facebook.com/100064233663286",
-  },
-];
-
-export { skillsData, educationData };
