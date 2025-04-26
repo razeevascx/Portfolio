@@ -35,17 +35,21 @@ function Navbar() {
   return (
     <nav className="py-4 px-4 z-50 sticky top-0 shadow-md backdrop-blur-sm ">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold gname">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 2 }}
+          className="text-2xl gname"
+        >
           <a href={"/"}>razeev</a>
-        </div>
+        </motion.div>
         <div className="hidden md:flex space-x-4">
           {quicklink.map((link) => (
             <motion.a
               key={link.id}
               href={link.url}
               className="flex items-center hover:text-blue-500 font-extrabold text-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.20 }}
             >
               <span className="font-medium">{link.title}</span>
             </motion.a>

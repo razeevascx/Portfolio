@@ -19,7 +19,7 @@ function Items({ Number, title, des }) {
           {title}
         </h1>
       </motion.div>
-        <p className="text-gray-400 max-w-2xl text-lg">{des}</p>
+      <p className="text-gray-400 max-w-2xl text-lg">{des}</p>
     </motion.div>
   );
 }

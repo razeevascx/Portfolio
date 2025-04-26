@@ -74,7 +74,7 @@ function Contact() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl overflow-hidden border border-slate-700/50 shadow-[0_0_15px_rgba(0,0,0,0.2)] max-w-6xl mx-auto"
+            className="rounded-2xl overflow-hidden border border-slate-700/50 shadow-[0_0_15px_rgba(0,0,0,0.2)] max-w-6xl mx-auto "
           >
             {/* Window Header */}
             <div className="px-4 py-3 border-b border-slate-700/50 flex items-center">
@@ -92,7 +92,7 @@ function Contact() {
             <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Left Column - Email Section */}
               <div className="space-y-6">
-                <div className="rounded-xl p-6 font-mono text-sm border border-slate-700/50 ">
+                <div className="rounded-xl p-6 font-mono text-sm border border-slate-700/50   hover:border-blue-400/50 transition-all duration-300 group">
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-slate-400">{`// Contact Information`}</span>
                     <motion.button
@@ -114,7 +114,7 @@ function Contact() {
                   whileHover={{ scale: 1.02 }}
                   className="flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group "
                 >
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center border border-slate-700/50 bg-slate-900/50">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
                     <HiOutlineMail className="text-2xl text-blue-400" />
                   </div>
                   <div>
@@ -127,29 +127,35 @@ function Contact() {
               </div>
 
               {/* Right Column - Social Links */}
-              <div className="space-y-4">
-                {socialLinks.slice(0, 3).map((link) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02, x: 4 }}
-                    className={`flex items-center gap-4 p-4 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group ${link.color}`}
-                  >
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
-                      {link.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium text-lg text-slate-200">
-                        {link.name}
+              <div className="space-y-6">
+                <h2 className="text-2xl font-bold text-center mb-4">
+                  Social Links
+                  <span className="text-blue-500 ml-1">(Click to visit)</span>
+                </h2>
+                <div className="space-y-4">
+                  {socialLinks.slice(0, 3).map((link) => (
+                    <motion.a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      className={`flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group ${link.color}`}
+                    >
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
+                        {link.icon}
                       </div>
-                      <div className="text-sm text-slate-400">
-                        {link.description}
+                      <div>
+                        <div className="font-medium text-lg text-slate-200">
+                          {link.name}
+                        </div>
+                        <div className="text-sm text-slate-400">
+                          {link.description}
+                        </div>
                       </div>
-                    </div>
-                  </motion.a>
-                ))}
+                    </motion.a>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
