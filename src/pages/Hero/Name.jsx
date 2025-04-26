@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 function Greeting() {
+
+  
   return (
     <motion.div
       className="mx-auto p-4 text-center"
@@ -32,6 +34,10 @@ function Greeting() {
           Welcome to
           <br /> My Space on the Internet
         </h1>
+
+
+        {/* Animated Line */}
+
         <div className="h-1 w-20 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full" />
       </motion.div>
     </motion.div>

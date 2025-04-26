@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import Footer from "./pages/Footer";
 import Navbar from "./pages/Navbar";
 import Home from "./pages/Hero/Index";
+// import PWAInstallPrompt from "./components/PWAInstallPrompt";
 import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 
@@ -63,6 +64,7 @@ function App() {
       <ErrorBoundary>
         <Suspense fallback={<LoadingFallback />}>
           <>
+            {/* <PWAInstallPrompt /> */}
             <Suspense fallback={<LoadingFallback />}>
               <Navbar />
             </Suspense>

@@ -40,18 +40,20 @@ function Navbar() {
           whileTap={{ scale: 2 }}
           className="text-2xl gname"
         >
-          <a href={"/"}>razeev</a>
+          <a href={"/"} className="font-extrabold">
+            razeev
+          </a>
         </motion.div>
         <div className="hidden md:flex space-x-4">
           {quicklink.map((link) => (
             <motion.a
               key={link.id}
               href={link.url}
-              className="flex items-center hover:text-blue-500 font-extrabold text-lg"
+              className="flex items-center hover:text-blue-500  text-lg"
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1.20 }}
+              whileTap={{ scale: 1.2 }}
             >
-              <span className="font-medium">{link.title}</span>
+              <span className="font-bold">{link.title}</span>
             </motion.a>
           ))}
         </div>
