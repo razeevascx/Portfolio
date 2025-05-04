@@ -4,7 +4,6 @@ Welcome to my portfolio project, a showcase of my skills and projects in web dev
 
 > **Showcasing My Journey, Inspiring My Future**
 
-<div align="center">
 
 [![Top Language](https://img.shields.io/github/languages/top/razeevascx/Portfolio?style=for-the-badge&color=0080ff)](https://github.com/razeevascx/Portfolio)
 [![Language Count](https://img.shields.io/github/languages/count/razeevascx/Portfolio?style=for-the-badge&color=0080ff)](https://github.com/razeevascx/Portfolio)
@@ -44,7 +43,7 @@ Welcome to my portfolio project, a showcase of my skills and projects in web dev
   </a>
 </p>
 
-</div>
+
 
 ## 🚀 **Features**
 
