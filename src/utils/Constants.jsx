@@ -1,9 +1,4 @@
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaDocker,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaPython, FaDocker } from "react-icons/fa";
 import {
   SiMongodb,
   SiExpress,
@@ -15,56 +10,50 @@ import {
   SiNextdotjs,
   SiSupabase,
 } from "react-icons/si";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Instagram,
-} from "lucide-react";
-import { Home,User,Zap,Rocket,Mail } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { Home, User, Zap, Rocket, Mail } from "lucide-react";
 import { FaDatabase, FaPalette, FaLayerGroup } from "react-icons/fa";
 import { BiCodeBlock } from "react-icons/bi";
 
-
 export const quickLink = [
-    {
-      id: "home",
-      title: "Home",
-      url: "/",
-      icon: <Home className="w-5 h-5 mr-2" />,
-    },
-    {
-      id: "about",
-      title: "About",
-      url: "#about",
-      icon: <User className="w-5 h-5 mr-2" />,
-    },
-    {
-      id: "services",
-      title: "Services",
-      url: "#services",
-      icon: <Zap className="w-5 h-5 mr-2" />,
-    },
-    {
-      id: "projects",
-      title: "Projects",
-      url: "#projects",
-      icon: <Rocket className="w-5 h-5 mr-2" />,
-    },
-    {
-      id: "contact",
-      title: "Contact",
-      url: "#contact",
-      icon: <Mail className="w-5 h-5 mr-2" />,
-    },
-  ];
+  {
+    id: "home",
+    title: "Home",
+    url: "/",
+    icon: <Home className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "about",
+    title: "About",
+    url: "#about",
+    icon: <User className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "services",
+    title: "Services",
+    url: "#services",
+    icon: <Zap className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "projects",
+    title: "Projects",
+    url: "#projects",
+    icon: <Rocket className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "contact",
+    title: "Contact",
+    url: "#contact",
+    icon: <Mail className="w-5 h-5 mr-2" />,
+  },
+];
 export const projectList = [
   {
     title: "School Management System",
     description:
       "A comprehensive system to manage school operations, including student enrollment, attendance tracking, and grade management.",
     link: "https://drive.google.com/file/d/17FeCxwSDwn6E1xAZLi-f313TcjAebRVw/view",
-    image: "image.png",
+    // image: "image.png",
     tech: {
       react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
       nodejs: { id: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
@@ -148,14 +137,6 @@ export const projectList = [
 ];
 
 export const socialLinks = [
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/razeev.asnx/",
-    icon: <Instagram size={30} />,
-    hoverColor: "hover:text-pink-500",
-    bgColor: "bg-pink-500/10",
-    description: "Follow my creative journey",
-  },
   {
     name: "Twitter",
     url: "https://twitter.com/razeev_asnx",

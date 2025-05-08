@@ -10,7 +10,7 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       id="project"
-      className="w-full p-10"
+      className="w-full p-5"
     >
       <motion.div
         initial={{ y: 50 }}

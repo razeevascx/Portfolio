@@ -15,7 +15,7 @@ const Service = () => {
   };
 
   return (
-    <section id="services" className="w-full p-10">
+    <section id="services" className="w-full p-5">
       <div className="max-w-6xl mx-auto">
         <Items
           Number="02"

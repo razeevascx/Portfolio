@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="w-full p-10"
+      className="w-full p-5"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

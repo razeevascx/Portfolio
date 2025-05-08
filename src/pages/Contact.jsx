@@ -11,11 +11,13 @@ function Contact() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const email = "contact@rajeevpuri.com.np";
-  const emailCode = `const contactMe = {
-  email: "${email}",
-  status: "Open to opportunities",
-  response_time: "24 hours",
-};`;
+  const emailCode = `{
+    "name" = "Rajeev Puri",
+    "title" = "BSc Computer Science Student && Software Engineer" ,
+    "email" = "${email}",
+    "website" = "https://rajeevpuri.com.np",
+    "gitHub" = "https://github.com/razeevascx"
+}`;
 
   const notify = (message, type = "success") => {
     toast.dismiss();
@@ -54,7 +56,7 @@ function Contact() {
   }, [controls, inView]);
 
   return (
-    <section id="project" className="w-full p-10">
+    <section id="project" className="w-full p-5">
       <div className="max-w-6xl mx-auto">
         <Items
           Number="04"
@@ -78,87 +80,73 @@ function Contact() {
           >
             {/* Window Header */}
             <div className="px-4 py-3 border-b border-slate-700/50 flex items-center">
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
               <div className="flex-1 text-center text-sm font-mono text-slate-400">
-                contact.jsx
+                BusinessCard.json
               </div>
             </div>
 
             {/* Content Container */}
-            <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Left Column - Email Section */}
-              <div className="space-y-6">
-                <div className="rounded-xl p-6 font-mono text-sm border border-slate-700/50   hover:border-blue-400/50 transition-all duration-300 group">
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-slate-400">{`// Contact Information`}</span>
-                    <motion.button
-                      onClick={handleCopyEmail}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-3 py-1 rounded-md text-xs text-slate-400 hover:text-blue-400 border border-slate-700/50"
-                    >
-                      Copy Email
-                    </motion.button>
-                  </div>
-                  <pre className="text-blue-400">
-                    <code>{emailCode}</code>
-                  </pre>
+            <div className="p-8  md:grid-cols-2">
+              <div className="rounded-xl p-6 font-mono text-sm border border-slate-700/50   hover:border-blue-400/50 transition-all duration-300 group">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-slate-400">{`// Contact Information`}</span>
+                  <motion.button
+                    onClick={handleCopyEmail}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-3 py-1 rounded-md text-xs text-slate-400 hover:text-blue-400 border border-slate-700/50"
+                  >
+                    {" "}
+                    <HiOutlineMail className="ml-2 h-4 w-4 text-blue-400" />
+                  </motion.button>
                 </div>
-
-                <motion.a
-                  href={`mailto:${email}`}
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group "
-                >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
-                    <HiOutlineMail className="text-2xl text-blue-400" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-lg text-slate-200">
-                      Send Email
-                    </div>
-                    <div className="text-sm text-slate-400">{email}</div>
-                  </div>
-                </motion.a>
-              </div>
-
-              {/* Right Column - Social Links */}
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-center mb-4">
-                  Social Links
-                  <span className="text-blue-500 ml-1">(Click to visit)</span>
-                </h2>
-                <div className="space-y-4">
-                  {socialLinks.slice(0, 3).map((link) => (
-                    <motion.a
-                      key={link.name}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02, x: 4 }}
-                      className={`flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group ${link.color}`}
-                    >
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
-                        {link.icon}
-                      </div>
-                      <div>
-                        <div className="font-medium text-lg text-slate-200">
-                          {link.name}
-                        </div>
-                        <div className="text-sm text-slate-400">
-                          {link.description}
-                        </div>
-                      </div>
-                    </motion.a>
-                  ))}
-                </div>
+                <pre className="text-blue-400 justify-normal text-lg font-mono whitespace-pre-wrap break-words">
+                  <code>{emailCode}</code>
+                </pre>
               </div>
             </div>
           </motion.div>
+
+          {/* Social Links Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <motion.a
+              href={`mailto:${email}`}
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group "
+            >
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
+                <HiOutlineMail className="text-2xl text-blue-400" />
+              </div>
+              <div>
+                <div className="font-medium text-lg text-slate-200">
+                  Send Email
+                </div>
+                <div className="text-sm text-slate-400">{email}</div>
+              </div>
+            </motion.a>
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                className={`flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group  ${link.hoverColor}`}
+              >
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
+                  {link.icon}
+                </div>
+                <div>
+                  <div className="font-medium text-lg text-slate-200">
+                    {link.name}
+                  </div>
+                  <div className="text-sm text-slate-400">
+                    {link.description}
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

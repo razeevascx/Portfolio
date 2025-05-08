@@ -57,18 +57,20 @@ const Project = ({ title, description, link, tech, image, date = "2024" }) => {
         </div>
 
         {/* Image Section */}
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="bg-gray-900/50 overflow-hidden rounded-xl shadow-xl hover:shadow-2xl
+        {image && (
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-gray-900/50 overflow-hidden rounded-xl shadow-xl hover:shadow-2xl
                      transition-all duration-300 border border-gray-800/50 hover:border-gray-700/50"
-        >
-          <img
-            src={`/projects/${image}`}
-            alt={title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            onError={() => setImageError(true)}
-          />
-        </motion.div>
+          >
+            <img
+              src={`/projects/${image}`}
+              alt={title}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              onError={() => setImageError(true)}
+            />
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
