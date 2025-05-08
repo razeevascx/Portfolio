@@ -9,7 +9,7 @@ const DynamicIsland = ({
   navLinks,
 }) => {
   const currentNavItem = navLinks.find(
-    (link) => link.href.substring(1) === activeSection,
+    (link) => link.href.substring(1) === activeSection
   );
 
   return (

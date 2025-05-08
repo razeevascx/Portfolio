@@ -1,47 +1,42 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class", // Enable dark mode with class strategy
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // Primary Colors (Main Brand Colors)
         primary: {
-          DEFAULT: "#2B4FFF", // blue - Main primary color
-          light: "#5C78FF", // brightBlue
-          dark: "#3D2AFF", // yellow (using as dark variant)
-          hover: "#5EA2FF", // brightPurple
+          DEFAULT: "#2B4FFF",
+          light: "#5C78FF",
+          dark: "#3D2AFF",
+          hover: "#5EA2FF",
         },
 
-        // Secondary Colors (Accent Colors)
         secondary: {
-          DEFAULT: "#7129FF", // green
-          light: "#905AFF", // brightGreen
-          dark: "#A52AFF", // red
-          hover: "#BA5AFF", // brightRed
+          DEFAULT: "#7129FF",
+          light: "#905AFF",
+          dark: "#A52AFF",
+          hover: "#BA5AFF",
         },
 
-        // Accent Colors
         accent: {
           cyan: "#28B9FF",
           brightCyan: "#5AC8FF",
           purple: "#2883FF",
         },
 
-        // Background Colors
         background: {
-          DEFAULT: "#1A1A1A", // background
-          dark: "#121212", // black
-          card: "#1A1A1A", // for cards/sections
-          light: "#FFFFFF", // light mode background
+          DEFAULT: "#1A1A1A",
+          dark: "#121212",
+          card: "#1A1A1A",
+          light: "#FFFFFF",
         },
 
-        // Text Colors
         text: {
-          primary: "#F1F1F1", // white/foreground
-          secondary: "#666666", // brightBlack
-          bright: "#FFFFFF", // brightWhite
-          dark: "#1A1A1A", // dark text for light mode
+          primary: "#F1F1F1",
+          secondary: "#666666",
+          bright: "#FFFFFF",
+          dark: "#1A1A1A",
         },
       },
 

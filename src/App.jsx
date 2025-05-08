@@ -1,14 +1,25 @@
 import React, { lazy, Suspense } from "react";
-import Footer from "./pages/footer/footer";
-import Navbar from "./pages/Navbar/Navbar";
+import Footer from "./pages/Footer";
+import Navbar from "./pages/Navbar";
 import Home from "./pages/Hero/Index";
+// import PWAInstallPrompt from "./components/PWAInstallPrompt";
 import { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 // Lazy load components
 const About = lazy(() => import("./pages/About/About"));
-const Project = lazy(() => import("./components/Project"));
-const Contact = lazy(() => import("./components/Contact"));
-const Service = lazy(() => import("./components/Service"));
+const Project = lazy(() => import("./pages/Project"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Service = lazy(() => import("./pages/Service"));
+
+const animation = {
+  section: {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+    viewport: { once: true, margin: "-100px" },
+  },
+};
 
 // Custom Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -53,6 +64,7 @@ function App() {
       <ErrorBoundary>
         <Suspense fallback={<LoadingFallback />}>
           <>
+            {/* <PWAInstallPrompt /> */}
             <Suspense fallback={<LoadingFallback />}>
               <Navbar />
             </Suspense>
@@ -65,31 +77,63 @@ function App() {
               </Suspense>
 
               <Suspense fallback={<LoadingFallback />}>
-                <section id="about">
+                <motion.section
+                  initial={animation.section.initial}
+                  whileInView={animation.section.whileInView}
+                  transition={animation.section.transition}
+                  viewport={animation.section.viewport}
+                  id="about"
+                >
                   <About />
-                </section>
+                </motion.section>
               </Suspense>
 
               <Suspense fallback={<LoadingFallback />}>
-                <section id="service">
+                <motion.section
+                  initial={animation.section.initial}
+                  whileInView={animation.section.whileInView}
+                  transition={animation.section.transition}
+                  viewport={animation.section.viewport}
+                  id="service"
+                >
                   <Service />
-                </section>
-              </Suspense>
-              <Suspense fallback={<LoadingFallback />}>
-                <section id="projects">
-                  <Project />
-                </section>
+                </motion.section>
               </Suspense>
 
               <Suspense fallback={<LoadingFallback />}>
-                <section id="contact">
-                  <Contact />
-                </section>
+                <motion.section
+                  initial={animation.section.initial}
+                  whileInView={animation.section.whileInView}
+                  transition={animation.section.transition}
+                  viewport={animation.section.viewport}
+                  id="projects"
+                >
+                  <Project />
+                </motion.section>
               </Suspense>
+
               <Suspense fallback={<LoadingFallback />}>
-                <section id="footer">
+                <motion.section
+                  initial={animation.section.initial}
+                  whileInView={animation.section.whileInView}
+                  transition={animation.section.transition}
+                  viewport={animation.section.viewport}
+                  id="contact"
+                >
+                  <Contact />
+                </motion.section>
+              </Suspense>
+
+              <Suspense fallback={<LoadingFallback />}>
+                <motion.section
+                  initial={animation.section.initial}
+                  whileInView={animation.section.whileInView}
+                  transition={animation.section.transition}
+                  viewport={animation.section.viewport}
+                  id="footer"
+                >
                   <Footer />
-                </section>
+                </motion.section>
               </Suspense>
             </main>
           </>

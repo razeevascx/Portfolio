@@ -31,7 +31,7 @@ const SkillCard = ({ skill, isHovered, onHover, onLeave }) => {
         <div className="flex-1">
           <h4
             className={`
-            text-sm font-semibold 
+            text-sm font-semibold
             ${isHovered ? "text-blue-400" : "text-gray-200"}
             transition-colors duration-300
           `}
