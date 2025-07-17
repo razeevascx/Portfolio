@@ -56,14 +56,14 @@ const SkillCard = ({ skill, isHovered, onHover, onLeave }) => {
 
       {/* Hover Effect Gradient */}
       <motion.div
-        className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"
+        className="absolute inset-0 rounded-lg opacity-0 bg-linear-to-r from-blue-500/10 to-purple-500/10"
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       />
 
       {/* Bottom Border Accent */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500"
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-linear-to-r from-blue-500 to-purple-500"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}

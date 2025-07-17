@@ -38,7 +38,7 @@ function Greeting() {
 
         {/* Animated Line */}
 
-        <div className="h-1 w-20 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full" />
+        <div className="h-1 w-20 mx-auto bg-linear-to-r from-primary to-secondary rounded-full" />
       </motion.div>
     </motion.div>
   );

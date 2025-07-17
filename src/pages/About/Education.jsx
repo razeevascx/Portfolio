@@ -39,13 +39,13 @@ function Education() {
 
   return (
     <motion.div
-      className="grid md:grid-cols-[340px,1fr] gap-12 relative"
+      className="grid md:grid-cols-[340px_1fr] gap-12 relative"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="space-y-1 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent rounded-lg -z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-blue-500/5 to-transparent rounded-lg -z-10" />
         {educationData.map((education, index) => (
           <EducationItem
             key={index}
@@ -64,7 +64,7 @@ function Education() {
         transition={{ duration: 0.3 }}
         className="relative overflow-hidden rounded-2xl glass-card group hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="p-10 relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
@@ -77,7 +77,7 @@ function Education() {
                 href={educationData[activeIndex].link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:from-blue-300 hover:to-blue-500 transition-all duration-300"
+                className="text-3xl font-bold bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:from-blue-300 hover:to-blue-500 transition-all duration-300"
               >
                 {educationData[activeIndex].school}
               </a>

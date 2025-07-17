@@ -1,14 +1,9 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import SkillCard from "./SkillCard";
+import { motion } from "framer-motion";
 import Education from "./Education";
-import { skillsData, tabs } from "../../utils/SkillsData";
 import Items from "../../components/Items";
+import Caasoul from "../../components/Caasoul";
 
 const About = () => {
-  const [hoveredSkill, setHoveredSkill] = useState(null);
-  const [activeTab, setActiveTab] = useState("mernStack");
-
   return (
     <motion.section
       className="w-full p-5"
@@ -16,7 +11,7 @@ const About = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto space-y-10">
+      <div className="max-w-6xl mx-auto space-y-10 overflow-x-hidden">
         <Items
           Number="01"
           title="About Me"
@@ -79,47 +74,7 @@ const About = () => {
         {/* Skills Section */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
-          {/* <div className="flex flex-wrap gap-3 mb-8">
-            {tabs.map((tab) => (
-              <motion.button
-                key={tab.id}
-                className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300
-              ${
-                activeTab === tab.id
-                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-gray-800/50 text-gray-400 hover:bg-gray-800"
-              }`}
-                onClick={() => setActiveTab(tab.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {tab.label}
-              </motion.button>
-            ))}
-          </div> */}
-          {/* <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            layout
-          >
-            <AnimatePresence mode="sync">
-              {skillsData[activeTab].map((skill) => (
-                <motion.div
-                  key={skill.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <SkillCard
-                    skill={skill}
-                    isHovered={hoveredSkill === skill.label}
-                    onHover={() => setHoveredSkill(skill.label)}
-                    onLeave={() => setHoveredSkill(null)}
-                  />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div> */}
+
         </div>
         {/* Education Section */}
         <div className="space-y-8">

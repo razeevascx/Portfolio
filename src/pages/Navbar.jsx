@@ -59,7 +59,7 @@ function Navbar() {
         </div>
         <div className="md:hidden">
           <button
-            className="text-gray-800 focus:outline-none"
+            className="text-gray-800 focus:outline-hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
