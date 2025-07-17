@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Education from "./Education";
 import Items from "../../components/Items";
+import Caasoul from "../../components/Caasoul";
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto space-y-10">
+      <div className="max-w-6xl mx-auto space-y-10 overflow-x-hidden">
         <Items
           Number="01"
           title="About Me"
@@ -73,6 +74,7 @@ const About = () => {
         {/* Skills Section */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
+
         </div>
         {/* Education Section */}
         <div className="space-y-8">
