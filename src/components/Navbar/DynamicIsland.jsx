@@ -89,7 +89,7 @@ const DynamicIsland = ({
                     }
                   `}
                 >
-                  <link.icon className="h-4 w-4 flex-shrink-0" />
+                  <link.icon className="h-4 w-4 shrink-0" />
                   <span className="text-sm font-medium">{link.label}</span>
                 </motion.a>
               ))}

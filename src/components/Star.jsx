@@ -104,7 +104,7 @@ const StarsCanvas = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full fixed inset-0 z-[1] bg-gradient-to-b from-primary-background/80 to-secondary-background/80"
+      className="w-full h-full fixed inset-0 z-1 bg-linear-to-b from-primary-background/80 to-secondary-background/80"
     />
   );
 };

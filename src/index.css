@@ -1,23 +1,234 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  background-color: #0f0f11;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  max-height: 100vh;
-  box-sizing: border-box;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #2b4fff;
+  --color-primary-light: #5c78ff;
+  --color-primary-dark: #3d2aff;
+  --color-primary-hover: #5ea2ff;
+
+  --color-secondary: #7129ff;
+  --color-secondary-light: #905aff;
+  --color-secondary-dark: #a52aff;
+  --color-secondary-hover: #ba5aff;
+
+  --color-accent-cyan: #28b9ff;
+  --color-accent-bright-cyan: #5ac8ff;
+  --color-accent-purple: #2883ff;
+
+  --color-background: #1a1a1a;
+  --color-background-dark: #121212;
+  --color-background-card: #1a1a1a;
+  --color-background-light: #ffffff;
+
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #666666;
+  --color-text-bright: #ffffff;
+  --color-text-dark: #1a1a1a;
+
+  --backdrop-blur-xs: 2px;
+  --backdrop-blur-sm: 4px;
+  --backdrop-blur-md: 8px;
+  --backdrop-blur-lg: 12px;
+  --backdrop-blur-xl: 16px;
+  --backdrop-blur-2xl: 40px;
+
+  --shadow-glow: 0 0 20px rgba(92, 120, 255, 0.3);
+  --shadow-glow-lg: 0 0 30px rgba(92, 120, 255, 0.4);
+  --shadow-glow-xl: 0 0 40px rgba(92, 120, 255, 0.5);
+  --shadow-navbar:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-in-out;
+  --animate-slide-down: slideDown 0.5s ease-in-out;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-primary: linear-gradient(
+    to right,
+    var(--tw-gradient-stops)
+  );
+
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+
+  --z-index-60: 60;
+  --z-index-70: 70;
+  --z-index-80: 80;
+  --z-index-90: 90;
+  --z-index-100: 100;
+
+  --transition-duration-400: 400ms;
+
+  --ease-bounce-in: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility glossy {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl transition-all duration-300;
+}
+
+@utility glass-card {
+  @apply bg-background-light/5 backdrop-blur-lg border border-text-primary/10 rounded-2xl transition-all duration-300;
+}
+
+@utility gradient-text {
+  @apply bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+@utility nav-item {
+  /* Navigation Styles */
+  @apply px-4 py-2 rounded-full transition-all duration-300 text-text-secondary hover:text-text-primary hover:bg-white/5;
+
+  &.active {
+    @apply bg-primary/10 text-primary;
+  }
+}
+
+@utility active {
+  &.nav-item {
+    @apply bg-primary/10 text-primary;
+  }
+
+  &.sidebar-item {
+    @apply bg-white/10 text-primary border-l-2 border-primary;
+  }
+}
+
+@utility sidebar-item {
+  /* Education Component Styles */
+  @apply p-4 cursor-pointer font-mono transition-all duration-300 rounded-lg hover:bg-white/5 hover:text-primary;
+
+  &.active {
+    @apply bg-white/10 text-primary border-l-2 border-primary;
+  }
+}
+
+@utility education-content {
+  @apply glass-card p-6 space-y-4;
+}
+
+@utility education-title {
+  @apply text-2xl font-bold gradient-text;
+}
+
+@utility education-school {
+  @apply text-lg text-primary hover:text-secondary transition-colors duration-300;
+}
+
+@utility education-year {
+  @apply text-text-secondary font-mono;
+}
+
+@utility education-description {
+  @apply text-text-primary/80 leading-relaxed;
+}
+
+@utility slide {
+  @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+}
+
+@utility canvas-container {
+  pointer-events: none;
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+}
+
+@layer utilities {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #0f0f11;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    max-height: 100vh;
+    box-sizing: border-box;
+  }
 }
 
 @layer base {
   .gname {
-    @apply bg-gradient-to-r from-green-600 to-indigo-400 bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-green-600 to-indigo-400 bg-clip-text text-transparent;
   }
 
   body {
@@ -36,76 +247,9 @@ body {
 }
 
 @layer components {
-  .glossy {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl transition-all duration-300;
-  }
-
-  .glass-card {
-    @apply bg-background-light/5 backdrop-blur-lg border border-text-primary/10 rounded-2xl transition-all duration-300;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-  }
-
-  /* Navigation Styles */
-  .nav-item {
-    @apply px-4 py-2 rounded-full transition-all duration-300 text-text-secondary hover:text-text-primary hover:bg-white/5;
-  }
-
-  .nav-item.active {
-    @apply bg-primary/10 text-primary;
-  }
-
-  /* Education Component Styles */
-  .sidebar-item {
-    @apply p-4 cursor-pointer font-mono transition-all duration-300 rounded-lg hover:bg-white/5 hover:text-primary;
-  }
-
-  .sidebar-item.active {
-    @apply bg-white/10 text-primary border-l-2 border-primary;
-  }
-
-  .education-content {
-    @apply glass-card p-6 space-y-4;
-  }
-
-  .education-title {
-    @apply text-2xl font-bold gradient-text;
-  }
-
-  .education-school {
-    @apply text-lg text-primary hover:text-secondary transition-colors duration-300;
-  }
-
-  .education-year {
-    @apply text-text-secondary font-mono;
-  }
-
-  .education-description {
-    @apply text-text-primary/80 leading-relaxed;
-  }
-  .slide {
-    @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
-  }
 
   canvas {
     touch-action: none;
-  }
-
-  .canvas-container {
-    pointer-events: none;
-  }
-}
-
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
   }
 }
 
