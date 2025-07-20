@@ -12,7 +12,10 @@
     "favicons": "node scripts/favicons.js"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
     "framer-motion": "^11.18.2",
+    "llmstxt": "^0.8.0",
     "lucide-react": "^0.447.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
@@ -26,6 +29,7 @@
   "devDependencies": {
     "@eslint/js": "^9.25.1",
     "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "@vitejs/plugin-react": "^4.4.1",

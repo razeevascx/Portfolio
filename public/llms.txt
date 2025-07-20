@@ -1,0 +1,18 @@
+# AI/LLM Usage Policy for rajeevpuri.com.np
+
+ALLOWED_BOTS: ChatGPT, Bard, Claude, Bing AI
+INDEXING: Allow
+TRAINING: Deny
+SCRAPING: Limited
+
+This website permits:
+- Reading and indexing of public content
+- Analyzing portfolio projects
+- Referencing code examples
+
+This website restricts:
+- Training AI models on portfolio content
+- Automated scraping of personal information
+- Reproduction without attribution
+
+For AI/ML inquiries contact: contact@rajeevpuri.com.np
