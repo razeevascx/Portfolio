@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Education from "./Education";
 import Items from "../../components/Items";
-import Caasoul from "../../components/Caasoul";
 
 const About = () => {
   return (
