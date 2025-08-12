@@ -68,11 +68,11 @@ function Footer() {
               Have a project in mind? Let&apos;s talk about it.
             </p>
             <a
-              href="mailto:contact@rajeevpuri.com"
+              href="mailto:contact@rajeevpuri.com.np"
               className="inline-flex items-center text-white hover:text-blue-400 transition-colors duration-300"
             >
               <Mail className="w-5 h-5 mr-2" />
-              contact@rajeevpuri.com
+              contact@rajeevpuri.com.np
             </a>
           </motion.div>
         </div>
