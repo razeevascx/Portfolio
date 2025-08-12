@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import Footer from "./pages/Footer";
 import Navbar from "./pages/Navbar";
-import Home from "./pages/Hero/Index";
 import { Toaster } from "react-hot-toast";
+import Index from "./pages/Hero-v2/Index";
 
 // Lazy load components
 const About = lazy(() => import("./pages/About/About"));
@@ -58,7 +58,7 @@ function App() {
 
           <Suspense fallback={<LoadingFallback />}>
             <section id="home">
-              <Home />
+              <Index />
             </section>
           </Suspense>
 
