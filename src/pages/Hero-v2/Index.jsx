@@ -64,7 +64,7 @@ function Index() {
 
   return (
     <motion.div
-      className="m-4 max-w-6xl mx-auto"
+      className="m-4 max-w-6xl mx-auto p-5"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -80,7 +80,7 @@ function Index() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-8xl font-bold text-blue-500"
+            className="text-5xl md:text-5xl lg:text-8xl font-bold text-blue-500"
           >
             <span className="mr-2 text-gray-400 hover:text-white">
               I&apos;m{" "}
@@ -166,19 +166,19 @@ function Index() {
             </motion.span>
             .
           </motion.p>
+          <motion.div variants={itemVariants}>
+            <Socialicons />
+          </motion.div>
         </motion.div>
 
-        <motion.div variants={imageVariants}>
+        <motion.div variants={imageVariants} className="hidden md:block ">
           <img
-            className="rounded-full h-96 shadow-lg object-cover hover:scale-105 transition-transform duration-300"
-            src="154011772.jpg"
+            className="rounded-full  object-cover hover:scale-105 transition-transform duration-300"
+            src="11102.png"
             alt="github_avatar"
           />
         </motion.div>
       </div>
-      <motion.div variants={itemVariants}>
-        <Socialicons />
-      </motion.div>
     </motion.div>
   );
 }
