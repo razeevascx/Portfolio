@@ -92,7 +92,7 @@ function Index() {
             variants={itemVariants}
             className="text-gray-400 hover:text-white leading-relaxed max-w-3xl text-xl"
           >
-            I turn your creativity into code through use of{" "}
+            I can help you turn your creativity into code through use of{" "}
             <motion.span variants={buttonVariants} className="inline-block">
               <Button
                 name="TypeScript"
