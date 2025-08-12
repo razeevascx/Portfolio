@@ -38,10 +38,10 @@ function Navbar() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 2 }}
-          className="text-2xl gname"
+
         >
-          <a href={"/"} className="font-extrabold">
-            razeev
+          <a href={"/"} >
+           <img className="w-10 border rounded-[100%]" src="https://avatars.githubusercontent.com/u/154011772" alt="github_avtar"  />
           </a>
         </motion.div>
         <div className="hidden md:flex space-x-4">
