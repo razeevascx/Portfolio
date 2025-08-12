@@ -161,6 +161,14 @@ export const socialLinks = [
     bgColor: "bg-gray-500/10",
     description: "Check out my projects",
   },
+  {
+    name: "Mail",
+    url: "contact@rajeevpuri.com.np",
+    icon: <Mail size={30} />,
+    hoverColor: "hover:text-blue-400",
+    bgColor: "text-blue-400/10",
+    description: "Mail service",
+  },
 ];
 
 export const animations = {
