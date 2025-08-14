@@ -15,7 +15,7 @@ import { Home, User, Zap, Rocket, Mail } from "lucide-react";
 import { FaDatabase, FaPalette, FaLayerGroup } from "react-icons/fa";
 import { BiCodeBlock } from "react-icons/bi";
 
-export const quickLink = [
+export const quicklink = [
   {
     id: "home",
     title: "Home",
@@ -25,25 +25,19 @@ export const quickLink = [
   {
     id: "about",
     title: "About",
-    url: "#about",
+    url: "/about",
     icon: <User className="w-5 h-5 mr-2" />,
-  },
-  {
-    id: "services",
-    title: "Services",
-    url: "#services",
-    icon: <Zap className="w-5 h-5 mr-2" />,
   },
   {
     id: "projects",
     title: "Projects",
-    url: "#projects",
+    url: "/projects",
     icon: <Rocket className="w-5 h-5 mr-2" />,
   },
   {
     id: "contact",
     title: "Contact",
-    url: "#contact",
+    url: "/contact",
     icon: <Mail className="w-5 h-5 mr-2" />,
   },
 ];
@@ -163,7 +157,7 @@ export const socialLinks = [
   },
   {
     name: "Mail",
-    url: "contact@rajeevpuri.com.np",
+    url: "mailto:contact@rajeevpuri.com.np",
     icon: <Mail size={30} />,
     hoverColor: "hover:text-blue-400",
     bgColor: "text-blue-400/10",

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 import Education from "./Education";
 import Items from "../../components/Items";
 
@@ -73,7 +73,6 @@ const About = () => {
         {/* Skills Section */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
-
         </div>
         {/* Education Section */}
         <div className="space-y-8">

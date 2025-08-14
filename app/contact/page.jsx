@@ -1,15 +1,11 @@
+"use client";
 import { HiOutlineMail } from "react-icons/hi";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import * as motion from "motion/react-client";
 import { toast } from "react-hot-toast";
 import Items from "../components/Items";
 import { socialLinks } from "../utils/Constants";
 
 function Contact() {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-
   const email = "contact@rajeevpuri.com.np";
   const emailCode = `{
     "name" = "Rajeev Puri",
@@ -49,35 +45,22 @@ function Contact() {
     }
   };
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
   return (
-    <section id="project" className="w-full p-5">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      id="project"
+      className="w-full p-5"
+    >
       <div className="max-w-6xl mx-auto">
         <Items
-          Number="04"
+          Number="03"
           title="Contact Me"
           des="Let's collaborate and bring your ideas to life. Feel free to reach out through any of these channels."
         />
-        <div className="relative" ref={ref}>
-          {/* Header Section */}
-          <h1 className="text-4xl m-4 text-center  font-bold">
-            Like the work I do?{" "}
-            <a href={`mailto:${email}`} className="text-blue-500 underline">
-              Contact
-            </a>
-          </h1>
-
+        <div className="relative">
           {/* Mac-themed Window */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl overflow-hidden border border-slate-700/50 shadow-[0_0_15px_rgba(0,0,0,0.2)] max-w-6xl mx-auto "
-          >
+          <div className="rounded-2xl overflow-hidden border border-slate-700/50 shadow-[0_0_15px_rgba(0,0,0,0.2)] max-w-6xl mx-auto ">
             {/* Window Header */}
             <div className="px-4 py-3 border-b border-slate-700/50 flex items-center">
               <div className="flex-1 text-center text-sm font-mono text-slate-400">
@@ -90,6 +73,7 @@ function Contact() {
               <div className="rounded-xl p-6 font-mono text-sm border border-slate-700/50   hover:border-blue-400/50 transition-all duration-300 group">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-slate-400">{`// Contact Information`}</span>
+
                   <motion.button
                     onClick={handleCopyEmail}
                     whileHover={{ scale: 1.05 }}
@@ -105,7 +89,7 @@ function Contact() {
                 </pre>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Social Links Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
@@ -124,32 +108,34 @@ function Contact() {
                 <div className="text-sm text-slate-400">{email}</div>
               </div>
             </motion.a>
-            {socialLinks.map((link, index) => (
-              <motion.a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                className={`flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group  ${link.hoverColor}`}
-              >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
-                  {link.icon}
-                </div>
-                <div>
-                  <div className="font-medium text-lg text-slate-200">
-                    {link.name}
+            {socialLinks
+              .filter((link) => link.name !== "Mail")
+              .map((link, index) => (
+                <motion.a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  className={`flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group  ${link.hoverColor}`}
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
+                    {link.icon}
                   </div>
-                  <div className="text-sm text-slate-400">
-                    {link.description}
+                  <div>
+                    <div className="font-medium text-lg text-slate-200">
+                      {link.name}
+                    </div>
+                    <div className="text-sm text-slate-400">
+                      {link.description}
+                    </div>
                   </div>
-                </div>
-              </motion.a>
-            ))}
+                </motion.a>
+              ))}
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 import Greeting from "./Name";
 import Description from "./Description";
 import Skills from "./Skill";
@@ -68,7 +68,7 @@ function Home() {
         <Description variants={variants.text} />
         <Skills variants={variants.text} />
         {/* Shaping */}
-       {/* <span className="slide">
+        {/* <span className="slide">
           <span className="wrapper">
             {words.map((word, index) => (
               <span
@@ -80,13 +80,12 @@ function Home() {
                   alt="person"
                   className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                 /> */}
-                {/* <span>{word.title}</span>
+        {/* <span>{word.title}</span>
               </span>
             ))}
           </span>
         </span> */}
       </motion.div>
-
     </motion.div>
   );
 }

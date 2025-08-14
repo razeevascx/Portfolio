@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 import Items from "../components/Items";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../utils/Constants";

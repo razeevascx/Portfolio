@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 
 function Greeting() {
-
-  
   return (
     <motion.div
       className="mx-auto p-4 text-center"
@@ -34,7 +32,6 @@ function Greeting() {
           Welcome to
           <br /> My Space on the Internet
         </h1>
-
 
         {/* Animated Line */}
 

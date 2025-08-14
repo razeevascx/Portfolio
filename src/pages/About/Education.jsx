@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 import { useState } from "react";
 import { educationData } from "../../utils/Constants";
 

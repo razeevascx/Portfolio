@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import Button from "../../components/Button";
+import * as motion from "motion/react-client";
+import Button from "../ui/Button";
 import {
   SiTypescript,
   SiReact,
@@ -10,9 +10,9 @@ import {
   SiOpslevel,
 } from "react-icons/si";
 import { FaPalette } from "react-icons/fa";
-import Socialicons from "../../components/Socialicons";
+import Socialicons from "@/components/Socialicons";
 
-function Index() {
+function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,7 +64,7 @@ function Index() {
 
   return (
     <motion.div
-      className="m-4 max-w-6xl mx-auto p-5"
+      className="m-4 max-w-7xl mx-auto "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -172,9 +172,10 @@ function Index() {
         </motion.div>
 
         <motion.div variants={imageVariants} className="hidden md:block ">
-          <img
-            className="rounded-full  object-cover hover:scale-105 transition-transform duration-300"
+          <motion.img
+            className="object-cover hover:scale-105 transition-transform duration-300  "
             src="11102.png"
+            whileTap={{ scale: 2 }}
             alt="github_avatar"
           />
         </motion.div>
@@ -183,4 +184,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Hero;

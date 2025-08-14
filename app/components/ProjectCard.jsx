@@ -1,14 +1,7 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 
- const Project = ({
-  title,
-  description,
-  link,
-  tech,
-  image,
-  date = "2024",
-}) => {
+const Project = ({ title, description, link, tech, image, date = "2024" }) => {
   const [imageError, setImageError] = useState(false);
 
   return (

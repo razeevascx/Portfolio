@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
-import { socialLinks, quickLink } from "../utils/Constants";
+import * as motion from "motion/react-client";
+import { socialLinks, quicklink } from "../utils/Constants";
 import { Mail } from "lucide-react";
 
 function Footer() {
   return (
     <footer className="mt-10 border-t border-gray-800">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-6 py-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-4"
@@ -44,7 +44,7 @@ function Footer() {
           >
             <h3 className="text-white text-xl font-semibold">Quick Links</h3>
             <nav className="grid grid-cols-2 ">
-              {quickLink.map((link) => (
+              {quicklink.map((link) => (
                 <motion.a
                   key={link.id}
                   href={link.url}
@@ -78,18 +78,11 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-800 px-6 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex  items-center">
             <p className="text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Rajeev Puri. All rights
               reserved.
             </p>
-            <motion.a
-              href="#home"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-              whileHover={{ y: -4 }}
-            >
-              Back to top ↑
-            </motion.a>
           </div>
         </div>
       </div>

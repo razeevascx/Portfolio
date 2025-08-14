@@ -1,3 +1,5 @@
+import Hero from "@/section/Hero";
+
 export default function Home() {
-  return <div>Hello</div>;
+  return <Hero />;
 }
