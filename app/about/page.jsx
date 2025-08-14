@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 import Education from "./Education";
-import Items from "../../components/Items";
+import Items from "@/components/Items";
 
 const About = () => {
   return (

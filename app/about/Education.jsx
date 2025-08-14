@@ -1,6 +1,7 @@
+"use client";
 import * as motion from "motion/react-client";
 import { useState } from "react";
-import { educationData } from "../../utils/Constants";
+import { educationData } from "@/utils/Constants";
 
 const EducationItem = ({ education, index, activeIndex, setActiveIndex }) => (
   <motion.div

@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import Button from "../ui/Button";
+import Button from "@/ui/Button";
 import {
   SiTypescript,
   SiReact,
@@ -11,8 +11,7 @@ import {
 } from "react-icons/si";
 import { FaPalette } from "react-icons/fa";
 import Socialicons from "@/components/Socialicons";
-
-function Hero() {
+export default function Home() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -183,5 +182,3 @@ function Hero() {
     </motion.div>
   );
 }
-
-export default Hero;
