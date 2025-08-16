@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cva } from "class-variance-authority";
 
 const buttonVariants = cva(
-  " font-semibold backdrop-blur-sm gap-1 transition-colors duration-200 hover:scale-105 inline-flex items-center   p-1 text-sm leading-4  whitespace-nowrap gap-2",
+  " font-semibold  gap-1 duration-200  inline-flex items-center   text-sm leading-4 hover:scale-105 whitespace-nowrap gap-2 ",
   {
     variants: {
       variant: {
@@ -14,7 +14,7 @@ const buttonVariants = cva(
           "bg-red-800 text-white shadow-xs hover:bg-red-800/90 focus-visible:ring-red-800/20 dark:focus-visible:ring-red-800/40 dark:bg-red-800/60",
         outline: "border border-gray-300 shadow-xs hover:border-gray-300/5 ",
         ghost: "bg-transparent  hover:bg-neutral-800",
-        link: "underline-offset-4 hover:underline text-blue-600 ",
+        link: "underline-offset-4 hover:underline text-blue-600",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -48,7 +48,7 @@ export default function Button({
     className
   );
   return link ? (
-    <Link href={link}>
+    <Link href={link} target="_blank" rel="noopener noreferrer">
       <button className={classes}>
         {icon}
 

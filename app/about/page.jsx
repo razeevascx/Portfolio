@@ -1,6 +1,7 @@
 import * as motion from "motion/react-client";
-import Education from "./Education";
 import Items from "@/components/Items";
+import Educard from "@/ui/Educard";
+import Lancrd from "@/ui/Skill/Lancrd";
 
 const About = () => {
   return (
@@ -36,7 +37,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
             Current Role: Student
           </motion.h3>
           <motion.div
@@ -73,13 +74,16 @@ const About = () => {
         {/* Skills Section */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
+          <ul className="text-lg font-bold text-white">Languages</ul>
+          <Lancrd />
+          <ul className="text-lg font-bold text-white">Framework</ul>
         </div>
         {/* Education Section */}
         <div className="space-y-8">
           <h3 className="text-2xl font-bold text-white">
             Educational Qualifications
           </h3>
-          <Education />
+          <Educard />
         </div>
       </div>
     </motion.section>

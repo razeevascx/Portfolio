@@ -191,11 +191,6 @@ export default function Hero() {
         "Life folds into two phases, Second one starts once we realize we got
         only one." - Confucius
       </p>
-      <Button
-        variant="ghost"
-        name="Scroll Down"
-        className="text-xl font-semibold text-white  bottom-4 rounded-4xl"
-      />
     </motion.section>
   );
 }

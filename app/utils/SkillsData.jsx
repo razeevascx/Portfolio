@@ -232,38 +232,38 @@ export const libraries = [
 ];
 
 export const language = {
-  Javascript: {
-    label: "JavaScript",
-    icon: <SiJavascript className="text-yellow-500" />,
-    color: "text-yellow-500",
-    description:
-      "JavaScript is a high-level, dynamic, and interpreted programming language for web development.",
-  },
   TypeScript: {
     label: "TypeScript",
-    icon: <SiTypescript className="text-blue-600" />,
+    icon: <SiTypescript className="text-blue-600 " />,
     color: "text-blue-600",
     description:
       "TypeScript is a strongly typed programming language that builds on JavaScript.",
   },
+  Javascript: {
+    label: "JavaScript",
+    icon: <SiJavascript className="text-yellow-500 " />,
+    color: "text-yellow-500",
+    description:
+      "JavaScript is a high-level, dynamic, and interpreted programming language for web development.",
+  },
   Java: {
     label: "Java",
-    icon: <FaJava className="text-red-600" />,
+    icon: <FaJava className="text-orange-600 " />,
     color: "text-red-600",
     description:
       "Java is a high-level, class-based, object-oriented programming language.",
   },
   Go: {
     label: "Go",
-    icon: <SiGo className="text-blue-500" />,
+    icon: <SiGo className="text-blue-300 " />,
     color: "text-blue-500",
     description:
       "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
   },
   Python: {
     label: "Python",
-    icon: <FaPython className="text-green-600" />,
-    color: "text-green-600",
+    icon: <FaPython className="text-yellow-400 " />,
+    color: "text-yellow-600",
     description:
       "Python is a high-level, interpreted programming language with dynamic semantics.",
   },

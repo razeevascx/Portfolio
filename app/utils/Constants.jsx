@@ -27,7 +27,6 @@ import {
   Rocket,
   Mail,
 } from "lucide-react";
-import { BiCodeBlock } from "react-icons/bi";
 
 export const quicklink = [
   {
@@ -60,96 +59,6 @@ export const quicklink = [
     url: "/resource",
   },
 ];
-export const projectList = [
-  {
-    title: "School Management System",
-    description:
-      "A comprehensive system to manage school operations, including student enrollment, attendance tracking, and grade management.",
-    link: "https://drive.google.com/file/d/17FeCxwSDwn6E1xAZLi-f313TcjAebRVw/view",
-    // image:"127.0.0.1_3000_.png",
-    tech: {
-      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-      nodejs: { id: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
-      mongodb: {
-        id: "MongoDB",
-        icon: <SiMongodb className="text-[#47A248]" />,
-      },
-      express: {
-        id: "Express",
-        icon: <SiExpress className="text-white " />,
-      },
-      redux: { id: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
-    },
-  },
-  {
-    title: "Telegram Bot",
-    description:
-      "A bot for automating tasks on Telegram, such as sending scheduled messages, managing groups, and providing information on demand.",
-    link: "https://github.com/razeevascx/terabox_bot",
-    tech: {
-      python: { id: "Python", icon: <FaPython className="text-[#3776AB]" /> },
-      docker: { id: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
-    },
-  },
-  {
-    title: "News Temp",
-    description:
-      "A template for displaying news articles with a clean and responsive design, suitable for news websites and blogs.",
-    link: "https://github.com/razeevascx/news-temp",
-    tech: {
-      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-      tailwind: {
-        id: "Tailwind CSS",
-        icon: <SiTailwindcss className="text-[#06B6D4]" />,
-      },
-      vite: { id: "Vite", icon: <SiVite className="text-[#646CFF]" /> },
-    },
-  },
-  {
-    title: "Portfolio",
-    description:
-      "A personal portfolio website to showcase projects, skills, and experiences, with a modern and professional design.",
-    link: "https://rajeevpuri.com.np",
-    image: "127.0.0.1_3000_.png",
-    tech: {
-      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-      tailwind: {
-        id: "Tailwind CSS",
-        icon: <SiTailwindcss className="text-[#06B6D4]" />,
-      },
-      vite: { id: "Vite", icon: <SiVite className="text-[#646CFF]" /> },
-      framer: {
-        id: "Framer Motion",
-        icon: <SiFramer className="text-[#0055FF]" />,
-      },
-    },
-  },
-  {
-    title: "MailRef",
-    description:
-      "A tool for generating temporary email addresses for receiving emails without revealing your real email address.",
-    link: "https://github.com/razeevascx/MailRef",
-    tech: {
-      nextjs: {
-        id: "Next.js",
-        icon: <SiNextdotjs className="text-[#000000]" />,
-      },
-      tailwind: {
-        id: "Tailwind CSS",
-        icon: <SiTailwindcss className="text-[#06B6D4]" />,
-      },
-      typescript: {
-        id: "TypeScript",
-        icon: <SiTypescript className="text-[#3178C6]" />,
-      },
-      supabase: {
-        id: "Supabase",
-        icon: <SiSupabase className="text-[#3ECF8E]" />,
-      },
-    },
-  },
-];
-
 export const socialLinks = [
   {
     name: "Twitter",
@@ -185,54 +94,11 @@ export const socialLinks = [
   },
 ];
 
-export const animations = {
-  // Page level animations
-  pageVariants: {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-  },
-
-  // Container animations with stagger effect
-  containerVariants: {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  },
-
-  // Individual item animations
-  itemVariants: {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  },
-
-  // Hover animations
-  hoverScale: {
-    scale: 1.05,
-    transition: {
-      type: "spring",
-      stiffness: 300,
-    },
-  },
-};
-
 export const educationData = [
   {
-    degree: "Bsc (Hons) Computer Science",
+    degree: "Bachelor of Science",
     school: "University of Wolverhampton",
-    role: "Major in Computer Science",
+    logo: "https://www.wlv.ac.uk/media/2019-template-assets/graphics/logo.svg",
     location: "Wolverhampton, UK",
     year: "2025 - 2028",
     experiences: [
@@ -244,8 +110,8 @@ export const educationData = [
   },
   {
     degree: "Higher Secondary Education",
+    logo: "https://wms.edigitalnepal.com/wms/files/ws-profile/1751363007678_8359cc42-d2cc-421f-ac2d-67c4d44f82c5.png",
     school: "Khwopa Higher Secondary School",
-    role: "Major in Computer Science",
     location: "Dekocha 06, Bhaktapur 44800",
     year: "2022 - 2024",
     experiences: [
@@ -253,37 +119,136 @@ export const educationData = [
       "Developed skills in problem-solving, coding, and data analysis.",
       "Participated in academic projects and tech-based workshops.",
     ],
-    link: "https://www.facebook.com/khwopahss",
+    link: "https://khwopahss.edu.np/",
   },
 ];
 
-export const services = [
+export const projectList = [
   {
-    icon: <BiCodeBlock size={40} aria-label="MERN Stack Development" />,
-    title: "MERN Stack Development",
+    title: "Portfolio",
     description:
-      "Specialized in building full-stack applications using MongoDB, Express.js, React.js, and Node.js. Creating scalable and modern web solutions with the latest technologies.",
-    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux"],
+      "Portfolio website to showcase my ideas - A modern, responsive personal portfolio built with Next.js, featuring smooth animations and professional design.",
+    link: "https://github.com/razeevascx/Portfolio",
+    liveLink: "https://rajeevpuri.com.np",
+    image: "127.0.0.1_3000_.png",
+    tech: {
+      nextjs: {
+        id: "Next.js",
+        icon: <SiNextdotjs className="text-[#000000] dark:text-white" />,
+      },
+      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+      tailwind: {
+        id: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+      },
+      typescript: {
+        id: "TypeScript",
+        icon: <SiTypescript className="text-[#3178C6]" />,
+      },
+      framer: {
+        id: "Framer Motion",
+        icon: <SiFramer className="text-[#0055FF]" />,
+      },
+    },
+    featured: true,
   },
   {
-    icon: <FaPalette size={40} aria-label="Graphic Design" />,
-    title: "Graphic Design",
+    title: "TeraBox Bot",
     description:
-      "Creating stunning visual content including logos, brand identity, marketing materials, and social media graphics. Focusing on unique and memorable designs.",
-    technologies: ["Photoshop", "Illustrator", "Figma"],
+      "Telegram bot for TeraBox automation - An advanced bot with 1 star and 2 forks, featuring file management and download assistance.",
+    link: "https://github.com/razeevascx/terabox_bot",
+    tech: {
+      python: { id: "Python", icon: <FaPython className="text-[#3776AB]" /> },
+      docker: { id: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
+    },
+    featured: true,
+    stars: 1,
+    forks: 2,
   },
   {
-    icon: <FaLayerGroup size={40} aria-label="UI/UX Design" />,
-    title: "UI/UX Design",
+    title: "MailRef",
     description:
-      "Designing intuitive and user-centered interfaces with a focus on user experience. Creating wireframes, prototypes, and implementing responsive designs.",
-    technologies: ["Figma"],
+      "A temporary email service built with Next.js and Supabase, allowing users to generate disposable email addresses for privacy protection.",
+    link: "https://github.com/razeevascx/MailRef",
+    tech: {
+      nextjs: {
+        id: "Next.js",
+        icon: <SiNextdotjs className="text-[#000000] dark:text-white" />,
+      },
+      tailwind: {
+        id: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+      },
+      typescript: {
+        id: "TypeScript",
+        icon: <SiTypescript className="text-[#3178C6]" />,
+      },
+      supabase: {
+        id: "Supabase",
+        icon: <SiSupabase className="text-[#3ECF8E]" />,
+      },
+    },
   },
   {
-    icon: <FaDatabase size={40} aria-label="Database Management" />,
-    title: "Database Management",
+    title: "Dotfiles",
     description:
-      "Expert in database design, optimization, and management. Handling both SQL and NoSQL databases with a focus on performance and security.",
-    technologies: ["MongoDB", "MySQL"],
+      "My personal Windows config of apps, terminal settings, VS Code and more - Personal development environment configuration.",
+    link: "https://github.com/razeevascx/dotfiles",
+    tech: {
+      powershell: {
+        id: "PowerShell",
+        icon: <FaDatabase className="text-[#5391FE]" />,
+      },
+      config: {
+        id: "Config Files",
+        icon: <FaPalette className="text-[#FF6B35]" />,
+      },
+    },
+  },
+  {
+    title: "Simple Bank Management System",
+    description:
+      "A banking system using Java - Comprehensive banking application with account management, transactions, and user authentication.",
+    link: "https://github.com/razeevascx/Bank_Management_System",
+    tech: {
+      java: { id: "Java", icon: <FaLayerGroup className="text-[#ED8B00]" /> },
+      database: {
+        id: "Database",
+        icon: <FaDatabase className="text-[#4DB33D]" />,
+      },
+    },
+  },
+  {
+    title: "News Template",
+    description:
+      "A modern, responsive news website template with clean design, article management, and optimized reading experience.",
+    link: "https://github.com/razeevascx/news-temp",
+    tech: {
+      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+      tailwind: {
+        id: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+      },
+      vite: { id: "Vite", icon: <SiVite className="text-[#646CFF]" /> },
+    },
+  },
+  {
+    title: "School Management System",
+    description:
+      "A comprehensive system to manage school operations, including student enrollment, attendance tracking, and grade management.",
+    link: "https://drive.google.com/file/d/17FeCxwSDwn6E1xAZLi-f313TcjAebRVw/view",
+    tech: {
+      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+      nodejs: { id: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+      mongodb: {
+        id: "MongoDB",
+        icon: <SiMongodb className="text-[#47A248]" />,
+      },
+      express: {
+        id: "Express",
+        icon: <SiExpress className="text-white" />,
+      },
+      redux: { id: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
+    },
   },
 ];

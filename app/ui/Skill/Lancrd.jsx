@@ -1,26 +1,25 @@
 import * as motion from "motion/react-client";
 import { language } from "@/utils/SkillsData";
-import Items from "@/components/Items";
+import Button from "../Button";
 
 export default function Lancrd() {
   const languages = Object.values(language);
 
   return (
-    <>
-      <Items Number="01" title={"Languages"} />
-      <motion.div className="flex gap-8 whitespace-nowrap justify-around">
-        {languages.map((dta, idx) => (
-          <div
-            key={`first-${dta.label}-${idx}`}
-            className="inline-flex justify-center text-center items-center group hover:scale-105 text-4xl gap-4"
-          >
-            {dta.icon}
-
-            <h3 className="font-bold text-xl">{dta.label}</h3>
-          </div>
-        ))}
-      </motion.div>
-      <Items Number="02" title={"Framework && Tools"} />
-    </>
+    <motion.div className="flex m-4 flex-wrap gap-8 whitespace-nowrap  border-2 border-dashed divide-dashed border-gray-500 p-4 rounded-lg justify-around">
+      {languages.map((dta, idx) => (
+        <div
+          key={`first-${dta.label}-${idx}`}
+          className="flex justify-center m-2 text-centers items-center group hover:scale-105  gap-4  "
+        >
+          <Button
+            icon={dta.icon}
+            variant={"ghost"}
+            name={dta.label}
+            className={"text-2xl rounded-4xl"}
+          />
+        </div>
+      ))}
+    </motion.div>
   );
 }

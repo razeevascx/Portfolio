@@ -1,133 +1,119 @@
-# 🚀 **Portfolio**
+<div align="center">
 
-Welcome to my portfolio project, a showcase of my skills and projects in web development. This project is currently under active development and will feature an interactive, responsive design.
+# Portfolio
 
-> **Showcasing My Journey, Inspiring My Future**
+> "Showcasing My Journey, Inspiring My Future"
 
+</div>
 
-[![Top Language](https://img.shields.io/github/languages/top/razeevascx/Portfolio?style=for-the-badge&color=0080ff)](https://github.com/razeevascx/Portfolio)
-[![Language Count](https://img.shields.io/github/languages/count/razeevascx/Portfolio?style=for-the-badge&color=0080ff)](https://github.com/razeevascx/Portfolio)
+<div align="center">
 
-### 🛠️ Built with
+![Last Commit](https://img.shields.io/github/last-commit/razeevascx/Portfolio?label=last%20commit&color=blue&style=flat-square)
+![Language Count](https://img.shields.io/github/languages/count/razeevascx/Portfolio?label=languages&color=orange&style=flat-square)
+![Top Language](https://img.shields.io/github/languages/top/razeevascx/Portfolio?color=green&style=flat-square)
 
-<p align="center">
-  <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" alt="React">
-  </a>
-  <a href="https://www.typescriptlang.org/">
-    <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="TypeScript">
-  </a>
-  <a href="https://vitejs.dev/">
-    <img src="https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white" alt="Vite">
-  </a>
-</p>
+</div>
 
-<p align="center">
-  <a href="https://tanstack.com/router/latest">
-    <img src="https://img.shields.io/badge/TanStack_Router-FF4154.svg?style=for-the-badge&logo=React-Router&logoColor=white" alt="TanStack Router">
-  </a>
-  <a href="https://tailwindcss.com/">
-    <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white" alt="Tailwind CSS">
-  </a>
-  <a href="https://www.framer.com/motion/">
-    <img src="https://img.shields.io/badge/Framer_Motion-0055FF.svg?style=for-the-badge&logo=Framer&logoColor=white" alt="Framer Motion">
-  </a>
-</p>
+<div align="center">
 
-<p align="center">
-  <a href="https://eslint.org/">
-    <img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=for-the-badge&logo=ESLint&logoColor=white" alt="ESLint">
-  </a>
-  <a href="https://postcss.org/">
-    <img src="https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=for-the-badge&logo=PostCSS&logoColor=white" alt="PostCSS">
-  </a>
-</p>
+**Built with the tools and technologies:**
 
+![Next.js](https://img.shields.io/badge/-Next.js-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/-React-blue?style=flat-square&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-blue?style=flat-square&logo=tailwindcss&logoColor=white)
 
+![Framer Motion](https://img.shields.io/badge/-Framer%20Motion-purple?style=flat-square&logo=framer)
+![MDX](https://img.shields.io/badge/-MDX-orange?style=flat-square&logo=mdx)
+![ESLint](https://img.shields.io/badge/-ESLint-purple?style=flat-square&logo=eslint)
+![React Icons](https://img.shields.io/badge/-React%20Icons-red?style=flat-square&logo=react)
 
-## 🚀 **Features**
+</div>
 
-- 🎯 **Modern Stack:** Built with React 18, TypeScript, and Vite
-- 🛣️ **Advanced Routing:** Using TanStack Router for type-safe routing
-- 💅 **Styling:** Tailwind CSS with PostCSS and Autoprefixer
-- 🎬 **Animations:** Smooth transitions with Framer Motion
-- 📱 **Responsive Design:** Full-page scrolling with react-fullpage
-- 🎨 **Icons:** Comprehensive icon set with Lucide React and React Icons
-- ✨ **UI Feedback:** Toast notifications with react-hot-toast
-- 🛠️ **Development:** ESLint for code quality and Prettier for formatting
-- 📦 **Build Tools:** Vite for lightning-fast development and builds
+---
 
-## 🚀 **Getting Started**
+## ✨ Key Features
 
-### ✅ **Prerequisites**
+- **⚡ Modern Framework** - Built with Next.js 15 for optimal performance and SEO
+- **🎨 Interactive UI** - Smooth animations powered by Framer Motion
+- **📱 Responsive Design** - Fully responsive layout that works on all devices
+- **🎯 Type Safety** - Written in TypeScript for better development experience
+- **💅 Styled Components** - Beautiful styling with Tailwind CSS
+- **📝 MDX Support** - Rich content creation with MDX integration
+- **🔧 Developer Experience** - Hot reload, ESLint, and modern tooling
+- **⚡ Performance** - Optimized builds with Next.js and Turbopack
 
-- Node.js (Latest LTS version)
-- pnpm (Package Manager)
+## 🛠️ Technology Stack
 
-### ⚙️ **Installation**
+| Category          | Technologies                     |
+| ----------------- | -------------------------------- |
+| **Frontend**      | Next.js 15, React 18, TypeScript |
+| **Styling**       | Tailwind CSS, PostCSS, Clsx      |
+| **Animation**     | Framer Motion (Motion/React)     |
+| **Content**       | MDX, Sugar High                  |
+| **Icons**         | Lucide React, React Icons        |
+| **Notifications** | React Hot Toast                  |
+| **Development**   | ESLint, Turbopack                |
 
-1. **Clone the repository:**
+## 🚀 Setup
 
-```bash
-git clone https://github.com/razeevascx/Portfolio
-```
+### Prerequisites
 
-2. **Navigate to the project directory:**
+Before you begin, ensure you have the following installed:
 
-```bash
-cd Portfolio
-```
+- **Node.js** (Latest LTS version recommended)
+- **pnpm** (Package manager)
 
-3. **Install dependencies:**
+### Installation
 
-```bash
-pnpm install
-```
+1. **Clone the Repository**
 
-### 🔥 **Development**
+   ```bash
+   git clone https://github.com/razeevascx/Portfolio.git
+   ```
 
-Start the development server:
+2. **Navigate to Project**
 
-```bash
-pnpm dev
-```
+   ```bash
+   cd Portfolio
+   ```
 
-### 🏗️ **Build**
+3. **Install Dependencies**
 
-Build for production:
+   ```bash
+   pnpm install
+   ```
+
+4. **Start Development Server**
+
+   ```bash
+   pnpm dev
+   ```
+
+5. **Verify Installation**
+   - Open browser: http://localhost:3000
+   - You should see the portfolio homepage
+
+### Build for Production
 
 ```bash
 pnpm build
 ```
 
-### 🔍 **Other Scripts**
-
-- **Preview production build:**
+### Preview Production Build
 
 ```bash
-pnpm preview
+pnpm start
 ```
 
-- **Lint code:**
+## 🛠️ Available Scripts
 
-```bash
-pnpm lint
-```
+| Command         | Description                             |
+| --------------- | --------------------------------------- |
+| `pnpm dev`      | Start development server with Turbopack |
+| `pnpm build`    | Build for production                    |
+| `pnpm start`    | Start production server                 |
+| `pnpm lint`     | Run ESLint for code quality             |
+| `pnpm favicons` | Generate favicon assets                 |
 
-- **Format code:**
-
-```bash
-pnpm format
-```
-
-- **Generate routes:**
-
-```bash
-pnpm generate-routes
-```
-
-- **Watch routes for changes:**
-
-```bash
-pnpm watch-routes
-```
+---
