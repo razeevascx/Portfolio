@@ -1,154 +1,270 @@
 import {
-  FaNodeJs,
   FaReact,
   FaGit,
   FaDocker,
   FaGithub,
-  FaHtml5,
-  FaCss3,
   FaJs,
   FaFigma,
   FaNpm,
-  FaDatabase,
-  FaServer,
+  FaPython,
+  FaJava,
+  FaBootstrap,
+  FaSass,
+  FaAngular,
+  FaVuejs,
+  FaAws,
 } from "react-icons/fa";
-import { SiTailwindcss, SiPostman } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiPostman,
+  SiJavascript,
+  SiTypescript,
+  SiGo,
+  SiNextdotjs,
+  SiVite,
+  SiWebpack,
+  SiFramer,
+  SiRedux,
+  SiExpress,
+  SiSocketdotio,
+  SiJest,
+  SiCypress,
+  SiEslint,
+  SiPrettier,
+  SiVercel,
+  SiNetlify,
+  SiHeroku,
+} from "react-icons/si";
 
+export const libraries = [
+  {
+    label: "React.js",
+    icon: <FaReact className="text-blue-500" />,
+    color: "text-blue-500",
+    description:
+      "A JavaScript library for building user interfaces with component-based architecture.",
+  },
+  {
+    label: "Redux",
+    icon: <SiRedux className="text-purple-600" />,
+    color: "text-purple-600",
+    description:
+      "A predictable state container for JavaScript apps, commonly used with React.",
+  },
+  {
+    label: "Framer Motion",
+    icon: <SiFramer className="text-pink-500" />,
+    color: "text-pink-500",
+    description:
+      "A production-ready motion library for React with declarative animations.",
+  },
+  {
+    label: "Socket.io",
+    icon: <SiSocketdotio className="text-gray-800" />,
+    color: "text-gray-800",
+    description:
+      "A library that enables real-time bidirectional event-based communication.",
+  },
+  {
+    label: "Express.js",
+    icon: <SiExpress className="text-yellow-500" />,
+    color: "text-yellow-500",
+    description: "Fast, unopinionated, minimalist web framework for Node.js.",
+  },
+  {
+    label: "Next.js",
+    icon: <SiNextdotjs className="text-black dark:text-white" />,
+    color: "text-black dark:text-white",
+    description:
+      "The React Framework for production with built-in SSR and static generation.",
+  },
+  {
+    label: "Vue.js",
+    icon: <FaVuejs className="text-green-500" />,
+    color: "text-green-500",
+    description:
+      "The Progressive JavaScript Framework for building user interfaces.",
+  },
+  {
+    label: "Angular",
+    icon: <FaAngular className="text-red-600" />,
+    color: "text-red-600",
+    description:
+      "A platform for building mobile and desktop web applications using TypeScript.",
+  },
+  {
+    label: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-blue-400" />,
+    color: "text-blue-400",
+    description:
+      "A utility-first CSS framework for rapidly building custom user interfaces.",
+  },
+  {
+    label: "Bootstrap",
+    icon: <FaBootstrap className="text-purple-600" />,
+    color: "text-purple-600",
+    description:
+      "The world's most popular CSS Framework for building responsive, mobile-first sites.",
+  },
+  {
+    label: "Sass",
+    icon: <FaSass className="text-pink-500" />,
+    color: "text-pink-500",
+    description:
+      "CSS with superpowers - the most mature, stable, and powerful professional grade CSS extension language.",
+  },
+  {
+    label: "Git",
+    icon: <FaGit className="text-red-500" />,
+    color: "text-red-500",
+    description:
+      "A distributed version control system for tracking changes in source code.",
+  },
+  {
+    label: "GitHub",
+    icon: <FaGithub className="text-gray-700" />,
+    color: "text-gray-700",
+    description: "A platform for version control and collaboration using Git.",
+  },
+  {
+    label: "Docker",
+    icon: <FaDocker className="text-blue-400" />,
+    color: "text-blue-400",
+    description:
+      "A platform for developing, shipping, and running applications in containers.",
+  },
+  {
+    label: "Vite",
+    icon: <SiVite className="text-yellow-500" />,
+    color: "text-yellow-500",
+    description:
+      "A build tool that aims to provide a faster and leaner development experience.",
+  },
+  {
+    label: "Webpack",
+    icon: <SiWebpack className="text-blue-600" />,
+    color: "text-blue-600",
+    description: "A static module bundler for modern JavaScript applications.",
+  },
+  {
+    label: "VS Code",
+    icon: <FaJs className="text-blue-500" />,
+    color: "text-blue-500",
+    description:
+      "A lightweight but powerful source code editor with rich ecosystem.",
+  },
+  {
+    label: "Postman",
+    icon: <SiPostman className="text-orange-500" />,
+    color: "text-orange-500",
+    description: "A collaboration platform for API development and testing.",
+  },
+  {
+    label: "Figma",
+    icon: <FaFigma className="text-pink-500" />,
+    color: "text-pink-500",
+    description:
+      "A web-based UI/UX design tool for collaborative interface design.",
+  },
+  {
+    label: "npm",
+    icon: <FaNpm className="text-red-500" />,
+    color: "text-red-500",
+    description:
+      "The package manager for JavaScript and the world's largest software registry.",
+  },
+  {
+    label: "Jest",
+    icon: <SiJest className="text-red-600" />,
+    color: "text-red-600",
+    description:
+      "A delightful JavaScript testing framework with a focus on simplicity.",
+  },
+  {
+    label: "Cypress",
+    icon: <SiCypress className="text-green-600" />,
+    color: "text-green-600",
+    description:
+      "Fast, easy and reliable testing for anything that runs in a browser.",
+  },
+  {
+    label: "ESLint",
+    icon: <SiEslint className="text-purple-600" />,
+    color: "text-purple-600",
+    description:
+      "A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.",
+  },
+  {
+    label: "Prettier",
+    icon: <SiPrettier className="text-pink-600" />,
+    color: "text-pink-600",
+    description:
+      "An opinionated code formatter that supports many languages and integrates with most editors.",
+  },
+  {
+    label: "Vercel",
+    icon: <SiVercel className="text-black dark:text-white" />,
+    color: "text-black dark:text-white",
+    description:
+      "A platform for frontend frameworks and static sites, built to integrate with headless content.",
+  },
+  {
+    label: "Netlify",
+    icon: <SiNetlify className="text-teal-500" />,
+    color: "text-teal-500",
+    description:
+      "A web developer platform that multiplies productivity with deploy previews and serverless functions.",
+  },
+  {
+    label: "Heroku",
+    icon: <SiHeroku className="text-purple-700" />,
+    color: "text-purple-700",
+    description:
+      "A platform as a service that enables developers to build, run, and operate applications entirely in the cloud.",
+  },
+  {
+    label: "AWS",
+    icon: <FaAws className="text-orange-600" />,
+    color: "text-orange-600",
+    description:
+      "Amazon Web Services - a comprehensive, evolving cloud computing platform.",
+  },
+];
 
-export const skillsData = {
-
-  frontend: [
-    {
-      label: "HTML5",
-      icon: <FaHtml5 />,
-      color: "text-orange-500",
-      description:
-        "HTML5 is the latest version of HTML, the standard language for creating web pages.",
-    },
-    {
-      label: "CSS3",
-      icon: <FaCss3 />,
-      color: "text-blue-500",
-      description:
-        "CSS3 is used for styling HTML documents and is essential for responsive design.",
-    },
-    {
-      label: "JavaScript",
-      icon: <FaJs />,
-      color: "text-yellow-500",
-      description:
-        "JavaScript is a high-level, dynamic, and interpreted programming language.",
-    },
-    {
-      label: "React.js",
-      icon: <FaReact />,
-      color: "text-blue-500",
-      description:
-        "React.js is a JavaScript library for building user interfaces.",
-    },
-    {
-      label: "Tailwind CSS",
-      icon: <SiTailwindcss />,
-      color: "text-blue-400",
-      description:
-        "Tailwind CSS is a utility-first CSS framework for building custom user interfaces.",
-    },
-    {
-      label: "Material UI",
-      icon: <FaReact />, // Placeholder icon for Material UI if SiMaterialui is unavailable
-      color: "text-purple-500",
-      description:
-        "Material UI is a popular React UI framework that implements Google’s Material Design.",
-    },
-  ],
-  backend: [
-    {
-      label: "Node.js",
-      icon: <FaNodeJs />,
-      color: "text-green-500",
-      description:
-        "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    },
-    {
-      label: "Express.js",
-      icon: <FaServer />,
-      color: "text-yellow-500",
-      description:
-        "Express.js is a fast, unopinionated, minimalist web framework for Node.js.",
-    },
-    {
-      label: "MongoDB",
-      icon: <FaDatabase />,
-      color: "text-green-500",
-      description:
-        "MongoDB is a NoSQL document database that stores data in flexible, JSON-like documents.",
-    },
-    {
-      label: "PostgreSQL",
-      icon: <FaDatabase />,
-      color: "text-blue-600",
-      description:
-        "PostgreSQL is a powerful, open-source relational database system.",
-    },
-    {
-      label: "Firebase",
-      icon: <FaDatabase />,
-      color: "text-yellow-600",
-      description:
-        "Firebase is a platform developed by Google for creating mobile and web applications.",
-    },
-    {
-      label: "REST API",
-      icon: <FaServer />,
-      color: "text-orange-500",
-      description:
-        "REST API is an architectural style for designing networked applications.",
-    },
-  ],
-  tools: [
-    {
-      label: "Git",
-      icon: <FaGit />,
-      color: "text-red-500",
-      description:
-        "Git is a version control system for tracking changes in source code.",
-    },
-    {
-      label: "GitHub",
-      icon: <FaGithub />,
-      color: "text-gray-700",
-      description:
-        "GitHub is a platform for version control and collaboration.",
-    },
-    {
-      label: "VS Code",
-      color: "text-blue-500",
-      description: "VS Code is a lightweight but powerful source code editor.",
-    },
-    {
-      label: "Postman",
-      icon: <SiPostman />,
-      color: "text-orange-500",
-      description: "Postman is a collaboration platform for API development.",
-    },
-    {
-      label: "Figma",
-      icon: <FaFigma />,
-      color: "text-pink-500",
-      description: "Figma is a web-based UI/UX design tool.",
-    },
-    {
-      label: "npm",
-      icon: <FaNpm />,
-      color: "text-red-500",
-      description: "npm is the package manager for JavaScript.",
-    },
-    {
-      label: "Docker",
-      icon: <FaDocker />,
-      color: "text-blue-400",
-      description:
-        "Docker is a platform for developing, shipping, and running applications in containers.",
-    },
-  ],
+export const language = {
+  Javascript: {
+    label: "JavaScript",
+    icon: <SiJavascript className="text-yellow-500" />,
+    color: "text-yellow-500",
+    description:
+      "JavaScript is a high-level, dynamic, and interpreted programming language for web development.",
+  },
+  TypeScript: {
+    label: "TypeScript",
+    icon: <SiTypescript className="text-blue-600" />,
+    color: "text-blue-600",
+    description:
+      "TypeScript is a strongly typed programming language that builds on JavaScript.",
+  },
+  Java: {
+    label: "Java",
+    icon: <FaJava className="text-red-600" />,
+    color: "text-red-600",
+    description:
+      "Java is a high-level, class-based, object-oriented programming language.",
+  },
+  Go: {
+    label: "Go",
+    icon: <SiGo className="text-blue-500" />,
+    color: "text-blue-500",
+    description:
+      "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
+  },
+  Python: {
+    label: "Python",
+    icon: <FaPython className="text-green-600" />,
+    color: "text-green-600",
+    description:
+      "Python is a high-level, interpreted programming language with dynamic semantics.",
+  },
 };

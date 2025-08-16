@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 
-function Items({ Number, title, des }) {
+function Items({ Number = "", title, des = "" }) {
   return (
     <motion.div
       className="space-y-4 mb-16"
@@ -15,7 +15,7 @@ function Items({ Number, title, des }) {
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-4xl md:text-5xl font-bold text-white">
-          <span className=" text-blue-500">{Number}.</span>
+          <span className=" text-blue-500">{Number}. </span>
           {title}
         </h1>
       </motion.div>

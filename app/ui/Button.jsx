@@ -1,34 +1,67 @@
 import React from "react";
-function Button({
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { cva } from "class-variance-authority";
+
+const buttonVariants = cva(
+  " font-semibold backdrop-blur-sm gap-1 transition-colors duration-200 hover:scale-105 inline-flex items-center   p-1 text-sm leading-4  whitespace-nowrap gap-2",
+  {
+    variants: {
+      variant: {
+        secondary: "bg-gray-200 text-gray-800 shadow-sm hover:bg-gray-300 ",
+        default: "shadow-xs bg-neutral-800 text-white",
+        destructive:
+          "bg-red-800 text-white shadow-xs hover:bg-red-800/90 focus-visible:ring-red-800/20 dark:focus-visible:ring-red-800/40 dark:bg-red-800/60",
+        outline: "border border-gray-300 shadow-xs hover:border-gray-300/5 ",
+        ghost: "bg-transparent  hover:bg-neutral-800",
+        link: "underline-offset-4 hover:underline text-blue-600 ",
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+export default function Button({
   children,
   name,
+  variant,
   icon,
+  color,
   size,
-  color = "border-neutral-700 hover:border-neutral-700",
-  iconColor = "#3B82F6",
-  hoverColor,
-  className = "",
+  link,
+  className,
 }) {
-  const baseClass =
-    "rounded-20 font-semibold backdrop-blur-sm gap-1 transition-colors duration-200 hover:scale-105 inline-flex items-center rounded bg-neutral-800 p-1 text-sm leading-4 text-neutral-100 no-underline whitespace-nowrap"; // removed border-neutral-700
-  const colorClass = color;
-  const hoverClass = hoverColor ? `hover:${hoverColor}` : "";
+  const classes = cn(
+    buttonVariants({ variant, size }),
+    color
+      ? `border border-[${color}] text-[${color}] hover:border-[${color}]/20`
+      : "",
+    className
+  );
+  return link ? (
+    <Link href={link}>
+      <button className={classes}>
+        {icon}
 
-  // Clone icon with color if iconColor is provided and icon is a React element
-  const iconWithColor =
-    icon && iconColor && icon.type
-      ? React.cloneElement(icon, { color: iconColor })
-      : icon;
+        {name}
+        {children}
+      </button>
+    </Link>
+  ) : (
+    <button className={classes}>
+      {icon}
 
-  return (
-    <button
-      className={`${baseClass} h-${size} border ${colorClass} ${hoverClass} ${className}`}
-    >
-      {iconWithColor}
       {name}
       {children}
     </button>
   );
 }
-
-export default Button;

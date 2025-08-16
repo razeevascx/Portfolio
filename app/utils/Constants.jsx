@@ -1,4 +1,12 @@
-import { FaReact, FaNodeJs, FaPython, FaDocker } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDocker,
+  FaDatabase,
+  FaPalette,
+  FaLayerGroup,
+} from "react-icons/fa";
 import {
   SiMongodb,
   SiExpress,
@@ -10,11 +18,16 @@ import {
   SiNextdotjs,
   SiSupabase,
 } from "react-icons/si";
-import { Github, Linkedin, Twitter } from "lucide-react";
-import { Home, User, Zap, Rocket, Mail } from "lucide-react";
-import { FaDatabase, FaPalette, FaLayerGroup } from "react-icons/fa";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Home,
+  User,
+  Rocket,
+  Mail,
+} from "lucide-react";
 import { BiCodeBlock } from "react-icons/bi";
-
 
 export const quicklink = [
   {
@@ -40,6 +53,11 @@ export const quicklink = [
     title: "Contact",
     url: "/contact",
     icon: <Mail className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "resource",
+    title: "Resource",
+    url: "/resource",
   },
 ];
 export const projectList = [
@@ -92,7 +110,7 @@ export const projectList = [
     description:
       "A personal portfolio website to showcase projects, skills, and experiences, with a modern and professional design.",
     link: "https://rajeevpuri.com.np",
-    image:"127.0.0.1_3000_.png",
+    image: "127.0.0.1_3000_.png",
     tech: {
       react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
       tailwind: {
@@ -209,7 +227,6 @@ export const animations = {
     },
   },
 };
-
 
 export const educationData = [
   {

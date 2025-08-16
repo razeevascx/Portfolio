@@ -16,12 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-   metadataBase: new URL('https://rajeevpuri.com.np'),
+  metadataBase: new URL("https://rajeevpuri.com.np"),
   creator: "Rajeev Puri",
   icons: "/11102.png",
- 
   title: "Rajeev Puri | Portfolio",
-
   description:
     "Professional portfolio of Rajeev Puri, showcasing web development projects and skills",
   openGraph: {
@@ -30,7 +28,6 @@ export const metadata: Metadata = {
       "Professional portfolio of Rajeev Puri, showcasing web development projects and skills",
     url: "https://rajeevpuri.com.np",
     siteName: "Rajeev Puri Portfolio",
-
     type: "website",
     images: [
       {
@@ -50,18 +47,16 @@ export const metadata: Metadata = {
     creator: "@razeev_asnx",
   },
   manifest: "/manifest.json",
-
   category: "portfolio",
   alternates: {
     canonical: "https://rajeevpuri.com.np",
-
     types: {
       "application/xml": "https://rajeevpuri.com.np/sitemap.xml",
     },
   },
 };
 
-export default function RootLayout ({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -69,7 +64,7 @@ export default function RootLayout ({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <Navbar />
         {children}
