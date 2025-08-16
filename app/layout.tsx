@@ -19,9 +19,7 @@ export const metadata: Metadata = {
    metadataBase: new URL('https://rajeevpuri.com.np'),
   creator: "Rajeev Puri",
   icons: "/11102.png",
-  openGraph: {
-    images: '/opengraph-image.png',
-  },
+ 
   title: "Rajeev Puri | Portfolio",
 
   description:
