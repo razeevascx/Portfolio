@@ -15,6 +15,7 @@ import { Home, User, Zap, Rocket, Mail } from "lucide-react";
 import { FaDatabase, FaPalette, FaLayerGroup } from "react-icons/fa";
 import { BiCodeBlock } from "react-icons/bi";
 
+
 export const quicklink = [
   {
     id: "home",
@@ -47,7 +48,7 @@ export const projectList = [
     description:
       "A comprehensive system to manage school operations, including student enrollment, attendance tracking, and grade management.",
     link: "https://drive.google.com/file/d/17FeCxwSDwn6E1xAZLi-f313TcjAebRVw/view",
-    // image: "image.png",
+    // image:"127.0.0.1_3000_.png",
     tech: {
       react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
       nodejs: { id: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
@@ -91,6 +92,7 @@ export const projectList = [
     description:
       "A personal portfolio website to showcase projects, skills, and experiences, with a modern and professional design.",
     link: "https://rajeevpuri.com.np",
+    image:"127.0.0.1_3000_.png",
     tech: {
       react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
       tailwind: {
@@ -208,54 +210,6 @@ export const animations = {
   },
 };
 
-export const toastConfig = {
-  position: "bottom-center",
-  toastOptions: {
-    success: {
-      style: {
-        background: "#1e293b",
-        color: "#fff",
-        padding: "16px",
-        borderRadius: "10px",
-        border: "1px solid rgba(148, 163, 184, 0.1)",
-        boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-      },
-      iconTheme: {
-        primary: "#60a5fa",
-        secondary: "#fff",
-      },
-    },
-    error: {
-      style: {
-        background: "#1e293b",
-        color: "#fff",
-        padding: "16px",
-        borderRadius: "10px",
-        border: "1px solid rgba(148, 163, 184, 0.1)",
-        boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-      },
-      iconTheme: {
-        primary: "#ef4444",
-        secondary: "#fff",
-      },
-    },
-    duration: 3000,
-    className: "",
-  },
-};
-
-export const transitionPresets = {
-  spring: {
-    type: "spring",
-    stiffness: 300,
-    damping: 30,
-  },
-  smooth: {
-    type: "tween",
-    ease: "easeInOut",
-    duration: 0.5,
-  },
-};
 
 export const educationData = [
   {

@@ -61,10 +61,10 @@ const Project = ({ title, description, link, tech, image, date = "2024" }) => {
                      transition-all duration-300 border border-gray-800/50 hover:border-gray-700/50"
           >
             <img
-              src={`/projects/${image}`}
+              src={`/pictures/${image}`}
               alt={title}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              onError={() => setImageError(true)}
+
             />
           </motion.div>
         )}

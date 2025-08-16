@@ -63,12 +63,12 @@ export default function Home() {
 
   return (
     <motion.div
-      className="m-4 max-w-7xl mx-auto "
+      className="m-4 max-w-7xl mx-auto px-6 "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="flex items-center">
+      <div className="flex items-center justify-center">
         <motion.div className="space-y-6" variants={containerVariants}>
           <motion.h6
             variants={itemVariants}

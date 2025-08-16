@@ -13,44 +13,10 @@ import {
   FaServer,
 } from "react-icons/fa";
 import { SiTailwindcss, SiPostman } from "react-icons/si";
-export const tabs = [
-  { id: "mernStack", label: "MERN Stack" },
-  { id: "frontend", label: "Frontend" },
-  { id: "backend", label: "Backend" },
-  { id: "tools", label: "Tools" },
-];
+
 
 export const skillsData = {
-  mernStack: [
-    {
-      label: "MongoDB",
-      icon: <FaDatabase />,
-      color: "text-green-500",
-      description:
-        "MongoDB is a NoSQL document-based database for storing and retrieving data.",
-    },
-    {
-      label: "Express.js",
-      icon: <FaServer />,
-      color: "text-yellow-500",
-      description:
-        "Express.js is a popular Node.js web framework for building web applications.",
-    },
-    {
-      label: "React.js",
-      icon: <FaReact />,
-      color: "text-blue-500",
-      description:
-        "React.js is a JavaScript library for building user interfaces and can be used for developing single-page applications.",
-    },
-    {
-      label: "Node.js",
-      icon: <FaNodeJs />,
-      color: "text-green-500",
-      description:
-        "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    },
-  ],
+
   frontend: [
     {
       label: "HTML5",

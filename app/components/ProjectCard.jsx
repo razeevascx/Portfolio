@@ -1,8 +1,6 @@
-import { useState } from "react";
 import * as motion from "motion/react-client";
 
 const Project = ({ title, description, link, tech, image, date = "2024" }) => {
-  const [imageError, setImageError] = useState(false);
 
   return (
     <motion.div
@@ -13,22 +11,22 @@ const Project = ({ title, description, link, tech, image, date = "2024" }) => {
       className="border-b border-gray-800 pb-20 hover:border-gray-700 transition-colors duration-300"
     >
       <div className="max-w-4xl space-y-8">
+         {image && <div className=" shadow-lg">
+          <img
+            src={`/pictures/${image}`}
+            alt={title}
+            className="w-full hover:scale-100 transition-transform duration-500"
+          />
+        </div>}
         <div>
+          <p className="text-gray-500 text-sm mb-2 font-medium">{date}</p>
           <h3 className="text-3xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-gray-500 text-sm mb-2 font-medium">{date}</p>
           <p className="text-gray-400 mt-4 leading-relaxed">{description}</p>
         </div>
 
-        <div className="bg-gray-900 overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
-          <img
-            src={`/projects/${image}`}
-            alt={title}
-            className="w-full hover:scale-105 transition-transform duration-500"
-            onError={() => setImageError(true)}
-          />
-        </div>
+
 
         <div className="space-y-4">
           <div className="flex flex-wrap gap-3">
