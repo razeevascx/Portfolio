@@ -64,7 +64,8 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="lg:h-[85vh] m-4 relative"
+      id="home"
+      className="lg:h-[85vh] p-5  max-w-6xl mx-auto  space-y-10 overflow-x-hidden "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -168,10 +169,10 @@ export default function Hero() {
             <Socialicons />
           </motion.div>
           <motion.div variants={itemVariants} className="flex gap-4">
-            <Button name="View Project" link="/projects" size="lg" />
+            <Button name="View Project" link="#projects" size="lg" />
             <Button
               name="Contact"
-              link="/contact"
+              link="#contact"
               variant="secondary"
               size="lg"
             />
@@ -187,10 +188,13 @@ export default function Hero() {
           />
         </motion.div>
       </div>
-      <p className="text-neutral-400 font-bold font-mono text-xl hover:text-white mt-4">
+      <motion.p
+        variants={containerVariants}
+        className="text-neutral-400 font-bold font-mono text-xl  hover:text-white mt-4"
+      >
         "Life folds into two phases, Second one starts once we realize we got
         only one." - Confucius
-      </p>
+      </motion.p>
     </motion.section>
   );
 }

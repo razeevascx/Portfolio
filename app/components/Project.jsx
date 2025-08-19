@@ -8,8 +8,8 @@ const Projects = () => {
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      id="project"
-      className="w-full p-5 max-w-7xl mx-auto"
+      id="projects"
+      className="w-full p-5 max-w-6xl mx-auto"
     >
       <Items
         Number="02"
@@ -18,7 +18,7 @@ const Projects = () => {
       />
       <h1 className="text-5xl font-bold mb-10">
         Like the work I do?{" "}
-        <a href="/contact" className="text-blue-500 underline">
+        <a href="#contact" className="text-blue-500 underline">
           Contact
         </a>
       </h1>

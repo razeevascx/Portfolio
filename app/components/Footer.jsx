@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 function Footer() {
   return (
     <footer className="mt-10 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-6 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -78,11 +78,18 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-800 px-6 py-8">
-          <div className="flex  items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Rajeev Puri. All rights
               reserved.
             </p>
+            <motion.a
+              href="#home"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+              whileHover={{ y: -4 }}
+            >
+              Back to top ↑
+            </motion.a>
           </div>
         </div>
       </div>

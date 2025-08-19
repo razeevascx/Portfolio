@@ -1,14 +1,18 @@
 "use client";
 import * as motion from "motion/react-client";
 import { quicklink } from "@/utils/Constants";
-import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 function Navbar() {
-  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="py-4 px-4 z-50 sticky top-0 shadow-md backdrop-blur-sm ">
       <div className="container mx-auto flex justify-between items-center">
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 2 }}
+          className="text-2xl gname"
+        >
           <a href={"/"}>
             <img
               className="w-10 border rounded-[100%]"
@@ -18,23 +22,22 @@ function Navbar() {
           </a>
         </motion.div>
         <div className="hidden md:flex space-x-4">
-          {quicklink
-            .filter((link) => !(pathname === "/" && link.url === "/"))
-            .map((link) => (
-              <motion.a
-                key={link.id}
-                href={link.url}
-                className={`flex items-center hover:text-blue-500  text-lg`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 1.2 }}
-              >
-                <span className="font-bold">{link.title}</span>
-              </motion.a>
-            ))}
+          {quicklink.map((link) => (
+            <motion.a
+              key={link.id}
+              href={link.url}
+              className="flex items-center hover:text-blue-500  text-lg"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.2 }}
+            >
+              <span className="font-bold">{link.title}</span>
+            </motion.a>
+          ))}
         </div>
         <div className="md:hidden">
           <button
-            className="text-gray-800 focus:outline-hidden"
+            className="focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             <svg
@@ -56,13 +59,14 @@ function Navbar() {
       </div>
       <motion.div
         initial={{ height: 0 }}
-        className="overflow-hidden hidden mt-2"
+        animate={{ height: isOpen ? "auto" : 0 }}
+        className="overflow-hidden md:hidden mt-2 mx-auto flex gap-4 justify-center items-center"
       >
         {quicklink.map((link) => (
           <motion.a
             key={link.id}
             href={link.url}
-            className={`block text-gray-600 hover:text-gray-800 hover:font-bold py-2`}
+            className={`block  hover:font-bold py-2`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

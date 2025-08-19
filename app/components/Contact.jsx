@@ -1,6 +1,6 @@
 import { HiOutlineMail } from "react-icons/hi";
 import * as motion from "motion/react-client";
-import Items from "../components/Items";
+import Items from "./Items";
 import { socialLinks } from "../utils/Constants";
 
 function Contact() {
@@ -17,7 +17,7 @@ function Contact() {
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      id="project"
+      id="contact"
       className="w-full p-5"
     >
       <div className="max-w-6xl mx-auto">

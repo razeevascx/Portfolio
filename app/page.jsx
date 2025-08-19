@@ -1,11 +1,14 @@
-import Lancrd from "@/ui/Skill/Lancrd";
-
+import About from "@/components/about/About.jsx";
 import Hero from "@/ui/Hero";
+import Projects from "@/components/Project.jsx";
+import Contact from "@/components/Contact.jsx";
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto m-4 space-y-10 overflow-x-hidden ">
+    <>
       <Hero />
-      <Lancrd />
-    </main>
+      <About />
+      <Projects />
+      <Contact />
+    </>
   );
 }

@@ -35,24 +35,24 @@ export const quicklink = [
     url: "/",
     icon: <Home className="w-5 h-5 mr-2" />,
   },
-  {
-    id: "about",
-    title: "About",
-    url: "/about",
-    icon: <User className="w-5 h-5 mr-2" />,
-  },
-  {
-    id: "projects",
-    title: "Projects",
-    url: "/projects",
-    icon: <Rocket className="w-5 h-5 mr-2" />,
-  },
-  {
-    id: "contact",
-    title: "Contact",
-    url: "/contact",
-    icon: <Mail className="w-5 h-5 mr-2" />,
-  },
+  // {
+  //   id: "about",
+  //   title: "About",
+  //   url: "#about",
+  //   icon: <User className="w-5 h-5 mr-2" />,
+  // },
+  // {
+  //   id: "projects",
+  //   title: "Projects",
+  //   url: "/projects",
+  //   icon: <Rocket className="w-5 h-5 mr-2" />,
+  // },
+  // {
+  //   id: "contact",
+  //   title: "Contact",
+  //   url: "/contact",
+  //   icon: <Mail className="w-5 h-5 mr-2" />,
+  // },
   {
     id: "resource",
     title: "Resource",

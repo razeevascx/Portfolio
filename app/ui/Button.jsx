@@ -48,7 +48,7 @@ export default function Button({
     className
   );
   return link ? (
-    <Link href={link} target="_blank" rel="noopener noreferrer">
+    <Link href={link}>
       <button className={classes}>
         {icon}
 

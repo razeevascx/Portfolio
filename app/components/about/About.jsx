@@ -1,11 +1,11 @@
 import * as motion from "motion/react-client";
 import Items from "@/components/Items";
 import Educard from "@/ui/Educard";
-import Lancrd from "@/ui/Skill/Lancrd";
 
 const About = () => {
   return (
     <motion.section
+      id="about"
       className="w-full p-5"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -72,12 +72,12 @@ const About = () => {
           </motion.div>
         </motion.div>
         {/* Skills Section */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
           <ul className="text-lg font-bold text-white">Languages</ul>
           <Lancrd />
           <ul className="text-lg font-bold text-white">Framework</ul>
-        </div>
+        </div> */}
         {/* Education Section */}
         <div className="space-y-8">
           <h3 className="text-2xl font-bold text-white">
