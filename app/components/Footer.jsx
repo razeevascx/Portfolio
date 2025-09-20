@@ -1,6 +1,7 @@
 import * as motion from "motion/react-client";
 import { socialLinks, quicklink } from "../utils/Constants";
 import { Mail } from "lucide-react";
+import Socialicons from "./Socialicons";
 
 function Footer() {
   return (
@@ -18,22 +19,6 @@ function Footer() {
               Building digital experiences with code and creativity.
               Transforming ideas into elegant solutions.
             </p>
-            <div className="flex gap-4 pt-4">
-              {socialLinks.map((link) => (
-                <motion.a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </motion.a>
-              ))}
-            </div>
           </motion.div>
 
           <motion.div
@@ -83,13 +68,16 @@ function Footer() {
               &copy; {new Date().getFullYear()} Rajeev Puri. All rights
               reserved.
             </p>
-            <motion.a
-              href="#home"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-              whileHover={{ y: -4 }}
-            >
-              Back to top ↑
-            </motion.a>
+            <div className="flex s justify-around gap-4 items-center">
+              <Socialicons />
+              <motion.a
+                href="#home"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+                whileHover={{ y: -4 }}
+              >
+                Back to top ↑
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>
