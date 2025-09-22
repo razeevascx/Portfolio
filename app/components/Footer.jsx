@@ -68,7 +68,7 @@ function Footer() {
               &copy; {new Date().getFullYear()} Rajeev Puri. All rights
               reserved.
             </p>
-            <div className="flex s justify-around gap-4 items-center">
+            <div className="flex  flex-col md:flex-row justify-around gap-4 items-center">
               <Socialicons />
               <motion.a
                 href="#home"

@@ -27,6 +27,8 @@ import {
   Rocket,
   Mail,
 } from "lucide-react";
+import { PiPinterestLogo } from "react-icons/pi";
+import { BiCodeBlock } from "react-icons/bi";
 
 export const quicklink = [
   {
@@ -47,17 +49,23 @@ export const quicklink = [
   //   url: "/projects",
   //   icon: <Rocket className="w-5 h-5 mr-2" />,
   // },
-  // {
-  //   id: "contact",
-  //   title: "Contact",
-  //   url: "/contact",
-  //   icon: <Mail className="w-5 h-5 mr-2" />,
-  // },
   {
-    id: "resource",
-    title: "Resource",
-    url: "/resource",
+    id: "contact",
+    title: "Contact",
+    url: "/contact",
+    icon: <Mail className="w-5 h-5 mr-2" />,
   },
+  {
+    id: "pins",
+    title: "Pins",
+    url: "/pins",
+    icon: <PiPinterestLogo className="w-5 h-5 mr-2" />,
+  },
+  // {
+  //   id: "resource",
+  //   title: "Resource",
+  //   url: "/resource",
+  // },
 ];
 export const socialLinks = [
   {
@@ -80,9 +88,17 @@ export const socialLinks = [
     name: "GitHub",
     url: "https://github.com/razeevascx/",
     icon: <Github size={30} />,
-    hoverColor: "hover:text-gray-500",
-    bgColor: "bg-gray-500/10",
+    hoverColor: "hover:text-white-500",
+    bgColor: "bg-white-500/10",
     description: "Check out my projects",
+  },
+  {
+    name: "Pinterest",
+    url: "https://uk.pinterest.com/razeevpuree/_created/",
+    icon: <PiPinterestLogo size={30} />,
+    hoverColor: "hover:text-red-500",
+    bgColor: "bg-red-500/10",
+    description: "Check out my pins",
   },
   {
     name: "Mail",
@@ -190,22 +206,6 @@ export const projectList = [
     },
   },
   {
-    title: "Dotfiles",
-    description:
-      "My personal Windows config of apps, terminal settings, VS Code and more - Personal development environment configuration.",
-    link: "https://github.com/razeevascx/dotfiles",
-    tech: {
-      powershell: {
-        id: "PowerShell",
-        icon: <FaDatabase className="text-[#5391FE]" />,
-      },
-      config: {
-        id: "Config Files",
-        icon: <FaPalette className="text-[#FF6B35]" />,
-      },
-    },
-  },
-  {
     title: "Simple Bank Management System",
     description:
       "A banking system using Java - Comprehensive banking application with account management, transactions, and user authentication.",
@@ -250,5 +250,36 @@ export const projectList = [
       },
       redux: { id: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
     },
+  },
+];
+
+export const services = [
+  {
+    icon: <BiCodeBlock size={40} aria-label="MERN Stack Development" />,
+    title: "MERN Stack Development",
+    description:
+      "Specialized in building full-stack applications using MongoDB, Express.js, React.js, and Node.js. Creating scalable and modern web solutions with the latest technologies.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux"],
+  },
+  {
+    icon: <FaPalette size={40} aria-label="Graphic Design" />,
+    title: "Graphic Design",
+    description:
+      "Creating stunning visual content including logos, brand identity, marketing materials, and social media graphics. Focusing on unique and memorable designs.",
+    technologies: ["Photoshop", "Illustrator", "Figma"],
+  },
+  {
+    icon: <FaLayerGroup size={40} aria-label="UI/UX Design" />,
+    title: "UI/UX Design",
+    description:
+      "Designing intuitive and user-centered interfaces with a focus on user experience. Creating wireframes, prototypes, and implementing responsive designs.",
+    technologies: ["Figma"],
+  },
+  {
+    icon: <FaDatabase size={40} aria-label="Database Management" />,
+    title: "Database Management",
+    description:
+      "Expert in database design, optimization, and management. Handling both SQL and NoSQL databases with a focus on performance and security.",
+    technologies: ["MongoDB", "MySQL"],
   },
 ];

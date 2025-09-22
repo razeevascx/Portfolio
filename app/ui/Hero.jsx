@@ -1,6 +1,7 @@
 import * as motion from "motion/react-client";
 import Button from "@/ui/Button";
 import Cbutton from "@/ui/Cbutton";
+import Service from "@/components/Service.jsx";
 import {
   SiTypescript,
   SiReact,
@@ -65,7 +66,7 @@ export default function Hero() {
   return (
     <motion.section
       id="home"
-      className="lg:h-[85vh] p-5  max-w-6xl mx-auto  space-y-10 overflow-x-hidden "
+      className="max-w-6xl mx-auto  overflow-x-hidden p-4 "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -190,11 +191,12 @@ export default function Hero() {
       </div>
       <motion.p
         variants={containerVariants}
-        className="text-neutral-400 font-bold font-mono text-xl  hover:text-white mt-4"
+        className="text-neutral-400 font-bold font-mono text-xl  hover:text-white p-4"
       >
         "Life folds into two phases, Second one starts once we realize we got
         only one." - Confucius
       </motion.p>
+      <Service />
     </motion.section>
   );
 }

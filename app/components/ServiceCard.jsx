@@ -2,7 +2,7 @@ import * as motion from "motion/react-client";
 
 const ServiceCard = ({ service }) => (
   <motion.div
-    className="p-6 rounded-lg glass-card  hover:border-secondary/50
+    className="p-6 rounded-lg border-dashed  border-2  border-slate-700/50  hover:border-secondary/50
                transform hover:-translate-y-2 transition-all duration-300
                group shadow-md hover:shadow-lg"
   >
