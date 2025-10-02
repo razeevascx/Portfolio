@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import Button from "@/ui/Button";
+import Button from "@/components/ui/Button";
 
 const Project = ({ title, description, link, tech, image, date = "2024" }) => {
   return (

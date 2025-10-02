@@ -34,38 +34,27 @@ export const quicklink = [
   {
     id: "home",
     title: "Home",
-    url: "/",
+    url: "#home",
     icon: <Home className="w-5 h-5 mr-2" />,
   },
-  // {
-  //   id: "about",
-  //   title: "About",
-  //   url: "#about",
-  //   icon: <User className="w-5 h-5 mr-2" />,
-  // },
-  // {
-  //   id: "projects",
-  //   title: "Projects",
-  //   url: "/projects",
-  //   icon: <Rocket className="w-5 h-5 mr-2" />,
-  // },
+  {
+    id: "about",
+    title: "About",
+    url: "#about",
+    icon: <User className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "projects",
+    title: "Projects",
+    url: "#projects",
+    icon: <Rocket className="w-5 h-5 mr-2" />,
+  },
   {
     id: "contact",
     title: "Contact",
-    url: "/contact",
+    url: "#contact",
     icon: <Mail className="w-5 h-5 mr-2" />,
   },
-  {
-    id: "pins",
-    title: "Pins",
-    url: "/pins",
-    icon: <PiPinterestLogo className="w-5 h-5 mr-2" />,
-  },
-  // {
-  //   id: "resource",
-  //   title: "Resource",
-  //   url: "/resource",
-  // },
 ];
 export const socialLinks = [
   {
@@ -119,23 +108,10 @@ export const educationData = [
     year: "2025 - 2028",
     experiences: [
       "Gained in-depth knowledge in Computer Science.",
-      "Developed skills in software development, data analysis, and problem-solving.",
-      "Participated in various tech-related projects and workshops.",
+      "Became IBM Student Ambassador.",
+      "Became Treasurer of Mainframe Student Society.",
     ],
     link: "https://www.wlv.ac.uk/",
-  },
-  {
-    degree: "Higher Secondary Education",
-    logo: "https://wms.edigitalnepal.com/wms/files/ws-profile/1751363007678_8359cc42-d2cc-421f-ac2d-67c4d44f82c5.png",
-    school: "Khwopa Higher Secondary School",
-    location: "Dekocha 06, Bhaktapur 44800",
-    year: "2022 - 2024",
-    experiences: [
-      "Gained foundational knowledge in Computer Science.",
-      "Developed skills in problem-solving, coding, and data analysis.",
-      "Participated in academic projects and tech-based workshops.",
-    ],
-    link: "https://khwopahss.edu.np/",
   },
 ];
 
@@ -146,7 +122,6 @@ export const projectList = [
       "Portfolio website to showcase my ideas - A modern, responsive personal portfolio built with Next.js, featuring smooth animations and professional design.",
     link: "https://github.com/razeevascx/Portfolio",
     liveLink: "https://rajeevpuri.com.np",
-    image: "127.0.0.1_3000_.png",
     tech: {
       nextjs: {
         id: "Next.js",

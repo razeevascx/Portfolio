@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 import Items from "@/components/Items";
-import Educard from "@/ui/Educard";
+import Educard from "@/components/ui/Educard";
 
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
     >
       <div className="max-w-6xl mx-auto space-y-10 overflow-x-hidden">
         <Items
-          Number="01"
+          Number="03"
           title="About Me"
           des="Know more about me, my skills, and my educational background."
         />

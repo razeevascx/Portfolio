@@ -24,7 +24,7 @@ const Service = () => {
     >
       <div className="max-w-6xl mx-auto">
         <Items
-          Number="00"
+          Number="01"
           title="Here's How I Can Help You"
           des=" Delivering comprehensive solutions across various domains of
             software development"

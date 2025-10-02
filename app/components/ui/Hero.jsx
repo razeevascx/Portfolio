@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
-import Button from "@/ui/Button";
-import Cbutton from "@/ui/Cbutton";
+import Button from "@/components/ui/Button";
+import Cbutton from "@/components/ui/Cbutton";
 import Service from "@/components/Service.jsx";
 import {
   SiTypescript,
@@ -71,7 +71,7 @@ export default function Hero() {
       initial="hidden"
       animate="visible"
     >
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mb-5">
         <motion.div className="space-y-6" variants={containerVariants}>
           <motion.h6
             variants={itemVariants}
@@ -189,13 +189,7 @@ export default function Hero() {
           />
         </motion.div>
       </div>
-      <motion.p
-        variants={containerVariants}
-        className="text-neutral-400 font-bold font-mono text-xl  hover:text-white p-4"
-      >
-        "Life folds into two phases, Second one starts once we realize we got
-        only one." - Confucius
-      </motion.p>
+
       <Service />
     </motion.section>
   );
