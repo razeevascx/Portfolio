@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import { socialLinks, quicklink } from "../utils/Constants";
+import { socialLinks, quicklink } from "@/utils/Constants";
 import { Mail } from "lucide-react";
 import Socialicons from "./Socialicons";
 

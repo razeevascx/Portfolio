@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import { socialLinks } from "../utils/Constants";
+import { socialLinks } from "@/utils/Constants";
 function Socialicons() {
   return (
     <div className="flex gap-4 ">

@@ -1,7 +1,10 @@
+"use client";
+
 import { HiOutlineMail } from "react-icons/hi";
 import * as motion from "motion/react-client";
-import Items from "./Items";
-import { socialLinks } from "../utils/Constants";
+import Items from "@/components/ui/Items";
+import { socialLinks } from "@/lib/constants";
+import Container from "@/components/Container";
 
 function Contact() {
   const email = "contact@rajeevpuri.com.np";
@@ -14,7 +17,7 @@ function Contact() {
 }`;
 
   return (
-    <motion.section
+    <Container
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       id="contact"
@@ -77,7 +80,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </Container>
   );
 }
 

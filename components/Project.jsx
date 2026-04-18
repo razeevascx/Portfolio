@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 import { projectList } from "@/utils/Constants";
-import Items from "@/components/Items";
+import Items from "@/components/ui/Items";
 import ProjectCard from "@/components/ProjectCard";
 
 const Projects = () => {

@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client";
-import Items from "../components/Items";
-import ServiceCard from "../components/ServiceCard";
-import { services } from "../utils/Constants";
+import Items from "@/components/components/Items";
+import ServiceCard from "@/components/components/ServiceCard";
+import { services } from "@/utils/Constants";
 
 const Service = () => {
   const containerVariants = {

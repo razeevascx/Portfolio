@@ -23,6 +23,18 @@
       }
     ],
     "paths": {
+      "@/components/lib/*": [
+        "./components/lib/*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/lib/*": [
+        "./app/lib/*"
+      ],
+      "@/utils/*": [
+        "./app/utils/*"
+      ],
       "@/*": [
         "./app/*"
       ]
@@ -33,7 +45,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/components/ui/Button.jsx",
+    "components/ui/Button.jsx",
     "app/page.jsx",
     ".next/dev/types/**/*.ts"
   ],

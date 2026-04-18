@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import Items from "@/components/Items";
+import Items from "@/components/ui/Items";
 import Educard from "@/components/ui/Educard";
 
 const About = () => {

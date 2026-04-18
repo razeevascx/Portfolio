@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 import { language } from "@/utils/SkillsData";
-import Button from "../Button";
+import Button from "@/components/ui/Button";
 
 export default function Lancrd() {
   const languages = Object.values(language);
