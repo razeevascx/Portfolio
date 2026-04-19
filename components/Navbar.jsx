@@ -2,14 +2,14 @@
 import * as motion from "motion/react-client";
 import { quicklink } from "@/utils/Constants";
 import { useState } from "react";
-import Cointainer from "@/components/Container";
+import Container from "@/components/Container";
 import Logo from "@/components/Logo";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="py-4 px-4 z-50 sticky top-0 shadow-md backdrop-blur-sm ">
-      <Cointainer>
+      <Container>
         <div className="container mx-auto flex justify-between items-center">
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -42,6 +42,7 @@ function Navbar() {
               className="focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               <svg
                 className="w-6 h-6"
@@ -77,7 +78,7 @@ function Navbar() {
             </motion.a>
           ))}
         </motion.div>
-      </Cointainer>
+      </Container>
     </nav>
   );
 }
