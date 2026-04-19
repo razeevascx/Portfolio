@@ -14,12 +14,12 @@ interface ContainerProps {
 export default function Container({
   id,
   children,
-  className = "max-w-6xl mx-auto overflow-x-hidden p-4",
+  className = "max-w-6xl mx-auto overflow-x-hidden ",
   variants,
   initial = "hidden",
   animate = "visible",
   transition,
-}: ContainerProps) {
+}: Readonly<ContainerProps>) {
   return (
     <motion.section
       id={id}

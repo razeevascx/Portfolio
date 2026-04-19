@@ -37,11 +37,10 @@ function Contact() {
             </pre>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2  mt-8">
             <motion.a
               href={`mailto:${email}`}
-              whileHover={{ scale: 1.02 }}
-              className="flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group "
+              className="flex items-center gap-4 p-6  border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group "
             >
               <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
                 <HiOutlineMail className="text-2xl text-blue-400" />
@@ -61,8 +60,7 @@ function Contact() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  className={`flex items-center gap-4 p-6 rounded-xl border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group  ${link.hoverColor}`}
+                  className={`flex items-center gap-4 p-6  border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group  ${link.hoverColor}`}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
                     {link.icon}

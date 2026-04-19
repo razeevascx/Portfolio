@@ -1,22 +1,7 @@
-"use client";
-
 import * as motion from "motion/react-client";
-import Link from "next/link";
-import { type Project } from "@/lib/constants";
+import Button from "@/components/ui/Button";
 
-interface ProjectCardProps extends Project {
-  image?: string;
-  date?: string;
-}
-
-const ProjectComponent = ({
-  title,
-  description,
-  link,
-  tech,
-  image,
-  date = "2024",
-}: ProjectCardProps) => {
+const Project = ({ title, description, link, tech, image, date = "2024" }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -46,30 +31,28 @@ const ProjectComponent = ({
         <div className="space-y-4">
           <div className="flex flex-wrap gap-3">
             {Object.values(tech).map((item, i) => (
-              <div
+              <Button
                 key={i}
-                className="text-lg rounded-full px-4 py-2 transition-all duration-300 flex items-center gap-2 cursor-pointer bg-gray-800/50 hover:bg-gray-800 border border-gray-700"
+                className="text-lg rounded-full px-4 py-2 transition-all duration-300 flex items-center gap-2 cursor-pointer "
               >
                 <span className="text-lg">{item.icon}</span>
                 <span className="text-sm font-medium group-hover:text-white">
                   {item.id}
                 </span>
-              </div>
+              </Button>
             ))}
           </div>
 
-          <Link
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-lg rounded-4xl px-6 py-3 bg-transparent border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors duration-300"
-          >
-            View Project &rarr;
-          </Link>
+          <Button
+            name="View Project &rarr;"
+            variant="ghost"
+            link={link}
+            className="text-lg rounded-4xl hover:bg-blue-500 hover:text-white transition-colors duration-300"
+          />
         </div>
       </div>
     </motion.div>
   );
 };
 
-export default ProjectComponent;
+export default Project;
