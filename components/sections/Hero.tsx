@@ -1,9 +1,6 @@
-"use client";
-
 import * as motion from "motion/react-client";
-import Button from "./Button";
-import Cbutton from "./Cbutton";
-import Service from "@/components/sections/Service";
+import Button from "@/components/ui/Button";
+import Cbutton from "@/components/ui/Cbutton";
 import Container from "@/components/Container";
 import {
   SiTypescript,
@@ -15,7 +12,7 @@ import {
   SiOpslevel,
 } from "react-icons/si";
 import { FaPalette } from "react-icons/fa";
-import Socialicons from "./Socialicons";
+import Socialicons from "@/components/ui/Socialicons";
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,7 +66,7 @@ export default function Hero() {
   return (
     <Container
       id="home"
-      className="max-w-6xl mx-auto  overflow-x-hidden p-4"
+      className="max-w- mx-auto  overflow-x-hidden p-4 "
       variants={containerVariants as any}
       initial="hidden"
       animate="visible"
@@ -219,8 +216,6 @@ export default function Hero() {
           />
         </motion.div>
       </div>
-
-      <Service />
     </Container>
   );
 }

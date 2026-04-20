@@ -1,34 +1,20 @@
-"use client";
-
 import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaDocker,
-  FaDatabase,
-  FaPalette,
-  FaLayerGroup,
-} from "react-icons/fa";
-import {
-  SiMongodb,
-  SiExpress,
-  SiRedux,
-  SiTailwindcss,
-  SiVite,
-  SiFramer,
-  SiTypescript,
-  SiNextdotjs,
-  SiSupabase,
-} from "react-icons/si";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Home,
-  Rocket,
-  Mail,
-} from "lucide-react";
-import { BiCodeBlock } from "react-icons/bi";
+  ReactLight,
+  Nodejs,
+  Python,
+  Docker,
+  MongoDBLight,
+  Redux,
+  TailwindCSS,
+  MotionDark,
+  Vite,
+  Java,
+  TypeScript,
+  Nextjs,
+  Supabase,
+  Vue,
+} from "@ridemountainpig/svgl-react";
+import { Github, Home, Mail, Twitter, Linkedin } from "lucide-react";
 
 interface QuickLink {
   id: string;
@@ -72,6 +58,7 @@ export interface Project {
   featured?: boolean;
   stars?: number;
   forks?: number;
+  list?: string[];
 }
 
 export interface Service {
@@ -83,21 +70,21 @@ export interface Service {
 
 export const quicklink: QuickLink[] = [
   {
-    id: "home",
-    title: "Home",
-    url: "#home",
+    id: "services",
+    title: "Services",
+    url: "/services",
     icon: <Home className="w-5 h-5 mr-2" />,
   },
   {
     id: "projects",
     title: "Projects",
-    url: "#projects",
-    icon: <Rocket className="w-5 h-5 mr-2" />,
+    url: "/projects",
+    icon: <Github className="w-5 h-5 mr-2" />,
   },
   {
     id: "contact",
     title: "Contact",
-    url: "#contact",
+    url: "/contact",
     icon: <Mail className="w-5 h-5 mr-2" />,
   },
 ];
@@ -123,8 +110,8 @@ export const socialLinks: SocialLink[] = [
     name: "GitHub",
     url: "https://github.com/razeevascx/",
     icon: <Github size={30} />,
-    hoverColor: "hover:text-white-500",
-    bgColor: "bg-white-500/10",
+    hoverColor: "hover:text-white",
+    bgColor: "bg-white/10",
     description: "Check out my projects",
   },
   {
@@ -132,7 +119,7 @@ export const socialLinks: SocialLink[] = [
     url: "mailto:contact@rajeevpuri.com.np",
     icon: <Mail size={30} />,
     hoverColor: "hover:text-blue-400",
-    bgColor: "text-blue-400/10",
+    bgColor: "bg-blue-400/10",
     description: "Mail service",
   },
 ];
@@ -153,7 +140,7 @@ export const educationData: Education[] = [
   },
 ];
 
-export const projectList: Project[] = [
+export const projectList = [
   {
     title: "Portfolio",
     description:
@@ -163,20 +150,29 @@ export const projectList: Project[] = [
     tech: {
       nextjs: {
         id: "Next.js",
-        icon: <SiNextdotjs className="text-[#000000] dark:text-white" />,
+        icon: (
+          <Nextjs
+            width={24}
+            height={24}
+            className="text-[#000000] dark:text-white"
+          />
+        ),
       },
-      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+      react: {
+        id: "React",
+        icon: <ReactLight width={24} height={24} className="text-[#61DAFB]" />,
+      },
       tailwind: {
         id: "Tailwind CSS",
-        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+        icon: <TailwindCSS width={24} height={24} className="text-[#06B6D4]" />,
       },
       typescript: {
         id: "TypeScript",
-        icon: <SiTypescript className="text-[#3178C6]" />,
+        icon: <TypeScript width={24} height={24} className="text-[#3178C6]" />,
       },
       framer: {
         id: "Framer Motion",
-        icon: <SiFramer className="text-[#0055FF]" />,
+        icon: <MotionDark width={24} height={24} className="text-[#0055FF]" />,
       },
     },
     featured: true,
@@ -184,15 +180,21 @@ export const projectList: Project[] = [
   {
     title: "TeraBox Bot",
     description:
-      "Telegram bot for TeraBox automation - An advanced bot with 1 star and 2 forks, featuring file management and download assistance.",
+      "Telegram bot for TeraBox automation - An advanced bot with 2 stars and 3 forks, featuring file management and download assistance.",
     link: "https://github.com/razeevascx/terabox_bot",
     tech: {
-      python: { id: "Python", icon: <FaPython className="text-[#3776AB]" /> },
-      docker: { id: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
+      python: {
+        id: "Python",
+        icon: <Python width={24} height={24} className="text-[#3776AB]" />,
+      },
+      docker: {
+        id: "Docker",
+        icon: <Docker width={24} height={24} className="text-[#2496ED]" />,
+      },
     },
     featured: true,
-    stars: 1,
-    forks: 2,
+    stars: 2,
+    forks: 3,
   },
   {
     title: "MailRef",
@@ -202,19 +204,25 @@ export const projectList: Project[] = [
     tech: {
       nextjs: {
         id: "Next.js",
-        icon: <SiNextdotjs className="text-[#000000] dark:text-white" />,
+        icon: (
+          <Nextjs
+            width={24}
+            height={24}
+            className="text-[#000000] dark:text-white"
+          />
+        ),
       },
       tailwind: {
         id: "Tailwind CSS",
-        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+        icon: <TailwindCSS width={24} height={24} className="text-[#06B6D4]" />,
       },
       typescript: {
         id: "TypeScript",
-        icon: <SiTypescript className="text-[#3178C6]" />,
+        icon: <TypeScript width={24} height={24} className="text-[#3178C6]" />,
       },
       supabase: {
         id: "Supabase",
-        icon: <SiSupabase className="text-[#3ECF8E]" />,
+        icon: <Supabase width={24} height={24} className="text-[#3ECF8E]" />,
       },
     },
   },
@@ -224,10 +232,15 @@ export const projectList: Project[] = [
       "A banking system using Java - Comprehensive banking application with account management, transactions, and user authentication.",
     link: "https://github.com/razeevascx/Bank_Management_System",
     tech: {
-      java: { id: "Java", icon: <FaLayerGroup className="text-[#ED8B00]" /> },
+      java: {
+        id: "Java",
+        icon: <Java width={24} height={24} className="text-[#ED8B00]" />,
+      },
       database: {
         id: "Database",
-        icon: <FaDatabase className="text-[#4DB33D]" />,
+        icon: (
+          <MongoDBLight width={24} height={24} className="text-[#4DB33D]" />
+        ),
       },
     },
   },
@@ -237,12 +250,18 @@ export const projectList: Project[] = [
       "A modern, responsive news website template with clean design, article management, and optimized reading experience.",
     link: "https://github.com/razeevascx/news-temp",
     tech: {
-      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+      react: {
+        id: "React",
+        icon: <ReactLight width={24} height={24} className="text-[#61DAFB]" />,
+      },
       tailwind: {
         id: "Tailwind CSS",
-        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+        icon: <TailwindCSS width={24} height={24} className="text-[#06B6D4]" />,
       },
-      vite: { id: "Vite", icon: <SiVite className="text-[#646CFF]" /> },
+      vite: {
+        id: "Vite",
+        icon: <Vite width={24} height={24} className="text-[#646CFF]" />,
+      },
     },
   },
   {
@@ -251,45 +270,117 @@ export const projectList: Project[] = [
       "A comprehensive system to manage school operations, including student enrollment, attendance tracking, and grade management.",
     link: "https://drive.google.com/file/d/17FeCxwSDwn6E1xAZLi-f313TcjAebRVw/view",
     tech: {
-      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-      nodejs: { id: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+      react: {
+        id: "React",
+        icon: <ReactLight width={24} height={24} className="text-[#61DAFB]" />,
+      },
+      nodejs: {
+        id: "Node.js",
+        icon: <Nodejs width={24} height={24} className="text-[#339933]" />,
+      },
       mongodb: {
         id: "MongoDB",
-        icon: <SiMongodb className="text-[#47A248]" />,
+        icon: (
+          <MongoDBLight width={24} height={24} className="text-[#47A248]" />
+        ),
       },
       express: {
         id: "Express",
-        icon: <SiExpress className="text-white" />,
+        icon: <Nodejs width={24} height={24} className="text-white" />,
       },
-      redux: { id: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
+      redux: {
+        id: "Redux",
+        icon: <Redux width={24} height={24} className="text-[#764ABC]" />,
+      },
+    },
+  },
+  {
+    title: "Qwizzed",
+    description:
+      "An interactive quiz application for testing knowledge with real-time scoring and detailed analytics. Built with modern TypeScript technologies.",
+    link: "https://github.com/razeevascx/qwizzed",
+    tech: {
+      typescript: {
+        id: "TypeScript",
+        icon: <TypeScript width={24} height={24} className="text-[#3178C6]" />,
+      },
+      react: {
+        id: "React",
+        icon: <ReactLight width={24} height={24} className="text-[#61DAFB]" />,
+      },
+      tailwind: {
+        id: "Tailwind CSS",
+        icon: <TailwindCSS width={24} height={24} className="text-[#06B6D4]" />,
+      },
+    },
+    stars: 1,
+  },
+  {
+    title: "Z Xplore",
+    description:
+      "IBM Z Xplore Dev Container - Packages core tooling for IBM Z Xplore mainframe development without manual setup, enabling streamlined containerized development.",
+    link: "https://github.com/razeevascx/z-xplore",
+    tech: {
+      docker: {
+        id: "Docker",
+        icon: <Docker width={24} height={24} className="text-[#2496ED]" />,
+      },
+    },
+  },
+  {
+    title: "New Tab",
+    description:
+      "A beautiful and customizable new tab page extension. Provides an elegant dashboard with quick access to frequently used features and personalization options.",
+    link: "https://github.com/razeevascx/new-tab",
+    tech: {
+      vue: {
+        id: "Vue",
+        icon: <Vue width={24} height={24} className="text-[#4FC08D]" />,
+      },
+    },
+  },
+  {
+    title: "Passkey Demo",
+    description:
+      "A demonstration project showcasing passwordless authentication using passkeys. Implements modern security standards for user authentication.",
+    link: "https://github.com/razeevascx/passkey-demo",
+    tech: {
+      typescript: {
+        id: "TypeScript",
+        icon: <TypeScript width={24} height={24} className="text-[#3178C6]" />,
+      },
     },
   },
 ];
 
 export const services: Service[] = [
   {
-    icon: <BiCodeBlock size={40} aria-label="MERN Stack Development" />,
+    icon: (
+      <ReactLight width={40} height={40} aria-label="MERN Stack Development" />
+    ),
     title: "MERN Stack Development",
     description:
       "Specialized in building full-stack applications using MongoDB, Express.js, React.js, and Node.js. Creating scalable and modern web solutions with the latest technologies.",
     technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux"],
   },
   {
-    icon: <FaPalette size={40} aria-label="Graphic Design" />,
+    icon: <TailwindCSS width={40} height={40} aria-label="Graphic Design" />,
     title: "Graphic Design",
     description:
       "Creating stunning visual content including logos, brand identity, marketing materials, and social media graphics. Focusing on unique and memorable designs.",
     technologies: ["Photoshop", "Illustrator", "Figma"],
   },
   {
-    icon: <FaLayerGroup size={40} aria-label="UI/UX Design" />,
+    icon: <ReactLight width={40} height={40} aria-label="UI/UX Design" />,
     title: "UI/UX Design",
     description:
       "Designing intuitive and user-centered interfaces with a focus on user experience. Creating wireframes, prototypes, and implementing responsive designs.",
     technologies: ["Figma"],
   },
   {
-    icon: <FaDatabase size={40} aria-label="Database Management" />,
+    icon: (
+      <MongoDBLight width={40} height={40} aria-label="Database Management" />
+    ),
     title: "Database Management",
     description:
       "Expert in database design, optimization, and management. Handling both SQL and NoSQL databases with a focus on performance and security.",

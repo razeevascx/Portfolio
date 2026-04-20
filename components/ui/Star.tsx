@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 // THREE.js component disabled - not installed and not used
 

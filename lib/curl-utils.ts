@@ -99,8 +99,9 @@ export function Separator(): string {
   return `  ${colors.DARK_GRAY}${"─".repeat(100)}${colors.RESET}`;
 }
 
-export function isCurlRequest(userAgent: string): boolean {
-  return userAgent.toLowerCase().includes("curl");
+export function isCurlRequest(userAgent: string | null | undefined): boolean {
+  const agent = String(userAgent || "");
+  return agent.toLowerCase().includes("curl");
 }
 
 export function AccessDeniedResponse(): Response {
@@ -133,7 +134,8 @@ export function Legend(baseUrl: string = url): string {
 }
 
 export function Box(content: string, width: number = 70): string {
-  const topBottom = `${colors.LIGHT_CYAN}${"═".repeat(width)}${colors.RESET}`;
+  const top = `${colors.LIGHT_CYAN}╔${"═".repeat(width - 2)}╗${colors.RESET}`;
+  const bottom = `${colors.LIGHT_CYAN}╚${"═".repeat(width - 2)}╝${colors.RESET}`;
   const lines = content.split("\n");
 
   const boxedLines = lines.map((line) => {
@@ -144,7 +146,7 @@ export function Box(content: string, width: number = 70): string {
     )} ${colors.LIGHT_CYAN}║${colors.RESET}`;
   });
 
-  return `${topBottom}\n${boxedLines.join("\n")}\n${topBottom}`;
+  return `${top}\n${boxedLines.join("\n")}\n${bottom}`;
 }
 
 export function wrapText(text: string, width: number, indent = ""): string {

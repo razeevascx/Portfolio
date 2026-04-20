@@ -9,7 +9,7 @@ import {
   Separator,
   wrapText,
 } from "@/lib/curl-utils";
-import { projectList } from "@/utils/Constants";
+import { projectList } from "@/lib/constants";
 
 export async function GET(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";

@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-plex-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -18,42 +20,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rajeevpuri.com.np"),
-  creator: "Rajeev Puri",
-  icons: "/11102.png",
-  title: "Rajeev Puri | Portfolio",
+  title: "Rajeev Puri - Full Stack Engineer",
   description:
-    "Professional portfolio of Rajeev Puri, showcasing web development projects and skills",
+    "Full Stack Engineer building innovative web experiences with modern technologies",
   openGraph: {
-    title: "Rajeev Puri | Portfolio",
-    description:
-      "Professional portfolio of Rajeev Puri, showcasing web development projects and skills",
-    url: "https://rajeevpuri.com.np",
-    siteName: "Rajeev Puri Portfolio",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Rajeev Puri Portfolio",
-      },
-    ],
+    locale: "en_US",
+    url: "https://rajeevpuri.com.np",
+    title: "Rajeev Puri - Full Stack Engineer",
+    description:
+      "Full Stack Engineer building innovative web experiences with modern technologies",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rajeev Puri | Portfolio",
+    title: "Rajeev Puri - Full Stack Engineer",
     description:
-      "Professional portfolio of Rajeev Puri, showcasing web development projects and skills",
-    images: ["/opengraph-image.png"],
-    creator: "@razeev_asnx",
-  },
-  manifest: "/manifest.json",
-  category: "portfolio",
-  alternates: {
-    canonical: "https://rajeevpuri.com.np",
-    types: {
-      "application/xml": "https://rajeevpuri.com.np/sitemap.xml",
-    },
+      "Full Stack Engineer building innovative web experiences with modern technologies",
   },
 };
 
@@ -64,8 +46,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link
+        rel="icon"
+        href="/icon?<generated>"
+        type="image/png"
+        sizes="32x32"
+      />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans `}
+        className={`${ibmPlexSans.variable} ${geistMono.variable} antialiased font-sans `}
       >
         <Navbar />
         {children}

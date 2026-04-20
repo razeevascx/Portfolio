@@ -8,7 +8,7 @@ import {
   CurlResponse,
   Legend,
 } from "@/lib/curl-utils";
-import { socialLinks } from "@/utils/Constants";
+import { socialLinks } from "@/lib/constants";
 
 export async function GET(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
