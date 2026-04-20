@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import { language } from " @/lib/skills-data";
+import { language } from "@/lib/skills-data";
 import Button from "@/components/ui/Button";
 
 export default function Lancrd() {

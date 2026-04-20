@@ -1,7 +1,7 @@
 "use client";
 import * as motion from "motion/react-client";
 import { useState } from "react";
-import { educationData, type Education } from " lib/constants";
+import { educationData, type Education } from "@/lib/constants";
 
 interface EducationItemProps {
   education: Education;

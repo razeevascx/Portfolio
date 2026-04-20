@@ -8,6 +8,7 @@ import {
   TailwindCSS,
   MotionDark,
   Vite,
+  Java,
   TypeScript,
   Nextjs,
   Supabase,
@@ -109,8 +110,8 @@ export const socialLinks: SocialLink[] = [
     name: "GitHub",
     url: "https://github.com/razeevascx/",
     icon: <Github size={30} />,
-    hoverColor: "hover:text-white-500",
-    bgColor: "bg-white-500/10",
+    hoverColor: "hover:text-white",
+    bgColor: "bg-white/10",
     description: "Check out my projects",
   },
   {
@@ -118,7 +119,7 @@ export const socialLinks: SocialLink[] = [
     url: "mailto:contact@rajeevpuri.com.np",
     icon: <Mail size={30} />,
     hoverColor: "hover:text-blue-400",
-    bgColor: "text-blue-400/10",
+    bgColor: "bg-blue-400/10",
     description: "Mail service",
   },
 ];
@@ -233,7 +234,7 @@ export const projectList = [
     tech: {
       java: {
         id: "Java",
-        icon: <Python width={24} height={24} className="text-[#ED8B00]" />,
+        icon: <Java width={24} height={24} className="text-[#ED8B00]" />,
       },
       database: {
         id: "Database",

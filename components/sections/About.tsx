@@ -1,10 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import * as motion from "motion/react-client";
 import Items from "@/components/ui/Items";
-import Education from "./Education";
+import Education from "@/components/cards/Education";
 import Container from "@/components/Container";
 import { libraries, language } from "@/lib/skills-data";
-import SkillCard from "./SkillCard";
+import SkillCard from "@/components/cards/SkillCard";
 
 const About = () => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -17,7 +19,7 @@ const About = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w- mx-auto space-y-20 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto space-y-20 overflow-x-hidden">
         {/* Header */}
         <Items
           Number="03"

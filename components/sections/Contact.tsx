@@ -1,10 +1,8 @@
-"use client";
-
-import { HiOutlineMail } from "react-icons/hi";
 import * as motion from "motion/react-client";
 import Items from "@/components/ui/Items";
 import { socialLinks } from "@/lib/constants";
 import Container from "@/components/Container";
+import { Mail } from "lucide-react";
 
 function Contact() {
   const email = "contact@rajeevpuri.com.np";
@@ -32,7 +30,7 @@ function Contact() {
         <div className="relative">
           <div className="border-dashed border-2  p-6 font-mono text-sm  border-slate-700/50   hover:border-blue-400/50 transition-all duration-300 group">
             <span className="text-slate-400 ">{`// Contact Information`}</span>
-            <pre className="text-blue-400 justify-normal text-lg font-serif font-bold tracking-wider whitespace-pre-wrap break-words">
+            <pre className="text-blue-400 justify-normal text-lg font-serif font-bold tracking-wider whitespace-pre-wrap wrap-break-word">
               <code>{emailCode}</code>
             </pre>
           </div>
@@ -43,7 +41,7 @@ function Contact() {
               className="flex items-center gap-4 p-6  border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group "
             >
               <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-slate-700/50 bg-slate-800/50 group-hover:bg-slate-900/50 transition-colors">
-                <HiOutlineMail className="text-2xl text-blue-400" />
+                <Mail className="text-2xl text-blue-400" />
               </div>
               <div>
                 <div className="font-medium text-lg text-slate-200">

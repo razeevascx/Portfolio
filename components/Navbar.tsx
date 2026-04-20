@@ -1,5 +1,6 @@
 "use client";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 import { quicklink } from "@/lib/constants";
 import { useState } from "react";
 import Container from "@/components/Container";
@@ -10,36 +11,40 @@ function Navbar() {
   return (
     <nav className="py-4 px-4 z-50 sticky top-0 shadow-md backdrop-blur-sm ">
       <Container>
-        <div className="container mx-auto flex justify-between items-center">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.05 }}
-            className="cursor-pointer"
-          >
-            <a href={"/"}>
+        <div className="container mx-auto flex justify-between items-center ">
+          <motion.div whileTap={{ scale: 1.05 }} className="cursor-pointer">
+            <Link href="/">
               <Logo
-                width={100}
-                height={60}
+                width={60}
+                height={30}
                 className="hover:opacity-80 transition-opacity"
               />
-            </a>
+            </Link>
           </motion.div>
-          <div className="hidden md:flex space-x-4">
+          <div className="flex space-x-4">
             {quicklink.map((link) => (
               <motion.a
                 key={link.id}
                 href={link.url}
-                className="flex items-center hover:text-blue-500  text-lg"
-                whileHover={{ scale: 1.1 }}
+                className="flex items-center hover:text-blue-500 text-lg"
                 whileTap={{ scale: 1.2 }}
               >
                 <span className="font-bold">{link.title}</span>
               </motion.a>
             ))}
           </div>
+          <div className="flex space-x-4">
+            <motion.a
+              href="mailto:contact@rajeevpuri.com.np"
+              className="flex items-center hover:text-blue-500 text-lg"
+            >
+              <span className="font-bold">Connect Now</span>
+            </motion.a>
+          </div>
+
           <div className="md:hidden">
             <button
-              className="focus:outline-none"
+              className="focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded p-1"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
               aria-expanded={isOpen}
@@ -64,13 +69,13 @@ function Navbar() {
         <motion.div
           initial={{ height: 0 }}
           animate={{ height: isOpen ? "auto" : 0 }}
-          className="overflow-hidden md:hidden mt-2 mx-auto flex gap-4 justify-center items-center"
+          className="overflow-hidden md:hidden mt-2 mx-auto flex gap-4 justify-center items-center flex-col"
         >
           {quicklink.map((link) => (
             <motion.a
               key={link.id}
               href={link.url}
-              className={`block  hover:font-bold py-2`}
+              className={`block hover:font-bold py-2`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >

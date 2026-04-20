@@ -16,24 +16,23 @@ import {
   Postman,
   Netlify,
   Heroku,
-  AWS,
+  AmazonWebServicesLight,
   Firebase,
-  Vercel,
-  SocketIO,
-  Expressjs,
+  VercelLight,
+  SocketIOLight,
+  ExpressjsLight,
   Java,
-  Go,
-  GitHub,
+  GoLight,
+  GitHubLight,
   Git,
-  Prettier,
-  ESLint,
-  Npm,
+  PrettierLight,
+  ESLintLight,
+  JavaScript,
 } from "@ridemountainpig/svgl-react";
 import {
   Code2,
   Package,
   Coffee,
-  Bootstrap,
   Zap,
   Cloud,
   FileCode,
@@ -84,14 +83,14 @@ export const libraries: Skill[] = [
   },
   {
     label: "Socket.io",
-    icon: <SocketIO width={24} height={24} className="text-gray-800" />,
+    icon: <SocketIOLight width={24} height={24} className="text-gray-800" />,
     color: "text-gray-800",
     description:
       "A library that enables real-time bidirectional event-based communication.",
   },
   {
     label: "Express.js",
-    icon: <Expressjs width={24} height={24} className="text-yellow-500" />,
+    icon: <ExpressjsLight width={24} height={24} className="text-yellow-500" />,
     color: "text-yellow-500",
     description: "Fast, unopinionated, minimalist web framework for Node.js.",
   },
@@ -127,7 +126,7 @@ export const libraries: Skill[] = [
   },
   {
     label: "Bootstrap",
-    icon: <Bootstrap width={24} height={24} className="text-purple-600" />,
+    icon: <FileCode width={24} height={24} className="text-purple-600" />,
     color: "text-purple-600",
     description:
       "The world's most popular CSS Framework for building responsive, mobile-first sites.",
@@ -148,7 +147,7 @@ export const libraries: Skill[] = [
   },
   {
     label: "GitHub",
-    icon: <GitHub width={24} height={24} className="text-gray-700" />,
+    icon: <GitHubLight width={24} height={24} className="text-gray-700" />,
     color: "text-gray-700",
     description: "A platform for version control and collaboration using Git.",
   },
@@ -194,7 +193,7 @@ export const libraries: Skill[] = [
   },
   {
     label: "npm",
-    icon: <Npm width={24} height={24} className="text-red-500" />,
+    icon: <JavaScript width={24} height={24} className="text-red-500" />,
     color: "text-red-500",
     description:
       "The package manager for JavaScript and the world's largest software registry.",
@@ -215,14 +214,14 @@ export const libraries: Skill[] = [
   },
   {
     label: "ESLint",
-    icon: <ESLint width={24} height={24} className="text-purple-600" />,
+    icon: <ESLintLight width={24} height={24} className="text-purple-600" />,
     color: "text-purple-600",
     description:
       "A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.",
   },
   {
     label: "Prettier",
-    icon: <Prettier width={24} height={24} className="text-pink-600" />,
+    icon: <PrettierLight width={24} height={24} className="text-pink-600" />,
     color: "text-pink-600",
     description:
       "An opinionated code formatter that supports many languages and integrates with most editors.",
@@ -230,7 +229,11 @@ export const libraries: Skill[] = [
   {
     label: "Vercel",
     icon: (
-      <Vercel width={24} height={24} className="text-black dark:text-white" />
+      <VercelLight
+        width={24}
+        height={24}
+        className="text-black dark:text-white"
+      />
     ),
     color: "text-black dark:text-white",
     description:
@@ -252,7 +255,13 @@ export const libraries: Skill[] = [
   },
   {
     label: "AWS",
-    icon: <AWS width={24} height={24} className="text-orange-600" />,
+    icon: (
+      <AmazonWebServicesLight
+        width={24}
+        height={24}
+        className="text-orange-600"
+      />
+    ),
     color: "text-orange-600",
     description:
       "Amazon Web Services - a comprehensive, evolving cloud computing platform.",
@@ -267,9 +276,9 @@ export const language: Record<string, Language> = {
     description:
       "TypeScript is a strongly typed programming language that builds on JavaScript.",
   },
-  Javascript: {
+  JavaScript: {
     label: "JavaScript",
-    icon: <Code2 width={24} height={24} className="text-yellow-500 " />,
+    icon: <JavaScript width={24} height={24} className="text-yellow-500 " />,
     color: "text-yellow-500",
     description:
       "JavaScript is a high-level, dynamic, and interpreted programming language for web development.",
@@ -277,21 +286,21 @@ export const language: Record<string, Language> = {
   Java: {
     label: "Java",
     icon: <Java width={24} height={24} className="text-orange-600 " />,
-    color: "text-red-600",
+    color: "text-orange-600",
     description:
       "Java is a high-level, class-based, object-oriented programming language.",
   },
   Go: {
     label: "Go",
-    icon: <Go width={24} height={24} className="text-blue-300 " />,
-    color: "text-blue-500",
+    icon: <GoLight width={24} height={24} className="text-blue-300 " />,
+    color: "text-blue-300",
     description:
       "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
   },
   Python: {
     label: "Python",
     icon: <Python width={24} height={24} className="text-yellow-400 " />,
-    color: "text-yellow-600",
+    color: "text-yellow-400",
     description:
       "Python is a high-level, interpreted programming language with dynamic semantics.",
   },

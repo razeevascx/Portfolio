@@ -16,13 +16,7 @@ const Service = () => {
   };
 
   return (
-    <Container
-      className="w-full p-5 max-w- mx-auto"
-      id="services"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
+    <Container className="w-full p-5 max-w- mx-auto" id="services">
       <Items
         Number="01"
         title="Here's How I Can Help You"

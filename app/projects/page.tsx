@@ -1,5 +1,5 @@
-import Projects from "@/components/sections/Project";
+import Project from "@/components/sections/Project";
 
 export default function page() {
-  return <Projects />;
+  return <Project list={15} />;
 }
