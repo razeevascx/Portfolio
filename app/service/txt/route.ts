@@ -8,7 +8,7 @@ import {
   Legend,
   wrapText,
 } from "@/lib/curl-utils";
-import { services } from "@/utils/Constants";
+import { services } from "@/lib/constants";
 
 export async function GET(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";

@@ -1,6 +1,6 @@
 "use client";
 import * as motion from "motion/react-client";
-import { quicklink } from "@/utils/Constants";
+import { quicklink } from "@/lib/constants";
 import { useState } from "react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";

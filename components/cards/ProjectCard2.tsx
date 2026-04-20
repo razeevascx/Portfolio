@@ -1,5 +1,3 @@
-"use client";
-
 import * as motion from "motion/react-client";
 import { type Project } from "@/lib/constants";
 
@@ -79,7 +77,6 @@ const Project = ({
               src={`/pictures/${image}`}
               alt={title}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-
             />
           </motion.div>
         )}

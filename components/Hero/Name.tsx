@@ -18,7 +18,7 @@ function Greeting(props: any) {
         <h2 className="text-xl md:text-4xl font-medium text-gray-600 dark:text-gray-400 mb-2">
           Hello there I am
         </h2>
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold gname ">
+        <h1 className="text-4xl md:text- lg:text-8xl font-extrabold gname ">
           Rajeev Puri |
         </h1>
       </motion.div>

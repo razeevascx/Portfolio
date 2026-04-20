@@ -21,9 +21,9 @@ function Contact() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       id="contact"
-      className="w-full p-5"
+      className=" p-5"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className=" mx-auto">
         <Items
           Number="03"
           title="Contact Me"

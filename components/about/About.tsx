@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import * as motion from "motion/react-client";
 import Items from "@/components/ui/Items";
@@ -19,75 +17,29 @@ const About = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto space-y-16 overflow-x-hidden">
-        {/* Header with Items component */}
+      <div className="max-w- mx-auto space-y-20 overflow-x-hidden">
+        {/* Header */}
         <Items
           Number="03"
           title="About Me"
-          des="Passionate full-stack developer with expertise in modern web technologies, cloud infrastructure, and building scalable applications."
+          des="Full-stack developer crafting digital solutions with clean, scalable code."
         />
 
-        {/* About Description */}
+        {/* Biography Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="max-w-3xl"
         >
-          <div className="space-y-6">
-            <p className="text-gray-300 text-lg leading-relaxed">
-              I&apos;m a dedicated developer who loves transforming ideas into
-              digital solutions. With a strong foundation in full-stack
-              development, I specialize in building responsive, user-centric
-              web applications.
-            </p>
-            <p className="text-gray-400 leading-relaxed">
-              Currently pursuing a Bachelor of Science in Computer Science at
-              the University of Wolverhampton, I actively contribute to open
-              source projects and stay updated with emerging technologies.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-4">
-              <span className="px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20">
-                Full-Stack Developer
-              </span>
-              <span className="px-4 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm border border-purple-500/20">
-                IBM Student Ambassador
-              </span>
-              <span className="px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 text-sm border border-cyan-500/20">
-                Open Source Enthusiast
-              </span>
-            </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative h-full min-h-96"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-2xl blur-3xl" />
-            <div className="relative bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl p-8 border border-blue-500/10">
-              <div className="space-y-4 text-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Total Experience</span>
-                  <span className="text-blue-400 font-semibold">5+ Years</span>
-                </div>
-                <div className="h-px bg-gradient-to-r from-blue-500/20 to-transparent" />
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Projects Completed</span>
-                  <span className="text-purple-400 font-semibold">50+</span>
-                </div>
-                <div className="h-px bg-gradient-to-r from-purple-500/20 to-transparent" />
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Technologies</span>
-                  <span className="text-cyan-400 font-semibold">20+</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <p className="text-color-text-primary text-base leading-relaxed font-light">
+            Full-stack developer focused on building responsive web applications
+            with modern technologies. Currently pursuing a Bachelor of Science
+            in Computer Science at University of Wolverhampton.
+          </p>
         </motion.div>
 
-        {/* Skills Section */}
+        {/* Languages Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,14 +47,12 @@ const About = () => {
           className="space-y-8"
         >
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">
-              Programming Languages
-            </h2>
-            <p className="text-gray-400">
-              Core languages I use for development
-            </p>
+            <h3 className="text-xl font-light text-color-text-primary mb-1">
+              Languages
+            </h3>
+            <div className="h-px bg-color-text-secondary opacity-20" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {Object.values(language).map((lang, idx) => (
               <SkillCard
                 key={idx}
@@ -115,7 +65,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Tools & Libraries Section */}
+        {/* Tools & Libraries */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,14 +73,12 @@ const About = () => {
           className="space-y-8"
         >
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">
+            <h3 className="text-xl font-light text-color-text-primary mb-1">
               Tools & Libraries
-            </h2>
-            <p className="text-gray-400">
-              Technologies and frameworks I work with regularly
-            </p>
+            </h3>
+            <div className="h-px bg-color-text-secondary opacity-20" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {libraries.map((lib, idx) => (
               <SkillCard
                 key={idx}
@@ -143,7 +91,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Education Section */}
+        {/* Education */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,12 +99,10 @@ const About = () => {
           className="space-y-8"
         >
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">
-              Educational Journey
-            </h2>
-            <p className="text-gray-400">
-              My academic background and achievements
-            </p>
+            <h3 className="text-xl font-light text-color-text-primary mb-1">
+              Education
+            </h3>
+            <div className="h-px bg-color-text-secondary opacity-20" />
           </div>
           <Education />
         </motion.div>

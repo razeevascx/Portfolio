@@ -1,8 +1,6 @@
-import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
-import Button from "./ui/Button";
-import { cn } from "./lib/utils";
+import { cn } from "@/lib/utils";
 
 export function NotFound({ className }: { className?: string }) {
   return (

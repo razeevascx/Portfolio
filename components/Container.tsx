@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import * as motion from "motion/react-client";
 import { ReactNode } from "react";
 
@@ -14,7 +15,7 @@ interface ContainerProps {
 export default function Container({
   id,
   children,
-  className = "max-w-6xl mx-auto overflow-x-hidden ",
+  className,
   variants,
   initial = "hidden",
   animate = "visible",
@@ -23,7 +24,7 @@ export default function Container({
   return (
     <motion.section
       id={id}
-      className={className}
+      className={cn(className, "max-w-7xl mx-auto overflow-x-hidden")}
       variants={variants}
       initial={initial}
       animate={animate}

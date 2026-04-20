@@ -4,11 +4,12 @@ import * as motion from "motion/react-client";
 import { quicklink } from "@/lib/constants";
 import { Mail } from "lucide-react";
 import Socialicons from "./ui/Socialicons";
+import Container from "@/components/Container";
 
 function Footer() {
   return (
     <footer className="mt-10 border-t border-gray-800">
-      <div className="max-w-6xl mx-auto">
+      <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-6 py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -81,7 +82,7 @@ function Footer() {
             </motion.a>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

@@ -81,7 +81,7 @@ export default function Hero1() {
           </motion.div>
           {/* Name Display */}{" "}
           <motion.div variants={itemVariants as any} className="mb-12">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            <h1 className="text- md:text- lg:text-8xl font-bold leading-tight">
               I&apos;m <span className="text-blue-500">Rajeev</span>
               <br />
               Puri

@@ -1,11 +1,12 @@
-import About from "../components/about/About";
-import Hero from "../components/ui/Hero";
-import Projects from "../components/sections/Project";
-import Contact from "../components/sections/Contact";
+import Hero from "@/components/sections/Hero";
+import Projects from "@/components/sections/Project";
+import Contact from "@/components/sections/Contact";
+import Service from "@/components/sections/Service";
 export default function Home() {
   return (
     <>
       <Hero />
+      <Service />
       <Projects />
       <Contact />
     </>

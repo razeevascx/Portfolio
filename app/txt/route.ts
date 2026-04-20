@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
   const aboutText = wrapText(
     `I'm a passionate software engineer who loves transforming ideas into elegant solutions. Currently pursuing BSc while building modern web applications and learning new technologies.`,
     100,
-    "  "
+    "  ",
   );
 
   // Skills section
