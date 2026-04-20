@@ -34,25 +34,25 @@ export const quicklink = [
   {
     id: "home",
     title: "Home",
-    url: "#home",
+    url: "/",
     icon: <Home className="w-5 h-5 mr-2" />,
   },
-  // {
-  //   id: "about",
-  //   title: "About",
-  //   url: "#about",
-  //   icon: <User className="w-5 h-5 mr-2" />,
-  // },
   {
     id: "projects",
     title: "Projects",
-    url: "#projects",
+    url: "/projects",
     icon: <Rocket className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "services",
+    title: "Services",
+    url: "/services",
+    icon: <User className="w-5 h-5 mr-2" />,
   },
   {
     id: "contact",
     title: "Contact",
-    url: "#contact",
+    url: "/contact",
     icon: <Mail className="w-5 h-5 mr-2" />,
   },
 ];
@@ -146,15 +146,15 @@ export const projectList = [
   {
     title: "TeraBox Bot",
     description:
-      "Telegram bot for TeraBox automation - An advanced bot with 1 star and 2 forks, featuring file management and download assistance.",
+      "Telegram bot for TeraBox automation - An advanced bot with 2 stars and 3 forks, featuring file management and download assistance.",
     link: "https://github.com/razeevascx/terabox_bot",
     tech: {
       python: { id: "Python", icon: <FaPython className="text-[#3776AB]" /> },
       docker: { id: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
     },
     featured: true,
-    stars: 1,
-    forks: 2,
+    stars: 2,
+    forks: 3,
   },
   {
     title: "MailRef",
@@ -224,6 +224,66 @@ export const projectList = [
         icon: <SiExpress className="text-white" />,
       },
       redux: { id: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
+    },
+  },
+  {
+    title: "Qwizzed",
+    description:
+      "An interactive quiz application for testing knowledge with real-time scoring and detailed analytics. Built with modern TypeScript technologies.",
+    link: "https://github.com/razeevascx/qwizzed",
+    tech: {
+      typescript: {
+        id: "TypeScript",
+        icon: <SiTypescript className="text-[#3178C6]" />,
+      },
+      react: { id: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+      tailwind: {
+        id: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-[#06B6D4]" />,
+      },
+    },
+    stars: 1,
+  },
+  {
+    title: "Z Xplore",
+    description:
+      "IBM Z Xplore Dev Container - Packages core tooling for IBM Z Xplore mainframe development without manual setup, enabling streamlined containerized development.",
+    link: "https://github.com/razeevascx/z-xplore",
+    tech: {
+      docker: { id: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
+    },
+  },
+  {
+    title: "New Tab",
+    description:
+      "A beautiful and customizable new tab page extension. Provides an elegant dashboard with quick access to frequently used features and personalization options.",
+    link: "https://github.com/razeevascx/new-tab",
+    tech: {
+      vue: { id: "Vue", icon: <FaReact className="text-[#4FC08D]" /> },
+    },
+  },
+  {
+    title: "Passkey Demo",
+    description:
+      "A demonstration project showcasing passwordless authentication using passkeys. Implements modern security standards for user authentication.",
+    link: "https://github.com/razeevascx/passkey-demo",
+    tech: {
+      typescript: {
+        id: "TypeScript",
+        icon: <SiTypescript className="text-[#3178C6]" />,
+      },
+    },
+  },
+  {
+    title: "Dotfiles",
+    description:
+      "Personal configuration files for development environment setup - includes window config, terminal settings, VS Code configuration, and application preferences.",
+    link: "https://github.com/razeevascx/dotfiles",
+    tech: {
+      powershell: {
+        id: "PowerShell",
+        icon: <BiCodeBlock className="text-[#012456]" />,
+      },
     },
   },
 ];
