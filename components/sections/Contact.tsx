@@ -24,7 +24,7 @@ function Contact() {
     >
       <div className=" mx-auto">
         <Items
-          Number="03"
+          Number="04"
           title="Contact Me"
           des="Let's collaborate and bring your ideas to life. Feel free to reach out through any of these channels."
         />
