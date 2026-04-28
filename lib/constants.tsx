@@ -3,7 +3,6 @@ import {
   Nodejs,
   Python,
   Docker,
-  MongoDBLight,
   Redux,
   TailwindCSS,
   MotionDark,
@@ -13,14 +12,15 @@ import {
   Nextjs,
   Supabase,
   Vue,
+  MongoDBDark,
+  XDark,
 } from "@ridemountainpig/svgl-react";
-import { Github, Home, Mail, Twitter, Linkedin } from "lucide-react";
+import { GithubIcon, Mail, LinkedinIcon, X } from "lucide-react";
 
 interface QuickLink {
   id: string;
   title: string;
   url: string;
-  icon: React.ReactNode;
 }
 
 interface SocialLink {
@@ -30,6 +30,7 @@ interface SocialLink {
   hoverColor: string;
   bgColor: string;
   description: string;
+  username?: string;
 }
 
 export interface Education {
@@ -73,19 +74,26 @@ export const quicklink: QuickLink[] = [
     id: "services",
     title: "Services",
     url: "/services",
-    icon: <Home className="w-5 h-5 mr-2" />,
   },
   {
     id: "projects",
     title: "Projects",
     url: "/projects",
-    icon: <Github className="w-5 h-5 mr-2" />,
   },
   {
     id: "contact",
     title: "Contact",
     url: "/contact",
-    icon: <Mail className="w-5 h-5 mr-2" />,
+  },
+  {
+    id: "about",
+    title: "About",
+    url: "/about",
+  },
+  {
+    id: "design",
+    title: "Design",
+    url: "/design",
   },
 ];
 
@@ -93,26 +101,29 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Twitter",
     url: "https://twitter.com/razeev_asnx",
-    icon: <Twitter className="w-6 h-6" />,
+    icon: <XDark className="w-6 h-6" />,
     hoverColor: "hover:text-white",
     bgColor: "bg-white/10",
     description: "Latest updates & thoughts",
+    username: "@razeev_asnx",
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/razeevasnx",
-    icon: <Linkedin className="w-6 h-6" />,
+    icon: <LinkedinIcon className="w-6 h-6" />,
     hoverColor: "hover:text-blue-600",
     bgColor: "bg-blue-600/10",
     description: "Professional network",
+    username: "Rajeev Puri",
   },
   {
     name: "GitHub",
     url: "https://github.com/razeevascx/",
-    icon: <Github size={30} />,
+    icon: <GithubIcon size={30} />,
     hoverColor: "hover:text-white",
     bgColor: "bg-white/10",
     description: "Check out my projects",
+    username: "razeevascx",
   },
   {
     name: "Mail",
@@ -121,6 +132,7 @@ export const socialLinks: SocialLink[] = [
     hoverColor: "hover:text-blue-400",
     bgColor: "bg-blue-400/10",
     description: "Mail service",
+    username: "contact@rajeevpuri.com.np",
   },
 ];
 
@@ -238,9 +250,7 @@ export const projectList = [
       },
       database: {
         id: "Database",
-        icon: (
-          <MongoDBLight width={24} height={24} className="text-[#4DB33D]" />
-        ),
+        icon: <MongoDBDark width={24} height={24} className="text-[#4DB33D]" />,
       },
     },
   },
@@ -280,9 +290,7 @@ export const projectList = [
       },
       mongodb: {
         id: "MongoDB",
-        icon: (
-          <MongoDBLight width={24} height={24} className="text-[#47A248]" />
-        ),
+        icon: <MongoDBDark width={24} height={24} className="text-[#47A248]" />,
       },
       express: {
         id: "Express",
@@ -379,7 +387,7 @@ export const services: Service[] = [
   },
   {
     icon: (
-      <MongoDBLight width={40} height={40} aria-label="Database Management" />
+      <MongoDBDark width={40} height={40} aria-label="Database Management" />
     ),
     title: "Database Management",
     description:
