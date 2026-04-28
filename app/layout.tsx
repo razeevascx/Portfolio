@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { NoiseOverlay } from "@/components/background/Nebula";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -53,9 +54,11 @@ export default function RootLayout({
         sizes="32x32"
       />
       <body
-        className={`${ibmPlexSans.variable} ${geistMono.variable} antialiased font-sans `}
+        className={`${ibmPlexSans.variable} ${geistMono.variable} antialiased font-sans dark`}
       >
         <Navbar />
+        <NoiseOverlay />
+
         {children}
         <Footer />
         <Toaster />
