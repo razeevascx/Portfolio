@@ -7,8 +7,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "favicons": "node scripts/favicons.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
