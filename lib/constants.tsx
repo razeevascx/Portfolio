@@ -81,19 +81,14 @@ export const quicklink: QuickLink[] = [
     url: "/projects",
   },
   {
-    id: "contact",
-    title: "Contact",
-    url: "/contact",
-  },
-  {
     id: "about",
     title: "About",
     url: "/about",
   },
   {
-    id: "design",
-    title: "Design",
-    url: "/design",
+    id: "contact",
+    title: "Contact",
+    url: "/contact",
   },
 ];
 
