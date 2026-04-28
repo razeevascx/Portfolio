@@ -1,221 +1,95 @@
 import * as motion from "motion/react-client";
-import Button from "@/components/ui/Button";
-import Cbutton from "@/components/ui/Cbutton";
+import Link from "next/link";
 import Container from "@/components/Container";
-import {
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiLinux,
-  SiOpslevel,
-} from "react-icons/si";
-import { FaPalette } from "react-icons/fa";
 import Socialicons from "@/components/ui/Socialicons";
+import Marquee from "../ui/Marquee";
+
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8, rotate: -10 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.3,
-      },
-    },
-  };
-
   return (
-    <Container
-      id="home"
-      className="max-w- mx-auto  overflow-x-hidden p-4 "
-      variants={containerVariants as any}
-      initial="hidden"
-      animate="visible"
-    >
-      <div className="flex items-center justify-center mb-5">
-        <motion.div className="space-y-6" variants={containerVariants as any}>
-          <motion.h6
-            variants={itemVariants as any}
-            className="text-2xl font-medium text-gray-400 hover:text-white tracking-wide"
-          >
-            Welcome to my space on internet
-          </motion.h6>
-
-          <motion.h1
-            variants={itemVariants as any}
-            className="text-5xl md:text-5xl lg:text-8xl font-bold text-gray-400  hover:text-white "
-          >
-            I&apos;m <span className="mr-2 text-blue-500">Rajeev Puri</span>
-          </motion.h1>
-
-          <motion.p
-            variants={itemVariants as any}
-            className="text-gray-400 hover:text-white leading-relaxed max-w-3xl text-xl"
-          >
-            I can help you turn your creativity into code through use of{" "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="TypeScript"
-                icon={<SiTypescript aria-label="TypeScript Icon" />}
-                color="border-[#3178C6] hover:bg-[#3178C6]/20"
-                iconColor="#3178C6"
-              />
-            </motion.span>
-            {" , "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="React"
-                icon={<SiReact aria-label="React Icon" />}
-                color="border-[#61DAFB] hover:bg-[#61DAFB]/20"
-                iconColor="#61DAFB"
-              />
-            </motion.span>
-            {" , "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="Next.js"
-                icon={<SiNextdotjs aria-label="Next.js Icon" />}
-                color="border-white hover:bg-white/20"
-                iconColor="#000000"
-              />
-            </motion.span>
-            {" , "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="Node js"
-                icon={<SiNodedotjs aria-label="Node.js Icon" />}
-                color="border-[#339933] hover:bg-[#339933]/20"
-                iconColor="#339933"
-              />
-            </motion.span>
-            {" , "} and{" "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="PostgreSQL"
-                icon={<SiPostgresql aria-label="PostgreSQL Icon" />}
-                color="border-[#336791] hover:bg-[#336791]/20"
-                iconColor="#336791"
-              />
-            </motion.span>
-            {", "} With a focus on{" "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="UI Design"
-                icon={<FaPalette aria-label="Palette Icon" />}
-                color="border-[#E75480] hover:bg-[#E75480]/20"
-                iconColor="#E75480"
-              />
-            </motion.span>
-            . Enthusiastic about{" "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="DevSec Ops"
-                icon={<SiOpslevel aria-label="DevSec Ops Icon" />}
-                color="border-[#00B2A9] hover:bg-[#00B2A9]/20"
-                iconColor="#00B2A9"
-              />
-            </motion.span>{" "}
-            and{" "}
-            <motion.span
-              variants={buttonVariants as any}
-              className="inline-block"
-            >
-              <Cbutton
-                name="Linux"
-                icon={<SiLinux aria-label="Linux Icon" />}
-                color="border-[#FCC624] hover:bg-[#FCC624]/20"
-                iconColor="#FCC624"
-              />
-            </motion.span>
-            .
-          </motion.p>
-
-          <motion.div variants={itemVariants as any}>
-            <Socialicons />
-          </motion.div>
-          <motion.div variants={itemVariants as any} className="flex gap-4">
-            <Button name="View Project" link="#projects" size="lg" />
-            <Button
-              name="Contact"
-              link="#contact"
-              variant="secondary"
-              size="lg"
-            />
-          </motion.div>
-        </motion.div>
-
+    <>
+      <Container id="home" className="w-full p-5 mx-auto">
         <motion.div
-          variants={imageVariants as any}
-          className="hidden md:block "
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="space-y-12"
         >
-          <motion.img
-            className="object-cover hover:scale-105 transition-transform duration-300  "
-            src="11102.png"
-            whileTap={{ scale: 2 }}
-            alt="reddit_avatar"
-          />
+          <div className="grid  items-center min-h-[90dvh]">
+            <div className="z-10">
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex items-center gap-3 mb-8"
+              >
+                <div className="h-px w-12 bg-blue-600"></div>
+                <p className="text-[10px] uppercase tracking-[0.4em] text-blue-500 font-bold">
+                  A path back to wonder{" "}
+                </p>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-6xl md:text-8xl font-medium tracking-tight leading-[0.95] mb-8"
+              >
+                Relearn how to <br />
+                wonder, feel, and{" "}
+                <span className="mr-2 text-primary italic">Launch.</span>
+              </motion.h1>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="border-l-2 border-white/10 pl-8 mb-12 "
+              >
+                <p className="text-zinc-400 text-lg md:text-xl font-light max-w-3xl leading-relaxed hover:text-white  transition-colors duration-300">
+                  Hey there. I'm{" "}
+                  <span className="text-white font-bold">Rajeev Puri</span>.
+                  Currently a BSc Student and a software engineer. I'll guide
+                  your creativity with calm, immersive products that blend
+                  reflection, sound, and visual prompts so ideas feel natural
+                  again. logical.
+                </p>
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="text-[10px] text-zinc-400 font-medium mb-10 uppercase tracking-widest hover:text-white transition-colors duration-300"
+              >
+                No deadlines — No noise — Just space to rediscover your
+                imagination
+              </motion.p>
+
+              <Socialicons showUsername className="m-2" />
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex gap-6 pt-8"
+              >
+                <Link
+                  href="/projects"
+                  className="group flex items-center gap-3 text-xs px-10 py-5 border-2 border-white/20 bg-transparent font-black uppercase tracking-[0.2em] hover:border-white transition-all transform hover:-translate-y-1 active:scale-95"
+                >
+                  VIEW PROJECTS
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-10 py-5 bg-white text-black font-black text-xs uppercase tracking-[0.2em] transition-all transform hover:-translate-y-1 active:scale-95 border-2 border-white"
+                >
+                  CONTACT
+                </Link>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
-      </div>
-    </Container>
+      </Container>
+      <Marquee />
+    </>
   );
 }

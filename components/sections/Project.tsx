@@ -23,6 +23,11 @@ const Projects: React.FC<ProjectsProps> = ({ list = 3 }) => {
       {projectList.slice(0, list).map((project, indx) => (
         <ProjectCard key={project.title} {...project} index={indx} />
       ))}
+      {/* <div className="mt-16 mx-auto text-center">
+        <h2 className="text-5xl  md:text-9xl leading-[0.9] font-semibold tracking-wide">
+          Let’s build <span className="opacity-70">together.</span> Contact Now
+        </h2>
+      </div> */}
     </Container>
   );
 };
