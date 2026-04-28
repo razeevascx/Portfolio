@@ -1,15 +1,14 @@
-"use client";
-
-import { useState } from "react";
 import * as motion from "motion/react-client";
 import Items from "@/components/ui/Items";
-import Education from "@/components/cards/Education";
 import Container from "@/components/Container";
-import { libraries, language } from "@/lib/skills-data";
-import SkillCard from "@/components/cards/SkillCard";
+import { libraries } from "@/lib/skills-data";
+import ProfileCard from "../ui/ProfileCard";
+import SkillCard1 from "@/components/cards/SkillCard";
+import CertificateCard from "@/components/cards/CertificateCard";
+import { getCredlyBadges } from "@/lib/credly";
 
-const About = () => {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+const About = async () => {
+  const badges = await getCredlyBadges();
 
   return (
     <Container
@@ -19,95 +18,35 @@ const About = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto space-y-20 overflow-x-hidden">
-        {/* Header */}
-        <Items
-          Number="03"
-          title="About Me"
-          des="Full-stack developer crafting digital solutions with clean, scalable code."
-        />
+      <Items
+        Number="03"
+        title="About Me"
+        des="Full-stack developer crafting digital solutions with clean, scalable code."
+      />
 
-        {/* Biography Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl"
-        >
-          <p className="text-color-text-primary text-base leading-relaxed font-light">
-            Full-stack developer focused on building responsive web applications
-            with modern technologies. Currently pursuing a Bachelor of Science
-            in Computer Science at University of Wolverhampton.
-          </p>
-        </motion.div>
+      <ProfileCard />
 
-        {/* Languages Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-8"
-        >
+      {badges && badges.length > 0 && (
+        <motion.div className="mb-8 space-y-8">
           <div>
-            <h3 className="text-xl font-light text-color-text-primary mb-1">
-              Languages
-            </h3>
-            <div className="h-px bg-color-text-secondary opacity-20" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {Object.values(language).map((lang, idx) => (
-              <SkillCard
-                key={idx}
-                skill={lang}
-                isHovered={hoveredSkill === lang.label}
-                onHover={() => setHoveredSkill(lang.label)}
-                onLeave={() => setHoveredSkill(null)}
-              />
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
+              Certifications & Badges
+            </h2>
+            {badges.map((item) => (
+              <CertificateCard key={item.id} item={item} />
             ))}
           </div>
         </motion.div>
-
-        {/* Tools & Libraries */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="space-y-8"
-        >
-          <div>
-            <h3 className="text-xl font-light text-color-text-primary mb-1">
-              Tools & Libraries
-            </h3>
-            <div className="h-px bg-color-text-secondary opacity-20" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {libraries.map((lib, idx) => (
-              <SkillCard
-                key={idx}
-                skill={lib}
-                isHovered={hoveredSkill === lib.label}
-                onHover={() => setHoveredSkill(lib.label)}
-                onLeave={() => setHoveredSkill(null)}
-              />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Education */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="space-y-8"
-        >
-          <div>
-            <h3 className="text-xl font-light text-color-text-primary mb-1">
-              Education
-            </h3>
-            <div className="h-px bg-color-text-secondary opacity-20" />
-          </div>
-          <Education />
-        </motion.div>
+      )}
+      <div className="mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-12">
+          Frameworks & Tools
+        </h2>
+        <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
+          {libraries.map((skill) => (
+            <SkillCard1 key={skill.label} skill={skill} />
+          ))}
+        </div>
       </div>
     </Container>
   );

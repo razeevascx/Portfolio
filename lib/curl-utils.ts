@@ -58,7 +58,7 @@ export function Header(title: string, number: string, desc: string): string {
     const padding = Math.max(0, Math.floor((boxWidth - visibleLength) / 2));
     const rightPadding = Math.max(0, boxWidth - visibleLength - padding);
     return `${colors.BRIGHT_BLUE}║${colors.RESET}${" ".repeat(
-      padding
+      padding,
     )}${line}${" ".repeat(rightPadding)}${colors.BRIGHT_BLUE}║${colors.RESET}`;
   };
 
@@ -112,7 +112,7 @@ export function AccessDeniedResponse(): Response {
       headers: {
         "Content-Type": "text/plain",
       },
-    }
+    },
   );
 }
 
@@ -142,7 +142,7 @@ export function Box(content: string, width: number = 70): string {
     const visibleLength = line.replace(/\x1b\[[0-9;]*m/g, "").length;
     const padding = Math.max(0, width - 4 - visibleLength);
     return `${colors.LIGHT_CYAN}║${colors.RESET} ${line}${" ".repeat(
-      padding
+      padding,
     )} ${colors.LIGHT_CYAN}║${colors.RESET}`;
   });
 
@@ -159,7 +159,7 @@ export function wrapText(text: string, width: number, indent = ""): string {
     const visibleLength = word.replace(/\x1b\[[0-9;]*m/g, "").length;
     const currentVisibleLength = currentLine.replace(
       /\x1b\[[0-9;]*m/g,
-      ""
+      "",
     ).length;
 
     const spacer = currentLine ? 1 : 0;

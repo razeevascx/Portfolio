@@ -5,303 +5,215 @@ import {
   TailwindCSS,
   TypeScript,
   Nextjs,
-  Vue,
   Vite,
-  Redux,
   Nodejs,
-  Angular,
   Figma,
-  Jest,
-  Cypress,
-  Postman,
-  Netlify,
-  Heroku,
-  AmazonWebServicesLight,
   Firebase,
-  VercelLight,
-  SocketIOLight,
-  ExpressjsLight,
-  Java,
-  GoLight,
-  GitHubLight,
+  ExpressjsDark,
+  MongoDBDark,
+  MySQLDark,
+  Supabase,
+  Spring,
+  FramerDark,
   Git,
-  PrettierLight,
-  ESLintLight,
-  JavaScript,
+  Postman,
+  PhpDark,
+  Java,
+  BashDark,
+  C,
+  AmazonWebServicesDark,
+  ShadcnUiDark,
+  PrismaDark,
+  Bun,
 } from "@ridemountainpig/svgl-react";
-import {
-  Code2,
-  Package,
-  Coffee,
-  Zap,
-  Cloud,
-  FileCode,
-  Wand2,
-  Globe,
-  TestTube2,
-  AlertCircle,
-  Terminal,
-  Server,
-  Lightbulb,
-} from "lucide-react";
 
 export interface Skill {
   label: string;
   icon: React.ReactNode;
-  color: string;
   description: string;
 }
 
 interface Language {
   label: string;
   icon: React.ReactNode;
-  color: string;
   description: string;
 }
 
 export const libraries: Skill[] = [
   {
-    label: "React.js",
-    icon: <ReactLight width={24} height={24} className="text-blue-500" />,
-    color: "text-blue-500",
+    label: "React",
+    icon: <ReactLight className="size-10" />,
     description:
       "A JavaScript library for building user interfaces with component-based architecture.",
   },
   {
-    label: "Redux",
-    icon: <Redux width={24} height={24} className="text-purple-600" />,
-    color: "text-purple-600",
-    description:
-      "A predictable state container for JavaScript apps, commonly used with React.",
-  },
-  {
-    label: "Framer Motion",
-    icon: <Lightbulb width={24} height={24} className="text-pink-500" />,
-    color: "text-pink-500",
-    description:
-      "A production-ready motion library for React with declarative animations.",
-  },
-  {
-    label: "Socket.io",
-    icon: <SocketIOLight width={24} height={24} className="text-gray-800" />,
-    color: "text-gray-800",
-    description:
-      "A library that enables real-time bidirectional event-based communication.",
-  },
-  {
-    label: "Express.js",
-    icon: <ExpressjsLight width={24} height={24} className="text-yellow-500" />,
-    color: "text-yellow-500",
-    description: "Fast, unopinionated, minimalist web framework for Node.js.",
-  },
-  {
     label: "Next.js",
-    icon: (
-      <Nextjs width={24} height={24} className="text-black dark:text-white" />
-    ),
-    color: "text-black dark:text-white",
+    icon: <Nextjs className="size-10" />,
     description:
       "The React Framework for production with built-in SSR and static generation.",
   },
+
   {
-    label: "Vue.js",
-    icon: <Vue width={24} height={24} className="text-green-500" />,
-    color: "text-green-500",
+    label: "Spring Boot",
+    icon: <Spring className="size-10" />,
     description:
-      "The Progressive JavaScript Framework for building user interfaces.",
+      "Java-based framework for building production-grade stand-alone Spring applications.",
   },
   {
-    label: "Angular",
-    icon: <Angular width={24} height={24} className="text-red-600" />,
-    color: "text-red-600",
+    label: "Node.js",
+    icon: <Nodejs className="size-10" />,
     description:
-      "A platform for building mobile and desktop web applications using TypeScript.",
+      "JavaScript runtime built on Chrome's V8 engine for server-side development.",
   },
   {
-    label: "Tailwind CSS",
-    icon: <TailwindCSS width={24} height={24} className="text-blue-400" />,
-    color: "text-blue-400",
+    label: "Express.js",
+    icon: <ExpressjsDark className="size-10" />,
+    description: "Fast, unopinionated, minimalist web framework for Node.js.",
+  },
+  {
+    label: "TailwindCSS",
+    icon: <TailwindCSS className="size-10" />,
     description:
       "A utility-first CSS framework for rapidly building custom user interfaces.",
   },
   {
-    label: "Bootstrap",
-    icon: <FileCode width={24} height={24} className="text-purple-600" />,
-    color: "text-purple-600",
+    label: "Shadcn UI",
+    icon: <ShadcnUiDark className="size-10" />,
     description:
-      "The world's most popular CSS Framework for building responsive, mobile-first sites.",
+      "Simple, accessible component library that helps you build apps faster.",
   },
   {
-    label: "Sass",
-    icon: <FileCode width={24} height={24} className="text-pink-500" />,
-    color: "text-pink-500",
+    label: "Framer Motion",
+    icon: <FramerDark className="size-10" />,
     description:
-      "CSS with superpowers - the most mature, stable, and powerful professional grade CSS extension language.",
-  },
-  {
-    label: "Git",
-    icon: <Git width={24} height={24} className="text-red-500" />,
-    color: "text-red-500",
-    description:
-      "A distributed version control system for tracking changes in source code.",
-  },
-  {
-    label: "GitHub",
-    icon: <GitHubLight width={24} height={24} className="text-gray-700" />,
-    color: "text-gray-700",
-    description: "A platform for version control and collaboration using Git.",
-  },
-  {
-    label: "Docker",
-    icon: <Docker width={24} height={24} className="text-blue-400" />,
-    color: "text-blue-400",
-    description:
-      "A platform for developing, shipping, and running applications in containers.",
+      "A production-ready motion library for React with declarative animations.",
   },
   {
     label: "Vite",
-    icon: <Vite width={24} height={24} className="text-yellow-500" />,
-    color: "text-yellow-500",
+    icon: <Vite className="size-10" />,
     description:
       "A build tool that aims to provide a faster and leaner development experience.",
   },
   {
-    label: "Webpack",
-    icon: <Globe width={24} height={24} className="text-blue-600" />,
-    color: "text-blue-600",
-    description: "A static module bundler for modern JavaScript applications.",
-  },
-  {
-    label: "VS Code",
-    icon: <Terminal width={24} height={24} className="text-blue-500" />,
-    color: "text-blue-500",
+    label: "Prisma",
+    icon: <PrismaDark className="size-10" />,
     description:
-      "A lightweight but powerful source code editor with rich ecosystem.",
+      "Next-generation ORM for Node.js and TypeScript with a powerful query engine.",
   },
   {
-    label: "Postman",
-    icon: <Server width={24} height={24} className="text-orange-500" />,
-    color: "text-orange-500",
-    description: "A collaboration platform for API development and testing.",
-  },
-  {
-    label: "Figma",
-    icon: <Figma width={24} height={24} className="text-pink-500" />,
-    color: "text-pink-500",
+    label: "MongoDB",
+    icon: <MongoDBDark className="size-10" />,
     description:
-      "A web-based UI/UX design tool for collaborative interface design.",
+      "A NoSQL document database with scalable, flexible data storage.",
   },
   {
-    label: "npm",
-    icon: <JavaScript width={24} height={24} className="text-red-500" />,
-    color: "text-red-500",
+    label: "MySQL",
+    icon: <MySQLDark className="size-10" />,
+    description: "A popular open-source relational database management system.",
+  },
+  {
+    label: "Firebase",
+    icon: <Firebase className="size-10" />,
+    description:
+      "Google's platform for building web and mobile apps with real-time database.",
+  },
+  {
+    label: "Supabase",
+    icon: <Supabase className="size-10" />,
+    description:
+      "Open source Firebase alternative with PostgreSQL, Auth, and Real-time features.",
+  },
+  {
+    label: "AWS",
+    icon: <AmazonWebServicesDark className="size-10" />,
+    description:
+      "Amazon Web Services - a comprehensive, evolving cloud computing platform.",
+  },
+  {
+    label: "Docker",
+    icon: <Docker className="size-10" />,
+    description:
+      "A platform for developing, shipping, and running applications in containers.",
+  },
+  {
+    label: "Git",
+    icon: <Git className="size-10" />,
+    description:
+      "A distributed version control system for tracking changes in source code.",
+  },
+  {
+    label: "Bun",
+    icon: <Bun className="size-10" />,
     description:
       "The package manager for JavaScript and the world's largest software registry.",
   },
   {
-    label: "Jest",
-    icon: <Jest width={24} height={24} className="text-red-600" />,
-    color: "text-red-600",
-    description:
-      "A delightful JavaScript testing framework with a focus on simplicity.",
+    label: "Postman",
+    icon: <Postman className="size-10" />,
+    description: "A collaboration platform for API development and testing.",
   },
   {
-    label: "Cypress",
-    icon: <Cypress width={24} height={24} className="text-green-600" />,
-    color: "text-green-600",
+    label: "Figma",
+    icon: <Figma className="size-10" />,
     description:
-      "Fast, easy and reliable testing for anything that runs in a browser.",
-  },
-  {
-    label: "ESLint",
-    icon: <ESLintLight width={24} height={24} className="text-purple-600" />,
-    color: "text-purple-600",
-    description:
-      "A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.",
-  },
-  {
-    label: "Prettier",
-    icon: <PrettierLight width={24} height={24} className="text-pink-600" />,
-    color: "text-pink-600",
-    description:
-      "An opinionated code formatter that supports many languages and integrates with most editors.",
-  },
-  {
-    label: "Vercel",
-    icon: (
-      <VercelLight
-        width={24}
-        height={24}
-        className="text-black dark:text-white"
-      />
-    ),
-    color: "text-black dark:text-white",
-    description:
-      "A platform for frontend frameworks and static sites, built to integrate with headless content.",
-  },
-  {
-    label: "Netlify",
-    icon: <Netlify width={24} height={24} className="text-teal-500" />,
-    color: "text-teal-500",
-    description:
-      "A web developer platform that multiplies productivity with deploy previews and serverless functions.",
-  },
-  {
-    label: "Heroku",
-    icon: <Heroku width={24} height={24} className="text-purple-700" />,
-    color: "text-purple-700",
-    description:
-      "A platform as a service that enables developers to build, run, and operate applications entirely in the cloud.",
-  },
-  {
-    label: "AWS",
-    icon: (
-      <AmazonWebServicesLight
-        width={24}
-        height={24}
-        className="text-orange-600"
-      />
-    ),
-    color: "text-orange-600",
-    description:
-      "Amazon Web Services - a comprehensive, evolving cloud computing platform.",
+      "A web-based UI/UX design tool for collaborative interface design.",
   },
 ];
 
-export const language: Record<string, Language> = {
-  TypeScript: {
+export const language: Language[] = [
+  {
     label: "TypeScript",
-    icon: <TypeScript width={24} height={24} className="text-blue-600 " />,
-    color: "text-blue-600",
+    icon: <TypeScript className="size-10" />,
     description:
       "TypeScript is a strongly typed programming language that builds on JavaScript.",
   },
-  JavaScript: {
-    label: "JavaScript",
-    icon: <JavaScript width={24} height={24} className="text-yellow-500 " />,
-    color: "text-yellow-500",
+  {
+    label: "Php",
+    icon: <PhpDark className="size-10" />,
     description:
-      "JavaScript is a high-level, dynamic, and interpreted programming language for web development.",
+      "PHP is a popular general-purpose scripting language that is especially suited to web development.",
   },
-  Java: {
+  {
     label: "Java",
-    icon: <Java width={24} height={24} className="text-orange-600 " />,
-    color: "text-orange-600",
+    icon: <Java className="size-10" />,
     description:
       "Java is a high-level, class-based, object-oriented programming language.",
   },
-  Go: {
-    label: "Go",
-    icon: <GoLight width={24} height={24} className="text-blue-300 " />,
-    color: "text-blue-300",
+  {
+    label: "Bash",
+    icon: <BashDark className="size-10" />,
     description:
-      "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
+      "Bash is a Unix shell and command language that is widely used in Linux and macOS.",
   },
-  Python: {
+  {
     label: "Python",
-    icon: <Python width={24} height={24} className="text-yellow-400 " />,
-    color: "text-yellow-400",
+    icon: <Python className="size-10" />,
     description:
       "Python is a high-level, interpreted programming language with dynamic semantics.",
   },
-};
+  {
+    label: "C",
+    icon: <C className="size-10" />,
+    description:
+      "C is a general-purpose programming language created as an extension of the B programming language.",
+  },
+];
+
+export interface Integration {
+  name: string;
+  icon: React.ReactNode;
+  description: string;
+}
+
+export const data: Integration[] = [
+  ...libraries.map((lib) => ({
+    name: lib.label,
+    icon: lib.icon,
+    description: lib.description,
+  })),
+  ...language.map((lang) => ({
+    name: lang.label,
+    icon: lang.icon,
+    description: lang.description,
+  })),
+];

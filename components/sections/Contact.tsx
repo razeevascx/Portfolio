@@ -9,15 +9,16 @@ function Contact() {
   const emailCode = `{
     name: "Rajeev Puri",
     email: "${email}",
-    title: "BSc Student && Software Engineer" ,
-    gitHub: "https://github.com/razeevascx"
+    title: "BSc Student && Software Engineer",
+    gitHub: "https://github.com/razeevascx",
     website: "https://rajeevpuri.com.np",
 }`;
 
   return (
     <Container
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
       id="contact"
       className=" p-5"
     >

@@ -82,8 +82,44 @@ function Footer() {
             </motion.a>
           </div>
         </div>
+        <ShipItCTA />
       </Container>
     </footer>
+  );
+}
+
+function ShipItCTA() {
+  return (
+    <section className="py-2 group overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="relative z-10 text-center px-6"
+      >
+        <h2
+          className="text-5xl md:text-[10rem] font-black tracking-wider leading-none select-none  transition-all duration-700"
+          style={{
+            WebkitTextStroke: "1px rgba(255,255,255,0.1)",
+          }}
+        >
+          {/* SAY IT - Outline to White */}
+          <span className="text-transparent group-hover:text-white transition-colors duration-500 ease-in-out">
+            SAY IT.
+          </span>
+
+          {/* SHARE IT - Outline to Zinc */}
+          <span className="text-transparent group-hover:text-zinc-800 transition-colors duration-500 ease-in-out delay-75">
+            SHARE IT.
+          </span>
+
+          {/* SHIP IT - Outline to Blue Italic */}
+          <span className="text-transparent group-hover:text-blue-600 italic transition-colors duration-500 ease-in-out delay-150 group-hover:drop-shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+            SHIP IT.
+          </span>
+        </h2>
+      </motion.div>
+    </section>
   );
 }
 
