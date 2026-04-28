@@ -22,7 +22,6 @@ function Navbar() {
                 height={25}
                 className="hover:opacity-80 transition-opacity md:w-15 md:h-7.5"
               />
-              md:w-15
             </Link>
           </motion.div>
 
