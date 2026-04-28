@@ -1,13 +1,11 @@
-"use client";
 import * as motion from "motion/react-client";
 import Link from "next/link";
 import { quicklink } from "@/lib/constants";
-import { useState } from "react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";
+import { ArrowRight } from "lucide-react";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="py-4 px-4 z-50 sticky top-0 shadow-md backdrop-blur-sm ">
       <Container>
@@ -33,56 +31,17 @@ function Navbar() {
               </motion.a>
             ))}
           </div>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 gap-4">
             <motion.a
               href="mailto:contact@rajeevpuri.com.np"
               className="flex items-center hover:text-blue-500 text-lg"
             >
-              <span className="font-bold">Connect Now</span>
+              <button className="bg-white text-black px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-zinc-200 transition-all">
+                Lets Talk <ArrowRight size={14} />
+              </button>
             </motion.a>
-          </div>
-
-          <div className="md:hidden">
-            <button
-              className="focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded p-1"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
-            </button>
           </div>
         </div>
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: isOpen ? "auto" : 0 }}
-          className="overflow-hidden md:hidden mt-2 mx-auto flex gap-4 justify-center items-center flex-col"
-        >
-          {quicklink.map((link) => (
-            <motion.a
-              key={link.id}
-              href={link.url}
-              className={`block hover:font-bold py-2`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {link.title}
-            </motion.a>
-          ))}
-        </motion.div>
       </Container>
     </nav>
   );
