@@ -5,6 +5,7 @@ import { libraries } from "@/lib/skills-data";
 import ProfileCard from "../ui/ProfileCard";
 import SkillCard1 from "@/components/cards/SkillCard";
 import CertificateCard from "@/components/cards/CertificateCard";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { getCredlyBadges } from "@/lib/credly";
 
 const About = async () => {
@@ -29,9 +30,9 @@ const About = async () => {
       {badges && badges.length > 0 && (
         <motion.div className="mb-8 space-y-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
+            <SectionHeading className="mb-8">
               Certifications & Badges
-            </h2>
+            </SectionHeading>
             {badges.map((item) => (
               <CertificateCard key={item.id} item={item} />
             ))}
@@ -39,9 +40,7 @@ const About = async () => {
         </motion.div>
       )}
       <div className="mb-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-12">
-          Frameworks & Tools
-        </h2>
+        <SectionHeading className="mb-12">Frameworks & Tools</SectionHeading>
         <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
           {libraries.map((skill) => (
             <SkillCard1 key={skill.label} skill={skill} />
