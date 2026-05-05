@@ -27,11 +27,13 @@ const Service = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2  "
+        className="grid grid-cols-1 md:grid-cols-2"
       >
-        {services.map((service, index) => (
-          <ServiceCard key={index} service={service} index={index} />
-        ))}
+        {services
+          .filter((service) => service.type === "core")
+          .map((service, index) => (
+            <ServiceCard key={index} service={service} index={index} />
+          ))}
       </motion.div>
     </Container>
   );

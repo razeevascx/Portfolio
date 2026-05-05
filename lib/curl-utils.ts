@@ -104,16 +104,20 @@ export function isCurlRequest(userAgent: string | null | undefined): boolean {
   return agent.toLowerCase().includes("curl");
 }
 
-export function AccessDeniedResponse(): Response {
-  return new Response(
-    "Access denied. Please use curl to access this endpoint.",
-    {
-      status: 403,
-      headers: {
-        "Content-Type": "text/plain",
-      },
-    },
-  );
+export function isLLMRequest(userAgent: string | null | undefined): boolean {
+  const agent = String(userAgent || "").toLowerCase();
+  const llmAgents = [
+    "gptbot",
+    "chatgpt-user",
+    "claudebot",
+    "googlebot",
+    "bingbot",
+    "anthropic-ai",
+    "claude-web",
+    "perplexitybot",
+    "youbot",
+  ];
+  return llmAgents.some((bot) => agent.includes(bot));
 }
 
 export function CurlResponse(content: string): Response {
@@ -127,10 +131,11 @@ export function CurlResponse(content: string): Response {
 export function Legend(baseUrl: string = url): string {
   return `  ${colors.CYAN}Legend${colors.RESET}
 
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}            Get the home page
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/projects   Get the list of projects
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/service    Get available services
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/contact    Get contact information`;
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/llms.txt          Full site summary (AI Optimized)
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/about/llms.txt    Get about information
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/projects/llms.txt Get the list of projects
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/services/llms.txt Get available services
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/contact/llms.txt  Get contact information`;
 }
 
 export function Box(content: string, width: number = 70): string {

@@ -15,7 +15,22 @@ import {
   MongoDBDark,
   XDark,
 } from "@ridemountainpig/svgl-react";
-import { GithubIcon, Mail, LinkedinIcon, X } from "lucide-react";
+import {
+  GithubIcon,
+  Mail,
+  LinkedinIcon,
+  X,
+  Code2,
+  Palette,
+  Layout,
+  Database,
+  Cpu,
+  ShieldCheck,
+  Search,
+  Pencil,
+  LayoutDashboard,
+  Rocket,
+} from "lucide-react";
 
 interface QuickLink {
   id: string;
@@ -128,22 +143,6 @@ export const socialLinks: SocialLink[] = [
     bgColor: "bg-blue-400/10",
     description: "Mail service",
     username: "contact@rajeevpuri.com.np",
-  },
-];
-
-export const educationData: Education[] = [
-  {
-    degree: "Bachelor of Science",
-    school: "University of Wolverhampton",
-    logo: "https://www.wlv.ac.uk/media/2019-template-assets/graphics/logo.svg",
-    location: "Wolverhampton, UK",
-    year: "2025 - 2028",
-    experiences: [
-      "Gained in-depth knowledge in Computer Science.",
-      "Became IBM Student Ambassador.",
-      "Became Treasurer of Mainframe Student Society.",
-    ],
-    link: "https://www.wlv.ac.uk/",
   },
 ];
 
@@ -356,37 +355,158 @@ export const projectList = [
   },
 ];
 
-export const services: Service[] = [
+import {
+  FullStackIllustration,
+  BrandingIllustration,
+  UIUXIllustration,
+  DatabaseIllustration,
+  ArchitectureIllustration,
+  DevOpsIllustration,
+} from "@/components/illustration/ServiceIllustrations";
+
+export const services = [
   {
-    icon: (
-      <ReactLight width={40} height={40} aria-label="MERN Stack Development" />
-    ),
-    title: "MERN Stack Development",
+    id: "01",
+    icon: <FullStackIllustration />,
+    title: "Full-Stack Development",
     description:
-      "Specialized in building full-stack applications using MongoDB, Express.js, React.js, and Node.js. Creating scalable and modern web solutions with the latest technologies.",
-    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux"],
+      "End-to-end applications built with scalability and performance in mind. I deliver robust backends paired with high-fidelity, interactive frontends that provide a seamless user experience across all devices.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "PostgreSQL",
+      "REST APIs",
+      "GraphQL",
+    ],
+    category: "Engineering",
+    type: "core",
   },
   {
-    icon: <TailwindCSS width={40} height={40} aria-label="Graphic Design" />,
-    title: "Graphic Design",
+    id: "02",
+    icon: <BrandingIllustration />,
+    title: "Brand & Visual Identity",
     description:
-      "Creating stunning visual content including logos, brand identity, marketing materials, and social media graphics. Focusing on unique and memorable designs.",
-    technologies: ["Photoshop", "Illustrator", "Figma"],
+      "Strategic visual systems that tell your unique story. From logo design to comprehensive brand guidelines, I create cohesive identities that build trust and ensure long-term recognition in your market.",
+    technologies: [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Adobe InDesign",
+      "Figma",
+      "Typography Systems",
+      "Design Systems",
+    ],
+    category: "Branding",
+    type: "capable",
   },
   {
-    icon: <ReactLight width={40} height={40} aria-label="UI/UX Design" />,
+    id: "03",
+    icon: <UIUXIllustration />,
     title: "UI/UX Design",
     description:
-      "Designing intuitive and user-centered interfaces with a focus on user experience. Creating wireframes, prototypes, and implementing responsive designs.",
-    technologies: ["Figma"],
+      "User-centered interfaces that people actually enjoy using. I transform complex requirements into intuitive, high-fidelity prototypes, focusing on accessibility, usability, and modern aesthetic standards.",
+    technologies: [
+      "Figma",
+      "Framer",
+      "Adobe XD",
+      "Wireframing",
+      "Prototyping",
+      "User Testing",
+      "Design Systems",
+    ],
+    category: "Design",
+    type: "core",
   },
   {
-    icon: (
-      <MongoDBDark width={40} height={40} aria-label="Database Management" />
-    ),
-    title: "Database Management",
+    id: "04",
+    icon: <DatabaseIllustration />,
+    title: "Database Design & Optimization",
     description:
-      "Expert in database design, optimization, and management. Handling both SQL and NoSQL databases with a focus on performance and security.",
-    technologies: ["MongoDB", "MySQL"],
+      "Fast, reliable data management at any scale. I design optimized schemas and write efficient queries for both SQL and NoSQL environments, ensuring your application remains snappy under heavy load.",
+    technologies: [
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Prisma",
+      "Indexing",
+      "Query Optimization",
+      "Data Modeling",
+    ],
+    category: "Data",
+    type: "core",
+  },
+  {
+    id: "05",
+    icon: <ArchitectureIllustration />,
+    title: "System Design & Architecture",
+    description:
+      "Future-proof systems designed for the long haul. I apply clean architecture principles and proven design patterns to build infrastructure that grows with your user base and business needs.",
+    technologies: [
+      "Microservices",
+      "Event-Driven Architecture",
+      "REST APIs",
+      "GraphQL",
+      "System Design Patterns",
+      "Load Balancing",
+      "Caching Strategies",
+    ],
+    category: "Architecture",
+    type: "core",
+  },
+  {
+    id: "06",
+    icon: <DevOpsIllustration />,
+    title: "DevOps & Cloud Security",
+    description:
+      "Ship fast, stay secure. I implement automated CI/CD pipelines and containerized environments with security baked in from the start, allowing you to focus on features while I handle the infrastructure.",
+    technologies: [
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "Terraform",
+      "AWS",
+      "CI/CD Pipelines",
+      "Cloud Security",
+      "Monitoring (Prometheus/Grafana)",
+    ],
+    category: "DevOps",
+    type: "capable",
+  },
+];
+
+export const processSteps = [
+  {
+    step: "01",
+    title: "Discovery & Strategy",
+    detail:
+      "We dive deep into your business goals, user needs, and market landscape to define a clear, actionable roadmap for success.",
+    icon: Search,
+    status: "Planning",
+  },
+  {
+    step: "02",
+    title: "Design & Prototyping",
+    detail:
+      "We craft intuitive interfaces and distinct visual systems, iterating rapidly on high-fidelity prototypes to validate concepts.",
+    icon: Pencil,
+    status: "Designing",
+  },
+  {
+    step: "03",
+    title: "Engineering",
+    detail:
+      "Our engineers build robust, scalable architectures using modern tech stacks, ensuring pixel-perfect implementation.",
+    icon: LayoutDashboard,
+    status: "Building",
+  },
+  {
+    step: "04",
+    title: "Launch & Scale",
+    detail:
+      "We deploy with confidence, monitor real-world usage, and provide ongoing support to evolve the product.",
+    icon: Rocket,
+    status: "Releasing",
   },
 ];

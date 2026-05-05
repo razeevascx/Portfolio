@@ -7,12 +7,14 @@ export default function middleware(request: NextRequest) {
 
   // Check if request is from curl
   if (userAgent.toLowerCase().includes("curl")) {
-    // Map routes to their txt endpoints
+    // Map routes to their llms.txt endpoints
     const routeMap: Record<string, string> = {
-      "/": "/txt",
-      "/contact": "/contact/txt",
-      "/projects": "/projects/txt",
-      "/service": "/service/txt",
+      "/": "/llms.txt",
+      "/about": "/about/llms.txt",
+      "/contact": "/contact/llms.txt",
+      "/projects": "/projects/llms.txt",
+      "/services": "/services/llms.txt",
+      "/service": "/services/llms.txt",
     };
 
     if (pathname in routeMap) {

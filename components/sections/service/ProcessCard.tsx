@@ -1,4 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
 import * as motion from "motion/react-client";
 import type { ComponentType } from "react";
 
@@ -22,61 +21,56 @@ export default function ProcessCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative group"
+      className="relative group h-full"
     >
-      <div className="hidden lg:block absolute top-[40px] left-full w-full h-[1px] bg-gradient-to-r from-blue-500/30 to-transparent -z-10 group-last:hidden"></div>
+      <div className="relative h-full border border-white/10 p-8 hover:border-blue-500/50 bg-zinc-900/5 hover:bg-zinc-900/20 transition-all duration-500 flex flex-col gap-6 overflow-hidden">
+        {/* Background Step Number */}
+        <span className="absolute -top-4 -right-4 text-9xl font-black text-white/[0.02] group-hover:text-blue-500/[0.03] transition-colors pointer-events-none select-none">
+          {step}
+        </span>
 
-      <div className="relative h-full bg-[#0a0a0a] border border-white/10 p-6 rounded-xl hover:border-blue-500/50 transition-all duration-500 flex flex-col gap-6 overflow-hidden">
-        {/* Visual Accent Bar */}
-        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-zinc-800 group-hover:bg-blue-500 transition-colors duration-500"></div>
-
-        {/* Header Area */}
-        <div className="flex items-center justify-between">
+        <div className="flex justify-between items-center relative z-10">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-white/5 flex items-center justify-center group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all">
-              <Icon
-                size={18}
-                className="text-zinc-500 group-hover:text-blue-400"
-              />
+            <div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-500 group-hover:scale-110 transition-transform duration-500">
+              <Icon size={24} />
             </div>
-            <div>
-              <p className="text-[9px] font-mono font-bold text-blue-500 tracking-widest uppercase italic">
+            <div className="flex flex-col">
+              <p className="text-[10px] font-mono font-bold text-zinc-500 tracking-[0.2em] uppercase">
                 Step {step}
               </p>
-              <h3 className="text-sm font-black tracking-widest uppercase text-white group-hover:translate-x-1 transition-transform">
+              <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
                 {title}
               </h3>
             </div>
           </div>
-          <div className="flex flex-col items-end">
-            <span className="text-[8px] font-mono text-zinc-600 uppercase tracking-tighter">
-              {status}
-            </span>
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse mt-1 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
-          </div>
+          <span className="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest bg-zinc-800 text-zinc-400 border border-zinc-700 group-hover:border-blue-500/30 group-hover:text-blue-300 transition-all">
+            {status}
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="relative py-4 border-t border-white/5">
-          <p className="text-xs text-zinc-500 leading-relaxed group-hover:text-zinc-300 transition-colors italic">
-            "{detail}"
+        <div className="relative flex-1 py-4 border-t border-white/5 mt-2">
+          <p className="text-zinc-500 leading-relaxed group-hover:text-zinc-300 transition-colors text-sm">
+            {detail}
           </p>
         </div>
 
         {/* Footer Meta */}
-        <div className="mt-auto flex justify-between items-center pt-4 border-t border-white/5">
-          <div className="flex gap-1">
-            {[1, 2, 3].map((i) => (
+        <div className="mt-auto flex justify-between items-center pt-6 border-t border-white/5">
+          <div className="flex gap-2">
+            {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className={`h-1 w-3 rounded-full ${i <= Number(step) ? "bg-blue-500" : "bg-zinc-800"}`}
+                className={`h-1.5 w-6 rounded-full transition-all duration-500 ${
+                  i <= Number(step) 
+                    ? "bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" 
+                    : "bg-zinc-800"
+                }`}
               ></div>
             ))}
           </div>
-          <CheckCircle2
-            size={12}
-            className="text-zinc-800 group-hover:text-blue-500 transition-colors"
-          />
+          <span className="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-400 transition-colors">
+            PHASE {step}_COMPLETE
+          </span>
         </div>
       </div>
     </motion.div>
