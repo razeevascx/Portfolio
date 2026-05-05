@@ -120,26 +120,8 @@ export function isLLMRequest(userAgent: string | null | undefined): boolean {
   return llmAgents.some((bot) => agent.includes(bot));
 }
 
-export function stripAnsi(text: string): string {
-  // eslint-disable-next-line no-control-regex
-  return text.replace(/\x1b\[[0-9;]*m/g, "");
-}
-
-export function AccessDeniedResponse(): Response {
-  return new Response(
-    "Access denied. Please use curl to access this endpoint or visit /llms.txt for LLM-friendly content.",
-    {
-      status: 403,
-      headers: {
-        "Content-Type": "text/plain",
-      },
-    },
-  );
-}
-
-export function CurlResponse(content: string, isCurl = true): Response {
-  const finalContent = isCurl ? content : stripAnsi(content);
-  return new Response(finalContent, {
+export function CurlResponse(content: string): Response {
+  return new Response(content, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
     },
@@ -149,10 +131,11 @@ export function CurlResponse(content: string, isCurl = true): Response {
 export function Legend(baseUrl: string = url): string {
   return `  ${colors.CYAN}Legend${colors.RESET}
 
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}            Get the home page
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/projects   Get the list of projects
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/service    Get available services
-    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/contact    Get contact information`;
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/llms.txt          Full site summary (AI Optimized)
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/about/llms.txt    Get about information
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/projects/llms.txt Get the list of projects
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/services/llms.txt Get available services
+    ${colors.YELLOW}$${colors.RESET} curl ${baseUrl}/contact/llms.txt  Get contact information`;
 }
 
 export function Box(content: string, width: number = 70): string {

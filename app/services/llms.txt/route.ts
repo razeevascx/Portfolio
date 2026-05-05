@@ -3,7 +3,6 @@ import {
   colors,
   Header,
   isCurlRequest,
-  AccessDeniedResponse,
   CurlResponse,
   Legend,
   wrapText,
@@ -12,9 +11,23 @@ import { services } from "@/lib/constants";
 
 export async function GET(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
+  const isCurl = isCurlRequest(userAgent);
 
-  if (!isCurlRequest(userAgent)) {
-    return AccessDeniedResponse();
+  if (!isCurl) {
+    const mdContent = `# Services
+
+${services.map(s => `## ${s.title}
+${s.description}
+- **Technologies**: ${s.technologies.join(", ")}`).join("\n\n")}
+
+## Legend
+- Home: curl rajeevpuri.com.np/llms.txt
+- About: curl rajeevpuri.com.np/about/llms.txt
+- Projects: curl rajeevpuri.com.np/projects/llms.txt
+- Services: curl rajeevpuri.com.np/services/llms.txt
+- Contact: curl rajeevpuri.com.np/contact/llms.txt
+`;
+    return CurlResponse(mdContent);
   }
 
   // Services section with enhanced styling
@@ -42,8 +55,8 @@ ${wrappedDescription}
 
   ${colors.DIM}Let's discuss how I can help bring your ideas to life.${colors.RESET}
 
-  ${colors.BRIGHT_CYAN}▸${colors.RESET} ${colors.CYAN}curl rajeevpuri.com.np/contact${colors.RESET}  ${colors.DIM}Get my contact information${colors.RESET}
-  ${colors.BRIGHT_CYAN}▸${colors.RESET} ${colors.CYAN}curl rajeevpuri.com.np/projects${colors.RESET} ${colors.DIM}View my previous work${colors.RESET}`;
+  ${colors.BRIGHT_CYAN}▸${colors.RESET} ${colors.CYAN}curl rajeevpuri.com.np/contact/llms.txt${colors.RESET}  ${colors.DIM}Get my contact information${colors.RESET}
+  ${colors.BRIGHT_CYAN}▸${colors.RESET} ${colors.CYAN}curl rajeevpuri.com.np/projects/llms.txt${colors.RESET} ${colors.DIM}View my previous work${colors.RESET}`;
 
   const content = `${Header("SERVICES", "03", " Explore what I can do for you")}
 
