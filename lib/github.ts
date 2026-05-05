@@ -1,89 +1,49 @@
-export interface GitHubRepoData {
-  /** Display name in `owner/repo` format. */
-  fullName: string
-  /** Repository description. */
-  description: string | null
-  /** Primary programming language (e.g. "TypeScript"). */
-  language: string | null
-  /** Language color hex from GitHub (e.g. "#3178c6"). */
-  languageColor: string | null
-  /** Number of stars. */
-  stars: number
+export interface GitHubRepo {
+  /** Display name in `owner/repo` format (e.g. `"shadcn-ui/ui"`). */
+  fullName: string;
+  /** Number of stars on the repository. */
+  stars: number;
   /** Number of forks. */
-  forks: number
+  forks: number;
+  /** Number of subscribers (people watching the repo). */
+  watchers: number;
   /** Number of open issues. */
-  openIssues: number
-  /** SPDX license identifier (e.g. "MIT"). */
-  license: string | null
-  /** Topic tags. */
-  topics: string[]
-  /** ISO date of last push. */
-  updatedAt: string | null
-  /** Whether the repo is a fork. */
-  isFork: boolean
-  /** Whether the repo is archived. */
-  isArchived: boolean
-  /** Homepage URL. */
-  homepage: string | null
+  issues: number;
+  /** Repository description */
+  description: string | null;
+  /** Repository topics/tags */
+  topics: string[];
+  /** Whether the repository is archived */
+  isArchived: boolean;
+  /** Whether the repository is a fork */
+  isFork: boolean;
+  /** Primary programming language */
+  language: string | null;
+  /** Hex color code for the language */
+  languageColor: string | null;
+  /** SPDX license identifier */
+  license: string | null;
+  /** Last updated timestamp */
+  updatedAt: string;
 }
 
-/**
- * GitHub language colors for common languages.
- * Fallback when the API doesn't provide a color.
- */
-const LANGUAGE_COLORS: Record<string, string> = {
-  TypeScript: "#3178c6",
-  JavaScript: "#f1e05a",
-  Python: "#3572A5",
-  Rust: "#dea584",
-  Go: "#00ADD8",
-  Java: "#b07219",
-  "C#": "#178600",
-  "C++": "#f34b7d",
-  C: "#555555",
-  Ruby: "#701516",
-  PHP: "#4F5D95",
-  Swift: "#F05138",
-  Kotlin: "#A97BFF",
-  Dart: "#00B4AB",
-  Shell: "#89e051",
-  HTML: "#e34c26",
-  CSS: "#563d7c",
-  SCSS: "#c6538c",
-  Vue: "#41b883",
-  Svelte: "#ff3e00",
-  Elixir: "#6e4a7e",
-  Zig: "#ec915c",
-  Haskell: "#5e5086",
-  Lua: "#000080",
-  Scala: "#c22d40",
-  R: "#198CE7",
-  Julia: "#a270ba",
-  Nix: "#7e7eff",
-  OCaml: "#3be133",
-  MDX: "#fcb32c",
-}
+/** Type alias for backward compatibility */
+export type GitHubRepoData = GitHubRepo;
 
 /**
- * Get the display color for a programming language.
- */
-export function getLanguageColor(language: string): string {
-  return LANGUAGE_COLORS[language] ?? "#8b8b8b"
-}
-
-/**
- * Fetch extended metadata for a GitHub repository.
+ * Fetch public metadata for a GitHub repository.
  *
  * - Uses the public GitHub REST API — no API key required.
- * - Optionally authenticates with `process.env.GITHUB_TOKEN`.
- * - Caches the result for 1 hour via Next.js ISR.
+ * - Optionally authenticates with `process.env.GITHUB_TOKEN` to raise
+ *   the rate limit from 60 → 5 000 requests per hour.
+ * - Caches the result for 1 hour via Next.js ISR (`next.revalidate`).
  *
  * Returns `null` if the request fails or the repo doesn't exist.
  */
-export async function fetchGitHubRepoData(
+export async function fetchGitHubRepo(
   owner: string,
-  repo: string
-): Promise<GitHubRepoData | null> {
+  repo: string,
+): Promise<GitHubRepo | null> {
   try {
     const response = await fetch(
       `https://api.github.com/repos/${owner}/${repo}`,
@@ -95,62 +55,83 @@ export async function fetchGitHubRepoData(
             : {}),
         },
         next: { revalidate: 3600 },
-      }
-    )
-    if (!response.ok) return null
-    const data = await response.json()
-
-    if (typeof data.full_name !== "string") return null
-
+      },
+    );
+    if (!response.ok) return null;
+    const data = await response.json();
+    if (
+      typeof data.full_name !== "string" ||
+      typeof data.stargazers_count !== "number"
+    ) {
+      return null;
+    }
     return {
       fullName: data.full_name,
+      stars: data.stargazers_count,
+      forks: data.forks_count,
+      watchers: data.subscribers_count,
+      issues: data.open_issues_count,
       description: data.description ?? null,
-      language: data.language ?? null,
-      languageColor: data.language ? getLanguageColor(data.language) : null,
-      stars: data.stargazers_count ?? 0,
-      forks: data.forks_count ?? 0,
-      openIssues: data.open_issues_count ?? 0,
-      license: data.license?.spdx_id ?? null,
       topics: Array.isArray(data.topics) ? data.topics : [],
-      updatedAt: data.pushed_at ?? null,
-      isFork: data.fork ?? false,
-      isArchived: data.archived ?? false,
-      homepage: data.homepage || null,
-    }
+      isArchived: data.archived === true,
+      isFork: data.fork === true,
+      language: data.language ?? null,
+      languageColor: data.language_color ?? null,
+      license: data.license?.spdx_id ?? null,
+      updatedAt: data.updated_at ?? new Date().toISOString(),
+    };
   } catch {
-    return null
+    return null;
   }
 }
+
+/** Alias for fetchGitHubRepo for backward compatibility */
+export const fetchGitHubRepoData = fetchGitHubRepo;
 
 /**
  * Format a number for compact display.
+ *
+ * - `236000` → `"236k"`
+ * - `1500000` → `"1.5m"`
+ * - `842` → `"842"`
  */
 export function formatCount(count: number): string {
   if (count >= 1_000_000) {
-    const value = count / 1_000_000
-    return `${value % 1 === 0 ? value.toFixed(0) : value.toFixed(1)}m`
+    const value = count / 1_000_000;
+    return `${value % 1 === 0 ? value.toFixed(0) : value.toFixed(1)}m`;
   }
   if (count >= 1_000) {
-    const value = count / 1_000
-    return `${value % 1 === 0 ? value.toFixed(0) : value.toFixed(1)}k`
+    const value = count / 1_000;
+    return `${value % 1 === 0 ? value.toFixed(0) : value.toFixed(1)}k`;
   }
-  return count.toLocaleString("en-US")
+  return count.toLocaleString("en-US");
 }
 
 /**
- * Format a relative time from an ISO date string.
+ * Format a relative date (e.g., "2 days ago").
  */
-export function formatRelativeDate(iso: string): string {
-  const date = new Date(iso)
-  const now = new Date()
-  const diffMs = now.getTime() - date.getTime()
-  const diffDays = Math.floor(diffMs / 86_400_000)
+export function formatRelativeDate(dateString: string): string {
+  try {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffSecs = Math.floor(diffMs / 1000);
+    const diffMins = Math.floor(diffSecs / 60);
+    const diffHours = Math.floor(diffMins / 60);
+    const diffDays = Math.floor(diffHours / 24);
+    const diffMonths = Math.floor(diffDays / 30);
+    const diffYears = Math.floor(diffMonths / 12);
 
-  if (diffDays === 0) return "today"
-  if (diffDays === 1) return "yesterday"
-  if (diffDays < 30) return `${diffDays}d ago`
-  const months = Math.floor(diffDays / 30)
-  if (months < 12) return `${months}mo ago`
-  const years = Math.floor(diffDays / 365)
-  return `${years}y ago`
+    if (diffSecs < 60) return "just now";
+    if (diffMins < 60) return `${diffMins}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays < 30) return `${diffDays}d ago`;
+    if (diffMonths < 12) return `${diffMonths}mo ago`;
+    return `${diffYears}y ago`;
+  } catch {
+    return "unknown";
+  }
 }
+
+/** @deprecated Use `formatCount` instead. */
+export const formatStarCount = formatCount;

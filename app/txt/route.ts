@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
   const welcomeTitle = `${colors.BRIGHT_CYAN}${colors.BOLD}Welcome to my portfolio${colors.RESET}`;
 
   const aboutText = wrapText(
-    `I'm a passionate software engineer who loves transforming ideas into elegant solutions. Currently pursuing BSc while building modern web applications and learning new technologies.`,
+    `Hey there. I'm Rajeev Puri. Currently a BSc Student and a software engineer. I'll guide your creativity with calm, immersive products that blend reflection, sound, and visual prompts so ideas feel natural again. logical.`,
     100,
     "  ",
   );

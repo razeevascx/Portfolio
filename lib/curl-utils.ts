@@ -104,9 +104,30 @@ export function isCurlRequest(userAgent: string | null | undefined): boolean {
   return agent.toLowerCase().includes("curl");
 }
 
+export function isLLMRequest(userAgent: string | null | undefined): boolean {
+  const agent = String(userAgent || "").toLowerCase();
+  const llmAgents = [
+    "gptbot",
+    "chatgpt-user",
+    "claudebot",
+    "googlebot",
+    "bingbot",
+    "anthropic-ai",
+    "claude-web",
+    "perplexitybot",
+    "youbot",
+  ];
+  return llmAgents.some((bot) => agent.includes(bot));
+}
+
+export function stripAnsi(text: string): string {
+  // eslint-disable-next-line no-control-regex
+  return text.replace(/\x1b\[[0-9;]*m/g, "");
+}
+
 export function AccessDeniedResponse(): Response {
   return new Response(
-    "Access denied. Please use curl to access this endpoint.",
+    "Access denied. Please use curl to access this endpoint or visit /llms.txt for LLM-friendly content.",
     {
       status: 403,
       headers: {
@@ -116,8 +137,9 @@ export function AccessDeniedResponse(): Response {
   );
 }
 
-export function CurlResponse(content: string): Response {
-  return new Response(content, {
+export function CurlResponse(content: string, isCurl = true): Response {
+  const finalContent = isCurl ? content : stripAnsi(content);
+  return new Response(finalContent, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
     },

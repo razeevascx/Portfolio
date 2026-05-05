@@ -9,9 +9,14 @@ interface SectionHeadingProps {
 export default function SectionHeading({
   children,
   className,
-}: SectionHeadingProps) {
+}: Readonly<SectionHeadingProps>) {
   return (
-    <h2 className={cn("text-2xl md:text-3xl font-bold text-white", className)}>
+    <h2
+      className={cn(
+        "text-3xl md:text-4xl mb-4 font-bold text-white",
+        className,
+      )}
+    >
       {children}
     </h2>
   );

@@ -2,32 +2,97 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rajeev Puri Portfolio",
+    name: "Rajeev Puri - Software Engineer Portfolio",
     short_name: "Rajeev Puri",
     description:
-      "Professional portfolio of Rajeev Puri, showcasing web development projects and skills",
+      "Software Engineer specializing in full-stack web development, UI/UX design, and system architecture",
     start_url: "/",
-    background_color: "#0f0f11",
-    theme_color: "#22c55e",
+    scope: "/",
     display: "standalone",
-    orientation: "portrait",
-    categories: ["portfolio", "development", "professional"],
+    orientation: "portrait-primary",
+    theme_color: "#000000",
+    background_color: "#0f0f11",
+    categories: ["business", "productivity"],
     dir: "ltr",
     lang: "en",
-    scope: "/",
     prefer_related_applications: false,
     related_applications: [],
-    protocol_handlers: [
+    screenshots: [
       {
-        protocol: "mailto",
-        url: "/contact?email=%s",
+        src: "/opengraph-image.jpg",
+        type: "image/jpeg",
+        sizes: "1200x630",
+        form_factor: "wide",
       },
     ],
     icons: [
       {
         src: "/favicon.ico",
-        sizes: "any",
+        sizes: "32x32",
         type: "image/x-icon",
+      },
+      {
+        src: "/icon.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icon.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
+      },
+    ],
+    protocol_handlers: [
+      {
+        protocol: "mailto",
+        url: "/contact?email=%s",
+      },
+      {
+        protocol: "web+portfolio",
+        url: "/?ref=%s",
+      },
+    ],
+    shortcuts: [
+      {
+        name: "Projects",
+        short_name: "Projects",
+        description: "View my software engineering projects",
+        url: "/projects",
+        icons: [
+          {
+            src: "/icon.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
+      },
+      {
+        name: "Services",
+        short_name: "Services",
+        description: "Explore my services",
+        url: "/services",
+        icons: [
+          {
+            src: "/icon.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
+      },
+      {
+        name: "Contact",
+        short_name: "Contact",
+        description: "Get in touch with me",
+        url: "/contact",
+        icons: [
+          {
+            src: "/icon.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
       },
     ],
   };
