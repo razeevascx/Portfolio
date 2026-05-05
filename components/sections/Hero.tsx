@@ -104,7 +104,7 @@ export default function Hero() {
 
               <div className="w-full">
                 <CopyCommand
-                  command="curl -L https://rajeevpuri.com.np/llms.txt"
+                  command="curl -L https://rajeevpuri.com.np"
                   label="View in terminal"
                 />
               </div>
