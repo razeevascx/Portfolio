@@ -60,7 +60,7 @@ function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-8  space-y-6 border-b md:border-b-0 border-zinc-400 "
+            className="p-8  space-y-6 border-b md:border-b-0 border-border"
           >
             <h3 className="text-white text-xl font-semibold">Quick Links</h3>
             <nav className="grid grid-cols-2 gap-2">
