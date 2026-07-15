@@ -1,10 +1,5 @@
-import {
-  getBlogPostBySlug,
-  getBlogPosts,
-  getBlogPostMarkdown,
-} from "@/lib/notion/blog";
+import { getBlogPostBySlug, getBlogPosts } from "@/lib/notion/blog";
 import { notFound } from "next/navigation";
-import { formatDate } from "@/lib/utils";
 import Container from "@/components/Container";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { useMDXComponents } from "@/mdx-components";
@@ -18,12 +13,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import {
-  Calendar,
-  Clock,
-} from "lucide-react";
-import { BlogShare, TableOfContents } from "@/components/sections/blog";
-
+import ShareButton from "@/components/ui/ShareButton";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -102,52 +92,6 @@ function normalizeRawTables(markdown: string): string {
   );
 }
 
-interface HeadingItem {
-  text: string;
-  id: string;
-  level: number;
-}
-
-function extractHeadings(markdown: string): HeadingItem[] {
-  const headings: HeadingItem[] = [];
-  const lines = markdown.split("\n");
-  let inCodeBlock = false;
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith("```")) {
-      inCodeBlock = !inCodeBlock;
-      continue;
-    }
-
-    if (!inCodeBlock) {
-      if (trimmed.startsWith("### ")) {
-        const text = trimmed.replace("### ", "").trim();
-        headings.push({
-          text,
-          id: text
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/(^-|-$)/g, ""),
-          level: 3,
-        });
-      } else if (trimmed.startsWith("## ")) {
-        const text = trimmed.replace("## ", "").trim();
-        headings.push({
-          text,
-          id: text
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/(^-|-$)/g, ""),
-          level: 2,
-        });
-      }
-    }
-  }
-
-  return headings;
-}
-
 export default async function BlogPostPage(props: Readonly<BlogPostPageProps>) {
   const params = await props.params;
   const post = await getBlogPostBySlug(params.slug);
@@ -156,7 +100,7 @@ export default async function BlogPostPage(props: Readonly<BlogPostPageProps>) {
     notFound();
   }
 
-  const markdown = normalizeRawTables(await getBlogPostMarkdown(post.id));
+  const markdown = normalizeRawTables(post.content);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const components = useMDXComponents();
 
@@ -171,89 +115,95 @@ export default async function BlogPostPage(props: Readonly<BlogPostPageProps>) {
     keywords: post.tags.join(", ") || undefined,
   };
 
-  const headings = extractHeadings(markdown);
+  const canonicalUrl = `https://rajeevpuri.com.np/blog/${post.slug}`;
 
   return (
     <Container
-      className="pt-6 pb-20 px-8  mx-auto max-w-4xl"
+      className="pt-6  px-8 mx-auto max-w-4xl"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <article className="flex flex-col lg:flex-row gap-12 relative items-start">
-        {/* Main Content Article */}
+        <motion.div
+          variants={itemVariants}
+          className="blog-content border-border text-foreground-secondary leading-relaxed font-light prose prose-invert prose-a:text-blue-400 prose-a:no-underline prose-a:transition-colors prose-a:hover:text-blue-500 max-w-none"
+        >
           <motion.div
             variants={itemVariants}
-            className="blog-content border-border text-foreground-secondary leading-relaxed font-light prose prose-invert prose-a:text-blue-400 prose-a:no-underline prose-a:transition-colors prose-a:hover:text-blue-500 max-w-none"
+            className="mb-6 flex items-center justify-between flex-wrap gap-4"
           >
-            <motion.div variants={itemVariants}>
-              <Breadcrumb className="text-lg mb-10">
-                <BreadcrumbList>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator />
-                  <BreadcrumbItem>
-                    <BreadcrumbPage>{post.title}</BreadcrumbPage>
-                  </BreadcrumbItem>
-                </BreadcrumbList>
-              </Breadcrumb>
-            </motion.div>
-            <header className="mb-12">
-              {post.image && (
-                <motion.div
-                  variants={itemVariants}
-                  className="relative w-full h-[50dvh] mb-8 rounded-lg overflow-hidden"
-                >
+            <Breadcrumb className="text-lg">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{post.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+
+            <ShareButton
+              pageContent={post.excerpt || post.title}
+              pageUrl={canonicalUrl}
+            />
+          </motion.div>
+
+          <header className="mb-5">
+            <motion.h1
+              variants={itemVariants}
+              className="text-foreground text-4xl md:text-5xl lg:text-6xl  font-geist font-extrabold tracking-tight "
+            >
+              {post.title}
+            </motion.h1>
+            <motion.div variants={itemVariants} className="flex flex-wrap ">
+              <div className=" mt-4 mb-4 items-center gap-2 group transition-colors hover:text-foreground font-medium flex  text-lg text-zinc-400">
+                Written by{" "}
+                {post.createdByAvatar ? (
                   <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    sizes="(min-width: 1024px) 100vw, 100vw"
-                    className="object-center object-cover rounded-lg"
-                    priority
+                    src={post.createdByAvatar}
+                    alt={post.createdby}
+                    width={24}
+                    height={24}
+                    className="rounded-full object-cover size-6"
+                    unoptimized
                   />
-                </motion.div>
-              )}
-              <motion.h1
-                variants={itemVariants}
-                className="text-foreground text-4xl md:text-5xl lg:text-6xl border-b-2 font-outfit font-extrabold tracking-tight leading border-border pb-4 mb-6 md:mb-8"
-              >
-                {post.title}
-              </motion.h1>
+                ) : (
+                  <span className="size-6 rounded-full ">
+                    {post.createdby.charAt(0)}
+                  </span>
+                )}
+                {post.createdby}
+              </div>
+            </motion.div>
+
+            {post.image && (
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap mt-8 pb-6 border-b-2 border-border mb-12"
+                className="relative w-full h-[50dvh] mb-8 rounded-lg overflow-hidden"
               >
-                <div className="flex items-center gap-6">
-                  {post.publishedDate && (
-                    <div className="flex items-center gap-2 group transition-colors hover:text-foreground">
-                      <Calendar className="size-3.5 text-primary/80" />
-                      <time dateTime={post.publishedDate}>
-                        {formatDate(post.publishedDate)}
-                      </time>
-                    </div>
-                  )}
-                  <div className="flex items-center gap-2 group transition-colors hover:text-foreground">
-                    <Clock className="size-3.5 text-primary/80" />
-                    <span>{post.readingTime || 0} min read</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-4 ml-auto">
-                  <BlogShare title={post.title} slug={post.slug} />
-                </div>
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                  className="object-center object-cover rounded-lg"
+                  priority
+                />
               </motion.div>
-            </header>
-            {markdown && <MDXRemote source={markdown} components={components} />}
-          </motion.div>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-          />
-        </article>
+            )}
+          </header>
 
+          {markdown && <MDXRemote source={markdown} components={components} />}
+        </motion.div>
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      </article>
     </Container>
   );
 }

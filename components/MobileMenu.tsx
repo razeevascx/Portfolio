@@ -2,7 +2,7 @@
 
 import * as motion from "motion/react-client";
 import { ArrowRight } from "lucide-react";
-import { quicklink } from "@/lib/constants";
+import { navlink as quicklink } from "@/lib/data/Navlink";
 
 interface MobileMenuProps {
   onClose: () => void;

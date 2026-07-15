@@ -90,8 +90,7 @@ interface ProjectProps {
   index?: number;
   liveLink?: string;
   featured?: boolean;
-  stars?: number;
-  forks?: number;
+
 }
 
 const Project = ({
@@ -111,26 +110,20 @@ const Project = ({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="border group transition-colors duration-normal flex items-center hover:bg-white/2 p-6 border-border hover:border-primary/50"
+      className=" group transition-colors duration-normal flex items-center hover:bg-white/2 p-6 border-border hover:border-primary/50"
     >
-      <div className="max-w-4xl space-y-8 p-2 ">
-        {/* <p className="font-mono inline-block bg-foreground text-background px-3 py-1 text-sm font-bold tracking-widest">
-          {code}
-        </p> */}
-
+      <div className="space-y-4 ">
         {image && (
-          <div className="shadow-lg relative overflow-hidden rounded-base">
-            <Image
-              src={image || "/pictures/default.png"}
-              loading='eager'
-              alt={`Screenshot of ${title} project`}
-              width={800}
-              height={450}
-              className="w-full h-auto hover:scale-105 transition-transform duration-slow"
-            />
-          </div>
+          <Image
+            src={image || "/pictures/default.png"}
+            loading="eager"
+            alt={`Screenshot of ${title} project`}
+            width={800}
+            height={450}
+            className="w-full h-auto  object-contain"
+          />
         )}
-        <div>
+        <div className="border  border-border pb-4 p-4 ">
           <a
             href={link}
             target="_blank"
@@ -141,32 +134,30 @@ const Project = ({
               {title}
             </h3>
           </a>
+          <div className="lg:col-span-4 flex flex-wrap gap-2 text-lg mt-2">
+            {Object.values(tech)
+              .filter((item): item is TechItem => item !== undefined)
+              .map((item, i) => (
+                <div
+                  key={i}
+                  className="p-1 border border-border transition-all duration-normal flex items-center gap-2 cursor-pointer  hover:border-primary/50"
+                >
+                  <span className="text-lg">
+                    {item.icon ?? renderTechIcon(item.id)}
+                  </span>
+                  <span
+                    key={item.id}
+                    className="text-[10px] text-foreground-secondary group-hover:text-foreground transition-all duration-normal font-bold tracking-widest"
+                  >
+                    {item.id}
+                  </span>
+                </div>
+              ))}
+          </div>
 
           <p className="text-sm md:text-base text-foreground-secondary leading-relaxed group-hover:text-foreground transition-colors duration-normal mt-4 max-w-3xl font-light">
             {description}
           </p>
-        </div>
-
-        <div className="lg:col-span-4 flex flex-wrap gap-2 ">
-          {Object.values(tech)
-            .filter((item): item is TechItem => item !== undefined)
-            .map((item, i) => (
-              <Button
-                key={i}
-                variant={"outline"}
-                className="px-4 py-2 transition-all duration-normal flex items-center gap-2 cursor-pointer border-border hover:border-primary/50"
-              >
-                <span className="text-lg">
-                  {item.icon ?? renderTechIcon(item.id)}
-                </span>
-                <span
-                  key={item.id}
-                  className="text-[10px] text-foreground-secondary group-hover:text-foreground transition-all duration-normal font-bold tracking-widest"
-                >
-                  {item.id}
-                </span>
-              </Button>
-            ))}
         </div>
       </div>
     </motion.div>

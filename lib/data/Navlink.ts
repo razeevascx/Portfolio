@@ -1,9 +1,9 @@
-export const navlink = [
-  {
-    id: "services",
-    title: "Services",
-    url: "/services",
-  },
+interface QuickLink {
+  id: string;
+  title: string;
+  url: string;
+}
+export const navlink: QuickLink[] = [
   {
     id: "projects",
     title: "Projects",

@@ -170,10 +170,11 @@
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  html {
-    @apply font-sans;
-  }
+
 }
+  html {
+    font-family: var(--font-geist-sans);
+  }
 
 @layer components {
   /* Example utility combining the new theme variables */

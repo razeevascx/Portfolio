@@ -1,7 +1,6 @@
 import * as motion from "motion/react-client";
-import { quicklink } from "@/lib/constants";
+import { navlink as quicklink } from "@/lib/data/Navlink";
 import { Mail } from "lucide-react";
-import Socialicons from "./ui/Socialicons";
 import Container from "@/components/Container";
 import { Suspense } from "react";
 import { currentYear } from "@/lib/utils";

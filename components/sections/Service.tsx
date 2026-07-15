@@ -17,28 +17,23 @@ const Service = ({ isPage = false }: { isPage?: boolean }) => {
 
   return (
     <Container className="w-full p-5 mx-auto" id="services">
-      <Items
-        Number="01"
-        title="Here's How I Can Help You"
-        headingTag={isPage ? "h1" : "h2"}
-        des="Providing expert software engineering services focused on speed optimization, technical SEO, and secure backend infrastructure to drive measurable growth and seamless user experiences."
-      />
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        Here&apos;s How I Can Help You
+      </h2>
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-max"
       >
-        {services.slice(0, 5)
-          .map((service, index) => (
-            <ServiceCard
-              key={`core-${(service as any).id ?? index}`}
-              service={service}
-              index={index}
-                            className={service.gridClass}
-
-            />
-          ))}
+        {services.slice(0, 5).map((service, index) => (
+          <ServiceCard
+            key={`core-${(service as any).id ?? index}`}
+            service={service}
+            index={index}
+            className={service.gridClass}
+          />
+        ))}
       </motion.div>
     </Container>
   );

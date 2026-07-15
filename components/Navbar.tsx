@@ -3,12 +3,12 @@
 import * as motion from "motion/react-client";
 import Link from "next/link";
 import { useState,memo } from "react";
-import { quicklink } from "@/lib/constants";
 import Container from "@/components/Container";
 import MobileMenu from "@/components/MobileMenu";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { navlink as quicklink } from "@/lib/data/Navlink";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav className="py-4 z-50 sticky top-0 shadow-md backdrop-blur-sm bg-black/50">
       <Container className="px-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between ">
           <motion.div whileTap={{ scale: 1.05 }} className="cursor-pointer">
             <Link href="/" aria-label="Home">
 
@@ -35,11 +35,10 @@ function Navbar() {
 
           <motion.a
             href="mailto:contact@rajeevpuri.com.np"
-            className="hidden md:flex items-center hover:text-blue-500"
+            className="hidden md:flex items-center hover:text-blue-500 hover:underline font-semibold transition-all "
           >
-            <button className="bg-white text-black px-4 lg:px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-zinc-200 transition-all">
-              Lets Talk <ArrowRight size={14} />
-            </button>
+            contact@rajeevpuri.com.np
+
           </motion.a>
 
           <motion.button

@@ -1,4 +1,4 @@
-import { Outfit, Geist_Mono, Geist } from "next/font/google";
+import {  Geist_Mono, Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata, Viewport } from "next";
@@ -8,14 +8,11 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { NoiseOverlay } from "@/components/background/Nebula";
-import { cn } from "@/lib/utils";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -177,7 +174,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en" className={`${geistSans.className}`}>
       <head>
         {/* Structured Data (JSON-LD) */}
         <Script
@@ -188,7 +185,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} ${geistMono.variable} antialiased font-sans dark selection:bg-primary/40 `}
+        className={`antialiased font-sans dark selection:bg-primary/40`}
       >
         <Navbar />
         <NoiseOverlay />

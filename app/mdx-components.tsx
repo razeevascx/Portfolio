@@ -1,12 +1,11 @@
 import type { MDXComponents } from "mdx/types";
-import { Children, isValidElement } from "react";
+import { Children, isValidElement,ReactNode } from "react";
 import {
   BlogHeading,
   BlogBody,
   BlogPicture,
   BlogCode,
 } from "@/components/sections/blog";
-import { ReactNode } from "react";
 import Link from "next/link";
 
 interface MDXHeadingProps {

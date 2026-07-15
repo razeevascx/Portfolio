@@ -59,7 +59,7 @@ export default async function BlogPage() {
     >
       <motion.div variants={itemVariants}>
         <Items
-          Number="05"
+          Number="04"
           title="Blog"
           headingTag="h1"
           des="Thoughts on web development, Next.js, React, and building great digital
@@ -86,7 +86,7 @@ export default async function BlogPage() {
         >
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1"
           >
             {posts.map((post, index) => (
               <motion.div key={post.id} variants={itemVariants}>

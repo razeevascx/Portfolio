@@ -8,7 +8,7 @@ type BlogPostCardProps = {
   priority?: boolean;
 };
 
-export function BlogPostCard({ post, featured = false, priority = false }: BlogPostCardProps) {
+export function BlogPostCard({ post, featured = false, priority = false }: Readonly<BlogPostCardProps>) {
 
   return (
     <Link
@@ -43,7 +43,6 @@ export function BlogPostCard({ post, featured = false, priority = false }: BlogP
           <h3 className="text-3xl group-hover:text-primary font-bold text-foreground transition-colors duration-normal tracking-tight">
             {post.title}
           </h3>
-
           <p className="text-sm md:text-base text-foreground-secondary leading-relaxed group-hover:text-foreground transition-colors duration-normal mt-4 max-w-3xl font-light">
             {post.excerpt}
           </p>
@@ -60,7 +59,6 @@ export function BlogPostCard({ post, featured = false, priority = false }: BlogP
               </span>
             ))}
           </div>
-
         </div>
       </article>
     </Link>

@@ -20,7 +20,7 @@ const Projects = async ({ list = 4, isPage = false }: ProjectsProps) => {
       className="w-full p-5 mx-auto overflow-hidden"
     >
       <Items
-        Number="02"
+        Number="01"
         title="Projects"
         headingTag={isPage ? "h1" : "h2"}
         des="Explore a curated gallery of  projects designed to solve complex business challenges. Each case study demonstrates my expertise in building scalable web applications, optimizing for Core Web Vitals, and delivering high-performance digital solutions that drive user engagement."
@@ -32,7 +32,7 @@ const Projects = async ({ list = 4, isPage = false }: ProjectsProps) => {
           </div>
         }
       >
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-2 ">
           {projects.slice(0, list).map((project, indx) => (
             <ProjectCard key={project.title} {...project} index={indx} />
           ))}

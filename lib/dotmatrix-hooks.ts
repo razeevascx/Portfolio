@@ -8,7 +8,7 @@ export function usePrefersReducedMotion(): boolean {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const query = globalThis.matchMedia("(prefers-reduced-motion: reduce)");
 
     const update = () => {
       setPrefersReducedMotion(query.matches);
@@ -86,7 +86,7 @@ function emit(now: number) {
 function tick(now: number) {
   emit(now);
   if (listeners.size > 0) {
-    rafId = window.requestAnimationFrame(tick);
+    rafId = globalThis.requestAnimationFrame(tick);
   } else {
     rafId = null;
   }
@@ -94,13 +94,11 @@ function tick(now: number) {
 
 function subscribeFrame(listener: FrameListener) {
   listeners.add(listener);
-  if (rafId === null) {
-    rafId = window.requestAnimationFrame(tick);
-  }
+  rafId ??= globalThis.requestAnimationFrame(tick);
   return () => {
     listeners.delete(listener);
     if (listeners.size === 0 && rafId !== null) {
-      window.cancelAnimationFrame(rafId);
+      globalThis.cancelAnimationFrame(rafId);
       rafId = null;
     }
   };
@@ -175,12 +173,12 @@ export function useDotMatrixPhases({
   const safeSpeed = speed > 0 ? speed : 1;
   const autoRun = Boolean(animated && !hoverAnimated);
   const [hoverPhase, setHoverPhase] = useState<DotMatrixPhase>("idle");
-  const timeouts = useRef<number[]>([]);
+  const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const hoverGen = useRef(0);
 
   const clearTimers = useCallback(() => {
-    for (let i = 0; i < timeouts.current.length; i += 1) {
-      window.clearTimeout(timeouts.current[i]!);
+    for (const element of timeouts.current) {
+      globalThis.clearTimeout(element as unknown as number);
     }
     timeouts.current = [];
   }, []);
@@ -199,7 +197,7 @@ export function useDotMatrixPhases({
     const gen = ++hoverGen.current;
     setHoverPhase("collapse");
     const collapseMs = Math.max(1, Math.round(300 / safeSpeed));
-    const id = window.setTimeout(() => {
+    const id = globalThis.setTimeout(() => {
       if (hoverGen.current !== gen) {
         return;
       }

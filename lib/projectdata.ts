@@ -70,7 +70,7 @@ export async function getProjectData(): Promise<Project[]> {
   try {
     const rows = await getProjectRows();
 
-    return rows
+    const projects = rows
       .map((row: any) => {
         const props = (row?.properties || {}) as Record<string, NotionProperty>;
 
@@ -95,6 +95,9 @@ export async function getProjectData(): Promise<Project[]> {
         } as Project;
       })
       .filter((project) => project.title || project.link);
+    return projects.sort(
+      (a, b) => Number(!!(b as any).image) - Number(!!(a as any).image),
+    );
   } catch (error) {
     console.error("Failed to load project data from Notion:", error);
     return [];

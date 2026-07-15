@@ -32,7 +32,7 @@ export default function CertificateBadge({
               alt={badge.name}
               width={160}
               height={160}
-              className="size-40 object-contain"
+              className="size-30 md:size-40 object-contain"
             />
           ) : (
             <span className="text-2xl">🏅</span>

@@ -12,6 +12,8 @@ export interface BlogPost {
   readingTime: number;
   tags: string[];
   image?: string;
+  createdby: string;
+  createdByAvatar?: string;
 }
 
 export async function getBlogPostMarkdown(pageId: string): Promise<string> {
@@ -37,6 +39,7 @@ type NotionProperty = {
   number?: number;
   date?: { start?: string };
   files?: Array<{ file?: { url?: string }; external?: { url?: string } }>;
+  created_by?: { name?: string; avatar_url?: string };
 };
 
 function getPlainText(prop?: NotionProperty): string {
@@ -116,11 +119,12 @@ export async function getBlogPosts(dataSourceId?: string): Promise<BlogPost[]> {
             normalizeSlug(getPlainText(props.Slug)) ||
             normalizeSlug(getPlainText(props.Title)) ||
             "",
-          // Use excerpt for list views — full content is fetched per-post
           content: getPlainText(props.Excerpt) || "",
           excerpt: getPlainText(props.Excerpt) || "",
           publishedDate: props["Published Date"]?.date?.start || "",
           featured: !!props.Featured?.checkbox,
+          createdby: props["Written by"]?.created_by?.name || "Unknown",
+          createdByAvatar: props["Written by"]?.created_by?.avatar_url,
           readingTime:
             typeof props["Reading Time"]?.number === "number"
               ? props["Reading Time"].number
@@ -153,10 +157,7 @@ export async function getBlogPostBySlug(
 
   if (!post) return null;
 
-  // Fetch the full page body markdown (the actual content, not the DB property)
   const markdown = await getBlogPostMarkdown(post.id);
-
-  // Strip the leading h1 title line so it doesn't duplicate the page title
   const contentWithoutTitle = markdown.replace(/^#\s+.+\n?/, "").trimStart();
 
   return {

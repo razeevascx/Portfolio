@@ -30,7 +30,7 @@ export function BlogHeading({
   children,
   className = '',
 }: BlogHeadingProps) {
-  const baseStyles = 'text-foreground font-outfit scroll-m-20 mb-4 mt-8 first:mt-0 tracking-tight';
+  const baseStyles = 'text-foreground font-geist scroll-m-20 mb-4 mt-8 first:mt-0 tracking-tight';
 
   const sizeStyles = {
     h1: "text-4xl md:text-5xl lg:text-6xl leading-[0.95] font-extrabold text-balance ",

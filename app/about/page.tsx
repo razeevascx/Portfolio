@@ -13,8 +13,7 @@ import {
   Globe,
 
 } from "lucide-react";
-import { libraries } from "@/lib/skills-data";
-import SkillCard1 from "@/components/cards/SkillCard";
+
 import CertificateCard from "@/components/cards/CertificateCard";
 import { getCredlyBadges } from "@/lib/credly";
 
@@ -37,10 +36,10 @@ export default async function Page() {
     const badges = await getCredlyBadges();
 
   return (
-    <main className="min-h-screen pb-20">
+    <>
       <About isPage={true} />
 
-      <Container className="px-5 mt-16 space-y-32">
+      <Container className="px-5 mt-5 space-y-8">
         {badges && badges.length > 0 && (
           <motion.div className="mb-8 space-y-8">
             <div>
@@ -53,14 +52,7 @@ export default async function Page() {
             </div>
           </motion.div>
         )}
-        <div className="mb-16">
-          <SectionHeading className="mb-12">Frameworks & Tools</SectionHeading>
-          <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
-            {libraries.map((skill) => (
-              <SkillCard1 key={skill.label} skill={skill} />
-            ))}
-          </div>
-        </div>
+
         <section>
           <SectionHeading className="mb-12">Core Philosophy</SectionHeading>
           <div className="grid md:grid-cols-3 gap-8">
@@ -150,6 +142,6 @@ export default async function Page() {
           </div>
         </section>
       </Container>
-    </main>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { Copy, Check, FileCode, Terminal, Hash, ChevronRight } from 'lucide-react';
+import { Copy, Check,  Hash, ChevronRight } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
@@ -17,7 +17,7 @@ export function BlogCode({
   language = 'plaintext',
   title,
   showLineNumbers = true,
-}: BlogCodeProps) {
+}: Readonly<BlogCodeProps>) {
   const [copied, setCopied] = useState(false);
 
   const highlightedCode = useMemo(() => {
@@ -50,7 +50,7 @@ export function BlogCode({
           </div>
           {title ?? (
             <span className="meta-label text-foreground-muted flex items-center gap-2">
-              {title || language}
+              {title ?? language}
             </span>
           )}
         </div>
