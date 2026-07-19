@@ -17,16 +17,18 @@ export default function LanguageCard({
   return (
     <div
       className={cn(
-        "relative flex items-center gap-6 p-8  border-r border-white/5 bg-black/20 hover:bg-white/8 transition-all group select-none cursor-pointer ",
+        "gap-4 p-4  border transition-colors duration-300 flex items-center justify-center bg-background px-4 py-8 md:p-8 hover:bg-white/8  group select-none cursor-pointer",
         className,
       )}
     >
-      <div className="transition-transform duration-500 group-hover:scale-110 ">
+      <div className="shrink-0 transition-transform duration-500 group-hover:scale-110">
         {skill.icon}
       </div>
-      <p className="text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
-        {skill.label}
-      </p>
+      <div className="flex-1 min-w-0">
+        <p className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors truncate">
+          {skill.label}
+        </p>
+      </div>
     </div>
   );
 }

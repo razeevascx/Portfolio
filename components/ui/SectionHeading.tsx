@@ -11,13 +11,13 @@ export default function SectionHeading({
   className,
 }: Readonly<SectionHeadingProps>) {
   return (
-    <h2
+    <p
       className={cn(
-        "text-3xl md:text-4xl mb-4 font-bold text-white",
+        "text-3xl font-medium mb-4 ",
         className,
       )}
     >
       {children}
-    </h2>
+    </p>
   );
 }

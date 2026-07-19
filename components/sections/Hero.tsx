@@ -62,7 +62,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="hidden lg:block absolute inset-0 z-0"
+            className="hidden md:block absolute inset-0 z-0"
           >
             <TopographicCanvas {...param} />
             <div className="absolute inset-0 pointer-events-none bg-linear-to-r from-[#030303] via-[#030303]/80 to-transparent w-full" />
@@ -77,23 +77,11 @@ export default function Hero() {
         >
           <div className="flex items-center min-h-screen md:min-h-[90dvh] py-12 md:py-0">
             <div className="w-full max-w-3xl">
-              {/* Header Label */}
-              <motion.div
-                variants={itemVariants}
-                className="flex items-center gap-3 mb-6 md:mb-8"
-              >
-                <motion.div
-                  variants={lineVariants}
-                  className="h-px w-8 md:w-12 bg-blue-600"
-                />
-                <p className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-blue-500 font-bold">
-                  A Path Back to Wonder: Creative Design.
-                </p>
-              </motion.div>
+
 
               <motion.h1
                 variants={itemVariants}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-[0.95] mb-6 md:mb-8"
+                className="text-7xl  md:text-8xl l font-medium tracking-tight leading-[0.95] mb-6 md:mb-8"
               >
                 Relearn how to <br />
                 wonder, feel, and{" "}
@@ -122,7 +110,7 @@ export default function Hero() {
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8 md:mb-12"
+                className="flex w-full gap-6 mb-8 md:mb-12"
               >
                 <Link
                   href="/projects"
