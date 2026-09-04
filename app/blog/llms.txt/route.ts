@@ -37,7 +37,6 @@ ${post.tags.length > 0 ? `- **Tags**: ${post.tags.join(", ")}` : ""}
 - About: curl rajeevpuri.com.np/about/llms.txt
 - Blog: curl rajeevpuri.com.np/blog/llms.txt
 - Projects: curl rajeevpuri.com.np/projects/llms.txt
-- Services: curl rajeevpuri.com.np/services/llms.txt
 - Contact: curl rajeevpuri.com.np/contact/llms.txt
 `;
     return CurlResponse(mdContent);

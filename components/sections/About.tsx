@@ -23,29 +23,14 @@ const About = async ({ isPage = false }: { isPage?: boolean }) => {
       />
       <ProfileCard />
       <SectionHeading className="mt-12">
-        Want to deploy on Cloud?
+        Tech Stack.
       </SectionHeading>
       <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
-        {clouds.map((skill) => (
+        {[...clouds, ...frameworksAndTools].map((skill) => (
           <SkillCard key={skill.label} skill={skill} />
         ))}
       </div>
-      <SectionHeading className="mt-12">
-        Want to promote your business or content?
-      </SectionHeading>
-      <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
-        {marketingAndAds.map((skill) => (
-          <SkillCard key={skill.label} skill={skill} />
-        ))}
-      </div>
-      <SectionHeading className="mt-12">
-        List of Frameworks & Tools I use.
-      </SectionHeading>
-      <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
-        {frameworksAndTools.map((skill) => (
-          <SkillCard key={skill.label} skill={skill} />
-        ))}
-      </div>
+
     </Container>
   );
 };

@@ -11,7 +11,7 @@ const SkillCard = ({ skill, className }: SkillCardProps) => {
   return (
     <motion.div
       className={cn(
-        "gap-4 p-4  border transition-colors duration-300 flex items-center justify-center bg-background px-4 py-8 md:p-8 hover:bg-white/8  group select-none cursor-pointer",
+        "gap-4 p-2  border transition-colors duration-300 flex items-center justify-center bg-background px-2 py-4 md:p-8 hover:bg-white/8  group select-none cursor-pointer",
         className,
       )}
       initial={{ opacity: 0, y: 10 }}

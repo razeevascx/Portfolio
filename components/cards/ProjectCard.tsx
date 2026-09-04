@@ -17,7 +17,7 @@ import {
   Vue,
   MongoDBDark,
 } from "@ridemountainpig/svgl-react";
-import { Database } from "lucide-react";
+import { Database, Github } from "lucide-react";
 
 interface TechItem {
   id: string;
@@ -85,11 +85,6 @@ interface ProjectProps {
   link: string;
   tech: Record<string, TechItem | undefined>;
   image?: string;
-  date?: string;
-  list?: string[];
-  index?: number;
-  liveLink?: string;
-  featured?: boolean;
 
 }
 
@@ -97,67 +92,58 @@ const Project = ({
   title,
   description,
   link,
-  index = 0,
   tech,
   image,
-  date = "2024",
-  list,
 }: ProjectProps) => {
-  const code = `[0${String(index + 1)}]`;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className=" group transition-colors duration-normal flex items-center hover:bg-white/2 p-6 border-border hover:border-primary/50"
+      className=" group transition-colors  duration-normal flex items-center hover:bg-white/2 p-4 border-border border hover:border-primary/50"
     >
       <div className="space-y-4 ">
-        {image && (
+
           <Image
-            src={image || "/pictures/default.png"}
+            src={image || "/sample.webp"}
             loading="eager"
             alt={`Screenshot of ${title} project`}
             width={800}
             height={450}
-            className="w-full h-auto  object-contain"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out group-hover:shadow-lg"
           />
-        )}
-        <div className="border  border-border pb-4 p-4 ">
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <h3 className="text-4xl group-hover:text-primary font-bold text-foreground transition-colors duration-normal tracking-tight">
-              {title}
-            </h3>
-          </a>
-          <div className="lg:col-span-4 flex flex-wrap gap-2 text-lg mt-2">
+
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2"
+        >
+          <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-zinc-100 transition-colors">
+            {title}
+          </h3>
+        </a>
+        <p className="text-xs font-normal text-zinc-400 line-clamp-2 leading-relaxed">
+          {description}
+        </p>
+
+        <div className="pt-3 flex items-center justify-between border-t border-zinc-900 text-xs text-zinc-400 font-mono">
+
+          <div className="flex items-center space-x-1">
             {Object.values(tech)
               .filter((item): item is TechItem => item !== undefined)
-              .map((item, i) => (
+              .slice(0, 3)
+              .map((item, idx) => (
                 <div
-                  key={i}
-                  className="p-1 border border-border transition-all duration-normal flex items-center gap-2 cursor-pointer  hover:border-primary/50"
+                  key={idx}
+                  title={item.id}
+                  className="p-1.5  bg-zinc-900/80 border border-zinc-800 text-zinc-300 hover:border-zinc-700 transition-colors"
                 >
-                  <span className="text-lg">
-                    {item.icon ?? renderTechIcon(item.id)}
-                  </span>
-                  <span
-                    key={item.id}
-                    className="text-[10px] text-foreground-secondary group-hover:text-foreground transition-all duration-normal font-bold tracking-widest"
-                  >
-                    {item.id}
-                  </span>
+                  {item.icon ?? renderTechIcon(item.id)}
                 </div>
               ))}
           </div>
-
-          <p className="text-sm md:text-base text-foreground-secondary leading-relaxed group-hover:text-foreground transition-colors duration-normal mt-4 max-w-3xl font-light">
-            {description}
-          </p>
         </div>
       </div>
     </motion.div>

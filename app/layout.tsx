@@ -2,7 +2,6 @@ import {  Geist_Mono, Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata, Viewport } from "next";
-import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s ",
   },
   description:
-    "Software Engineer based in London, UK, specializing in Next.js, React, and Full-Stack Development. Building high-performance web applications, scalable system architectures, and secure cloud infrastructure.",
+    "London-based Software Engineer building high-performance Next.js, React, and TypeScript web apps with scalable cloud architecture.",
   keywords: [
     // Core Roles
     "Software Engineer London",
@@ -176,12 +175,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.className}`}>
       <head>
-        {/* Structured Data (JSON-LD) */}
-        <Script
+        <script
           id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          strategy="afterInteractive"
         />
       </head>
       <body

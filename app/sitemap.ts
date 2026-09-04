@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       let lastMod = now;
       if (p.publishedDate) {
         const d = new Date(p.publishedDate);
-        if (!isNaN(d.getTime())) {
+        if (!Number.isNaN(d.getTime())) {
           lastMod = d;
         }
       }
@@ -57,7 +57,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }) as MetadataRoute.Sitemap;
 
     return [...staticEntries, ...postEntries];
-  } catch (e) {
+  } catch (error) {
+    console.error("Failed to build sitemap:", error);
     return staticEntries;
   }
 }

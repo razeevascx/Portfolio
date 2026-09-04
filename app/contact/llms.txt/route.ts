@@ -29,7 +29,6 @@ ${socialLinks.map(s => `- **${s.name}**: [${s.username || s.name}](${s.url})`).j
 - About: curl rajeevpuri.com.np/about/llms.txt
 - Projects: curl rajeevpuri.com.np/projects/llms.txt
 - Blog: curl rajeevpuri.com.np/blog/llms.txt
-- Services: curl rajeevpuri.com.np/services/llms.txt
 - Contact: curl rajeevpuri.com.np/contact/llms.txt
 `;
     return CurlResponse(mdContent);
@@ -70,7 +69,7 @@ ${socialLinks.map(s => `- **${s.name}**: [${s.username || s.name}](${s.url})`).j
   ${colors.GOLD}${colors.BOLD}🚀 Quick Actions${colors.RESET}
 
   ${colors.BRIGHT_CYAN}▸${colors.RESET} ${colors.CYAN}curl rajeevpuri.com.np/projects/llms.txt${colors.RESET} ${colors.DIM}View my work${colors.RESET}
-  ${colors.BRIGHT_CYAN}▸${colors.RESET} ${colors.CYAN}curl rajeevpuri.com.np/services/llms.txt${colors.RESET}  ${colors.DIM}See what I offer${colors.RESET}`;
+`;
 
   const content = `${Header("CONTACT", "04", " Get in touch with me")}
 ${contactInfo}

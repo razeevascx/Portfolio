@@ -33,8 +33,8 @@ const Projects = async ({ list = 4, isPage = false }: ProjectsProps) => {
         }
       >
         <div className="grid grid-cols-1 gap-1 md:grid-cols-2 ">
-          {projects.slice(0, list).map((project, indx) => (
-            <ProjectCard key={project.title} {...project} index={indx} />
+          {projects.slice(0, list).map((project) => (
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
       </Suspense>

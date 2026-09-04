@@ -19,13 +19,10 @@ import {
 
   Code,
   Palette,
-  Layout,
   Database,
-  Cpu,
   PaletteIcon,
   Layers,
   Infinity,
-  ShieldCheck,
   Search,
   Pencil,
   LayoutDashboard,
@@ -82,7 +79,7 @@ export interface Project {
 
 export const socialLinks: SocialLink[] = [
   {
-    name: "X (Formarly Twitter)",
+    name: "X (Formerly Twitter)",
     url: "https://x.com/razeev_asnx",
     icon: <IconXTwitter className="w-6 h-6" />,
     hoverColor: "hover:text-white",
@@ -125,12 +122,7 @@ export const services = [
     icon: <PaletteIcon />,
     illustration: <BrandingIllustration />,
     title: "Brand Strategy & Digital Identity Systems",
-    description: [
-      "Strategic visual identities that build market authority and trust",
-      "Professional logo design tailored to your business goals",
-      "Comprehensive brand guidelines for consistency across all touchpoints",
-      "Memorable brand systems that ensure recognition at every interaction",
-    ],
+
     gridClass: "md:col-span-2 md:row-span-1",
     technologies: [
       "Brand Architecture",
@@ -146,12 +138,7 @@ export const services = [
     icon: <Code />,
     illustration: <FullStackIllustration />,
     title: "Scalable Next.js & Full-Stack Development",
-    description: [
-      "End-to-end web applications optimized for Core Web Vitals and speed",
-      "Secure backend architecture built for long-term scalability",
-      "High-fidelity frontends engineered to maximize user retention",
-      "Conversion-optimized experiences designed to grow with your business",
-    ],
+
     technologies: [
       "TypeScript",
       "PostgreSQL",
@@ -167,12 +154,7 @@ export const services = [
     icon: <Palette />,
     illustration: <UIUXIllustration />,
     title: "Conversion-Focused UI/UX & Product Design",
-    description: [
-      "User-centric interfaces engineered for accessibility (WCAG compliance)",
-      "High-usability designs that simplify complex user journeys",
-      "Interactive prototypes that translate business requirements into clarity",
-      "Tested flows that reduce friction and drive conversions",
-    ],
+
     technologies: ["Figma", "Wireframing", "User Testing", "Framer Motion"],
     category: "UX/UI Design",
     type: "core",
@@ -183,12 +165,7 @@ export const services = [
     icon: <Database />,
     illustration: <DatabaseIllustration />,
     title: "Database Architecture & Query Optimization",
-    description: [
-      "Optimized schemas designed for high-traffic, data-intensive applications",
-      "Efficient SQL and NoSQL queries that keep your platform fast under load",
-      "Reliable data management strategies built for scale and resilience",
-      "Indexing and modeling approaches that prevent performance bottlenecks",
-    ],
+
     technologies: [
       "Redis",
       "Prisma ORM",
@@ -204,12 +181,7 @@ export const services = [
     icon: <Layers />,
     illustration: <ArchitectureIllustration />,
     title: "Enterprise System Design & Architecture",
-    description: [
-      "Future-proof infrastructure built to scale with your user base",
-      "Clean architecture and design patterns for long-term maintainability",
-      "Modular systems that evolve seamlessly as your business grows",
-      "Technical foundations that support rapid feature development",
-    ],
+
     technologies: [
       "Microservices",
       "Serverless Architecture",
@@ -225,12 +197,7 @@ export const services = [
     icon: <Infinity />,
     illustration: <DevOpsIllustration />,
     title: "Cloud DevOps & Infrastructure Security",
-    description: [
-      "Automated CI/CD pipelines that accelerate your release cycles",
-      "Secure cloud environments with robust containerization strategies",
-      "Monitoring and alerting systems to catch issues before they escalate",
-      "Infrastructure that removes bottlenecks so your team ships faster",
-    ],
+
     technologies: ["AWS/Vercel", "Docker", "Kubernetes", "GitHub Actions"],
     category: "DevOps & Cloud",
     type: "capable",

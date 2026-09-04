@@ -65,12 +65,8 @@ const ServiceCard = ({ service, index,className }: ServiceCardProps) => {
         {/* <p className="text-zinc-500 text-base leading-relaxed group-hover:text-zinc-300 transition-colors duration-300 min-h-20 line-clamp-2">
           {service.description}
         </p> */}
-        <ul className="list-disc list-inside space-y-1 text-zinc-500 text-base leading-relaxed group-hover:text-zinc-300 transition-colors duration-300 min-h-20 line-clamp-2">
-          {service.description.map((point: string, i: number) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul>
 
+{/*
         <div className="hidden lg:flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-zinc-900">
           <div className="flex flex-wrap gap-2">
             {service.technologies.map((tech: string, idx: number) => (
@@ -82,7 +78,7 @@ const ServiceCard = ({ service, index,className }: ServiceCardProps) => {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
         <ChevronRightIcon size={14} className="text-primary" />
