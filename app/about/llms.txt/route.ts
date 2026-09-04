@@ -8,7 +8,7 @@ import {
   wrapText,
   Separator,
 } from "@/lib/curl-utils";
-import { libraries, language } from "@/lib/skills-data";
+import { frameworksAndTools, language } from "@/lib/skills-data";
 
 export async function GET(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
@@ -29,7 +29,7 @@ Hey there. I'm Rajeev Puri. Currently a BSc Student and a software engineer. I'l
 ${language.map(l => `- **${l.label}**: ${l.description}`).join("\n")}
 
 ### Key Libraries & Tools
-${libraries.slice(0, 10).map(l => `- **${l.label}**: ${l.description}`).join("\n")}
+${frameworksAndTools.slice(0, 10).map(l => `- **${l.label}**: ${l.description}`).join("\n")}
 
 ## Beyond the Terminal
 I believe that great software isn't just written in code—it's fueled by curiosity and a balanced perspective on life and design.
@@ -67,7 +67,7 @@ I believe that great software isn't just written in code—it's fueled by curios
   ${colors.GOLD}${colors.BOLD}Technical Expertise${colors.RESET}
 
   ${colors.WHITE}Languages:${colors.RESET} ${colors.CYAN}${language.map(l => l.label).join(", ")}${colors.RESET}
-  ${colors.WHITE}Top Tech:${colors.RESET}  ${colors.CYAN}${libraries.slice(0, 8).map(l => l.label).join(", ")}${colors.RESET}`;
+  ${colors.WHITE}Top Tech:${colors.RESET}  ${colors.CYAN}${frameworksAndTools.slice(0, 8).map(l => l.label).join(", ")}${colors.RESET}`;
 
   const beyondSection = `
   ${colors.GOLD}${colors.BOLD}Beyond the Terminal${colors.RESET}

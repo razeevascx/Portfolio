@@ -58,7 +58,7 @@ ${Legend()}
     frameworksAndTools.map(l => `- **${l.label}**: ${l.description}`).join("\n"),
 
     `## Services`,
-    ...services.map(s => `### ${s.title}\n${s.description}\n**Technologies**: ${s.technologies.join(", ")}`),
+    ...services.map(s => `### ${s.title}\n**Technologies**: ${s.technologies.join(", ")}`),
 
     `## Featured Projects`,
     ...projectList.map(p => `### ${p.title}\n${p.description}\n- **Tech Stack**: ${Object.values(p.tech).map(t => t.id).join(", ")}\n- **Link**: [GitHub](${p.link})${p.stars ? `\n- **Stars**: ${p.stars}` : ""}${p.forks ? `\n- **Forks**: ${p.forks}` : ""}`),
