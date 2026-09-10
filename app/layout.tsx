@@ -1,4 +1,4 @@
-import {  Geist_Mono, Geist } from "next/font/google";
+import { Geist_Mono, Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata, Viewport } from "next";
@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { NoiseOverlay } from "@/components/background/Nebula";
-
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +29,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://rajeevpuri.com.np"),
   title: {
-    default: "Rajeev Puri | Software Engineer",
+    default: "Rajeev Puri",
     template: "%s ",
   },
   description:
@@ -93,29 +93,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: "https://rajeevpuri.com.np",
-    title: "Rajeev Puri | Software Engineer",
-    description:
-      "London-based Software Engineer crafting high-performance digital products with Next.js and TypeScript. View my latest projects in Full-Stack development and System Architecture.",
-    images: [
-      {
-        url: "/opengraph-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Rajeev Puri Portfolio - Software Engineer in London",
-      },
-    ],
-    siteName: "Rajeev Puri Portfolio",
+    siteName: "Rajeev Puri ",
+    title: "Rajeev Puri ",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rajeev Puri | Software Engineer",
-    description:
-      "Software Engineer specializing in Next.js, React, and modern web tech. Based in London, UK.",
-    images: ["/twitter-image.jpg"],
     creator: "@razeev_asnx",
   },
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -166,7 +152,6 @@ const jsonLd = {
   ],
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -175,15 +160,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.className}`}>
       <head>
-        <script
+        <Script
           id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`antialiased font-sans dark selection:bg-primary/40`}
-      >
+      <body className={`antialiased font-sans dark selection:bg-primary/40`}>
         <Navbar />
         <NoiseOverlay />
 

@@ -35,13 +35,7 @@ const itemVariants = {
   },
 };
 
-const lineVariants = {
-  hidden: { scaleX: 0, originX: 0 },
-  visible: {
-    scaleX: 1,
-    transition: { duration: 1, ease: "circOut" as const },
-  },
-};
+
 
 export default function Hero() {
   const param = {
@@ -50,7 +44,8 @@ export default function Hero() {
     noiseScale: 0.002,
     colorScheme: "amber" as const,
     showLabels: true,
-    mouseInfluence: true,
+    showGrid: false,
+    mouseInfluence: false,
     hueRotate: 175,
   };
 
